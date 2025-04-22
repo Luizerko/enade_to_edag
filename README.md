@@ -7,8 +7,6 @@ A partir desses dados, queremos:
 - Construir um dashboard interativo com visualizações que nos permitam entender como o conteúdo do exame evoluiu ao longo do tempo.
 - Desenvolver uma pipeline automatizada com o uso de LLMs para gerar novas questões no estilo do ENADE, que possam ser utilizadas no Exame de Desempenho Acadêmico Geral (EDAG) do SENAI CIMATEC.
 
----
-
 ## Etapas do Projeto
 
 1. **Mineração de Dados**
@@ -22,8 +20,6 @@ A partir desses dados, queremos:
 4. **Geração de Questões com IA**
    - Uso de LLMs para sugerir novas questões estilo ENADE (com a formatação do EDAG).
    - Foco no conteúdo mais recente e relevante.
-
----
 
 ## Status Atual
 
