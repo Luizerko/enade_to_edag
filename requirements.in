@@ -1,0 +1,6 @@
+pip-tools
+playwright
+beautifulsoup4
+PyMuPDF
+pandas
+requests
