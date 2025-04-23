@@ -1,0 +1,28 @@
+questão 19
+é chamado de compilação o processo de conversão do código escrito pelo programador para um arquivo 
+binário que o computador consegue executar. esse processo é realizado por um programa chamado 
+compilador. entre as diversas tarefas de um compilador, destaca-se a de identificar os possíveis erros 
+sintáticos e semânticos. com base nessas informações, considere uma linguagem de programação em 
+que a sintaxe de uma operação aritmética seja dada pela seguinte gramática livre de contexto:
+s → var = e; | var = e; s
+e → e + e | e - e | e * e | e/e | e(e) | var
+inspirado nessa gramática, um profissional submete a seguinte sentença ao compilador dessa linguagem 
+de programação:
+a = a / (b - b);
+com base na gramática da linguagem de programação e acerca do processo de análise sintática e 
+semântica da sentença proposta pelo profissional, é correto afirmar que
+a	 a gramática gera a sentença apresentada e o erro presente na expressão está fora do escopo das 
+análises sintática e semântica.
+b	 a gramática gera a sentença apresentada, porém o analisador semântico transmitirá uma 
+mensagem de erro.
+c	 o analisador léxico transmitirá uma mensagem de erro, pois a gramática não gera a sentença 
+apresentada.
+d	 o analisador semântico transmitirá uma mensagem de erro, pois a gramática não gera a sentença 
+apresentada. 
+e	 a gramática gera a sentença apresentada, porém o analisador léxico transmitirá uma mensagem de erro.
+*r08202322*
+validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
+validinep2023validinep2023validin3p2023validinep2023validin3p2validinep
+
+engenharia de computação
+23

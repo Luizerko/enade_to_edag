@@ -1,0 +1,8 @@
+questão 06
+qual o grau de dificuldade das questões de 
+formação geral?
+a  muito fácil.
+b  fácil.
+c  médio.
+d  difícil.
+e  muito difícil.

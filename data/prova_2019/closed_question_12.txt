@@ -1,0 +1,53 @@
+questão 12
+em um sistema computacional avalia-se o desempenho no uso de dois tipos de memória secundária por 
+meio de programação linear. no gráfico apresentado cada eixo representa a quantidade de posições de 
+memória de cada tipo e a região colorida representa, de forma contínua, o conjunto de soluções viáveis 
+(região viável).
+as arestas da região viável foram definidas pelas diversas restrições observadas para os dois tipos 
+de memória. com base no gráfico, o máximo desempenho do sistema, representado pela variável  
+z = 30x + 10y, é de
+a	 350.
+b	 280.
+c	 270.
+d	 180.
+e	 130.
+área livre
+a
+b
+c
+d
+d
+c
+b
+a
+f
+e
+e
+x
+y
+f
+0
+1
+2
+3
+4
+5
+6
+7
+8
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+*r09201918*
+
+engenharia de computação
+19

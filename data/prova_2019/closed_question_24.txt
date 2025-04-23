@@ -1,0 +1,62 @@
+questão 24
+protocolos de roteamento de estado de enlace 
+utilizam difusão para propagar informações de 
+estado de enlace que são usadas para calcular rotas 
+individuais. entretanto, algumas técnicas provocam 
+a transmissão de pacotes redundantes na rede. 
+idealmente, cada nó deveria receber apenas uma 
+cópia do pacote de difusão.
+uma técnica utilizada para resolver o problema da 
+redundância de pacotes, é a difusão por spanning 
+tree. uma spanning tree de um grafo g = (n, e) é 
+um grafo g' = (n, e') tal que e' é um subconjunto 
+de e, g' é conexo, não possui ciclos e contém todos 
+os nós originais em g. se cada enlace tiver um 
+custo associado e o custo de uma árvore for a soma 
+dos custos dos enlaces, então uma árvore cujo 
+custo seja o mínimo entre todas as spanning trees 
+do grafo é denominada uma spanning tree mínima.
+kurose, j. f.; ross, k. w. redes de computadores e a internet: 
+uma abordagem top-down. 6. ed. são paulo:  
+pearson education do brasil, 2013 (adaptado).
+considere uma rede composta por 6 roteadores, 
+designados pelas letras a, b, c, d, e e f, conectados 
+conforme a seguinte tabela de custos de seus enlaces:
+conexão
+custo do enlace
+a - b
+2
+a - c
+2
+b - c
+2
+b - d
+3
+c - d
+3
+c - e
+1
+c - f
+1
+d - f
+2
+e - f
+1
+neste cenário, o custo da spanning tree mínima 
+correspondente é, exatamente:
+a	 5.
+b	 7.
+c	 8.
+d	 9.
+e	 11.
+1
+1,0
+1,0
+0
+0
+p
+1
+*r09201928*
+
+engenharia de computação
+29

@@ -1,0 +1,41 @@
+questão 10
+os resistores são dispositivos utilizados com finalidade de limitar a corrente elétrica em um circuito 
+elétrico. eles conseguem desempenhar essa função por apresentarem a propriedade da resistência elétrica,  
+que é a capacidade de um corpo se opor à passagem de corrente elétrica. diversos materiais podem ser 
+utilizados como resistores, tais como níquel-cromo, carbono e grafite.
+diante disso, considere uma situação hipotética em que seja preciso construir resistores cilíndricos na 
+forma da figura a seguir, a fim de serem utilizados em um circuito de corrente contínua que possui tensão 
+igual a 12 v. na figura, l representa o comprimento do material e a representa a área de seção transversal.
+a
+l
+observe, também, a tabela a seguir, a qual especifica características de três tipos de materiais utilizados 
+para fabricação dos resistores hipotéticos, como a resistividade r , o comprimento l e a área a.
+material
+r [ohm.mm2/m]
+l (m)
+a (mm2)
+carbono
+40,00
+1,00
+2,50 
+grafite
+13,00
+1,50
+1,50
+níquel-cromo
+1,10
+5,00
+0,50
+com base nessas informações, é correto afirmar que, a fim de se obter a configuração de resistores 
+viável para se ter uma corrente menor do que 300 ma, é preciso utilizar apenas
+a	 2 resistores de grafite em série.
+b	 3 resistores de carbono em série.
+c	 2 resistores de grafite em paralelo. 
+d	 2 resistores de carbono em paralelo.
+e	 3 resistores de níquel-cromo em série.
+*r08202314*
+validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
+validinep2023validinep2023validin3p2023validinep2023validin3p2validinep
+
+engenharia de computação
+15

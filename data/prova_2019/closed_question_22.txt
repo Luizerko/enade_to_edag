@@ -1,0 +1,46 @@
+questão 22
+considere um software de monitoramento de estufas que possui um alarme que detecta quando um 
+medidor de temperatura excede um dado limiar. para esse projeto, utilizou-se uma rede bayesiana para 
+inferir eventos que podem acontecer no sistema com as seguintes variáveis booleanas:
+• a: o alarme soa;
+•	 ad: o alarme está defeituoso, o alarme é acionado sem necessidade ou é um alarme falso;
+•	 md: o medidor de temperatura está defeituoso e pode gerar valores incorretos, levando a leituras 
+erradas do medidor; 
+•	 lm: os valores de leitura do medidor;
+•	 t: a temperatura real da estufa.
+quando a temperatura da estufa fica muito alta, o medidor de temperatura pode falhar. assim, a rede 
+bayesiana para esse domínio é
+a	  
+md
+ad
+t
+lm
+a
+b	  
+md
+ad
+t
+lm
+a
+c	  
+md
+ad
+t
+lm
+a
+d	  
+md
+ad
+t
+lm
+a
+e	  
+md
+ad
+t
+lm
+a
+*r09201927*
+
+engenharia de computação
+28

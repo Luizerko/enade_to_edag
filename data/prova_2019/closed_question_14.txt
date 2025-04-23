@@ -1,0 +1,81 @@
+questão 14
+filtros normalizados são resultantes da compressão da faixa de frequência infinitamente longa  
+– ∞ < ω < ∞ de um filtro analógico (tempo contínuo) para a faixa de frequência finita – π < ω < π 
+de um filtro digital (tempo discreto), com período 2π.
+haykin, s; veen, b.v. sinais e sistemas. porto alegre: bookman, 2001 (adaptado).
+a mudança da escala de frequências também pode ser pensada como uma normalização do eixo das 
+frequências em que a frequência de amostragem ωs corresponde a ±π e qualquer outra frequência em 
+hz, ω, corresponde à frequência discreta ±ω.
+oppenheim, a. v; schafer, r. w. discrete-time signal processing. 3. ed. nj: prentice hall, 1998 (adaptado).
+considerando um sistema de transmissão de dados com a máxima frequência do sinal de informação de 
+4 000 hz, e frequência de amostragem de 20 000 amostras por segundo com um filtro digital de resposta 
+ideal que rejeite os sinais de frequências superiores a 6 000 hz, a resposta em frequência do filtro que 
+atenda essas especificações é
+a	  
+ω
+h(e j    )
+ω
+−2π
+2π
+−π
+π
+−0,3π
+0,3π
+0
+1
+b	  
+h(e j    )
+ω
+ω
+−2π
+2π
+−π
+π
+−0,3π
+0,3π
+0
+1
+c	  
+ω
+h(e j    )
+ω
+−2π
+−1,7π
+1,7π
+2π
+−π
+π
+−0,3π
+0,3π
+0
+1
+d	  
+ω
+h(e j    )
+ω
+−2π
+2π
+−π
+π
+−0,6π
+0,6π
+−0,3π
+0,3π
+0
+1
+e	  
+ω
+h(e j    )
+ω
+−2π
+2π
+−π
+π
+−0,3π
+0,3π
+0
+1
+*r09201920*
+
+engenharia de computação
+21

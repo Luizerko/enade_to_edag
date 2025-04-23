@@ -1,0 +1,18 @@
+questão 38
+os sistemas distribuídos consistem em múltiplos componentes de software que se comunicam e que 
+cooperam entre si para realizar tarefas complexas. um padrão arquitetural comumente utilizado em 
+sistemas distribuídos é o de microsserviços, o qual divide o sistema em componentes independentes 
+e escaláveis, cada um executando sua própria funcionalidade específica. essa abordagem facilita  
+a manutenção, o teste e a escalabilidade do sistema como um todo.
+em relação a esse tema, qual dos seguintes benefícios é associado à arquitetura de microsserviços em 
+sistemas distribuídos?
+a	 capacidade de escalabilidade.
+b	 garantia de consistência de dados.
+c	 melhor desempenho de processamento.
+d	 menor consumo de recursos de hardware.
+e	 redução da complexidade de comunicação entre os componentes.
+*r08202338*
+validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
+validinep2023validinep2023validin3p2023validinep2023validin3p2validinep
+
+avaliação global da prova

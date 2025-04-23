@@ -1,0 +1,36 @@
+questão 30
+é comum a expressão "servidor web" ser utilizada para denominar processos cuja finalidade é disponibilizar 
+recursos estáticos, que são os que se encontram completos antes de uma requisição ser realizada, e 
+recursos dinâmicos, que são produzidos no momento em que um cliente o requisita e seu conteúdo 
+é definido em tempo de requisição. um container de servlets é um servidor web capaz de gerenciar 
+diferentes aplicações que disponibilizam conteúdo dinâmico, e um servlet é uma classe java capaz de 
+gerar conteúdo desse tipo, mediante a requisição de um cliente. cada requisição atendida por um servlet 
+pode ser executada por uma thread e múltiplas requisições podem estar em execução simultaneamente.
+considere o servlet a seguir que mantém uma variável cuja finalidade é controlar quantas requisições são 
+atendidas ao longo do tempo.
+1 @webservlet ("/") 
+2 public class contarequisicoes extends httpservlet { 
+3	   private int contador; 
+4	   protected void doget (httpservletrequest req, httpservletresponse resp) throws exception { 
+5	   	   contador = contador + 1; 
+6 	  } 
+7 }
+disponível em: <https://www.javaee.github.io/servlet-spec/downloads/servlet-4.0/servlet-4_0_final.pdf>.  
+acesso em: 24  jun. 2019 (adaptado).
+a respeito do servlet apresentado, avalie as afirmações a seguir.
+i.	 o código apresenta uma condição de corrida.
+ii.	 substituir a linha 5 pela construção synchronized (this) {contador = contador + 1;} 
+garante o correto funcionamento do método.
+iii.	 obter a trava do objeto referenciado por request antes de executar o incremento e liberá-la 
+logo a seguir, garante o correto funcionamento do método.
+é correto o que se afirma em
+a	 i, apenas.
+b	 ii, apenas.
+c	 i e iii, apenas.
+d	 ii e iii, apenas.
+e	 i, ii e iii.
+área livre
+*r09201933*
+
+engenharia de computação
+34

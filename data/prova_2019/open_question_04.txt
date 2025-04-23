@@ -1,0 +1,61 @@
+questão discursiva 04
+na matemática, um produtório é definido como:
+ 
+com base nessa equação, e considerando que x
+i
+i
+i 
+ 1 , com i > 0 , faça o que se pede nos itens a seguir.
+a)	 escreva uma função iterativa, em linguagem c, que receba os parâmetros de limite inferior m e de 
+limite superior n, calcule e retorne o resultado do produtório. (valor: 5,0 pontos).
+b)	 escreva uma função recursiva, em linguagem c, que receba os parâmetros de limite inferior m e de 
+limite superior n, calcule e retorne o resultado do produtório. (valor: 5,0 pontos).
+rascunho
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+área livre
+x
+x
+x
+x
+x
+x
+i
+i m
+n
+m
+m
+m
+n
+n
+
+
+
+
+
+
+
+
+
+
+1
+2
+1
+.
+*r09201913*
+
+engenharia de computação
+14

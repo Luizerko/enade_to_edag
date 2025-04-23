@@ -1,0 +1,97 @@
+questão 16
+considere a construção de um demultiplexador digital (demux) de 4 canais, usando cis 7404 e 7411, para 
+que um mesmo controle (liga/desliga) seja compartilhado por quatro leds. a figura a seguir apresenta o 
+diagrama esquemático do circuito.
+após a montagem, constatou-se que o circuito não funciona corretamente. para certificação de que o 
+circuito do diagrama esquemático estava correto, comparou-se os estados esperados com os estados 
+observados do circuito para identificar o defeito. a tabela a seguir sintetiza os dados dessa comparação.
+entrada 
+s1s0 
+estado esperado dos leds
+estado observado dos leds
+0 
+0 
+todos os leds apagados 
+todos os leds apagados 
+0 
+1 
+todos os leds apagados 
+todos os leds apagados 
+0 
+2 
+todos os leds apagados 
+led2 aceso 
+0 
+3 
+todos os leds apagados 
+todos os leds apagados 
+1 
+0 
+led4 aceso 
+led4 aceso 
+1 
+1 
+led3 aceso 
+led3 aceso 
+1 
+2 
+led2 aceso 
+led2 aceso 
+1 
+3 
+led1 aceso 
+led1 aceso 
+com base nos dados apresentados na tabela, o defeito que condiz com os resultados das observações é que
+a	 o pino 11 da porta ic1c não foi conectado.
+b	 o pino 9 da porta ic1c está conectado com s0, ao invés de estar conectado com s1.
+c	 o pino 10 da porta ic1c está conectado com s0, ao invés de estar conectado com s0 negado.
+d	 o pino 11 da porta ic1c está conectado com s0, ao invés de estar conectado com a entrada.
+e	 o pino 11 da porta ic1c está conectado com s1, ao invés de estar conectado com a entrada.
+entrada
+s1
+3
+4
+2
+74ac04n
+74ac04n
+ic3b
+ic3a
+1
+ic1a
+ic1b
+r1
+led1
+led2
+led3
+led4
+gnd
+r2
+r3
+r4
+ic1c
+ic2a
+74ac11n
+74ac11n
+74ac11n
+74ac11n
+2
+12
+6
+8
+12
+13
+3
+4
+5
+1
+2
+13
+9
+10
+11
+1
+s0
+*r09201922*
+
+engenharia de computação
+23

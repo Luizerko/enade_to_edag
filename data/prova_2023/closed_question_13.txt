@@ -1,0 +1,53 @@
+questão 13
+uma forma sistemática de analisar circuitos elétricos de qualquer tamanho, visando à simulação 
+em computadores, consiste em representá-los por meio de grafos. essa representação implica a 
+substituição dos elementos do ramo do circuito por uma conexão orientada (arco) e de nós do circuito 
+por vértices, resultando em um grafo orientado. a orientação dos arcos coincide com a orientação dos 
+sentidos de referência associados de tensão e corrente, adotados pela convenção passiva.
+grafos são ditos conexos se existir, ao menos, um caminho entre quaisquer dois nós. corte refere-se 
+a um conjunto de arcos que, se removido, divide o grafo (tornando-o desconexo). a lei de kirchoff 
+das correntes, usando a nomenclatura de grafos, pode ser enunciada como “para qualquer rede de 
+parâmetros concentrados e para qualquer de seus cortes, a soma algébrica de todas as correntes 
+através dos arcos do corte é zero.”
+disponível em: http://www.peb.ufrj.br/. acesso em: 16 jun. 2023 (adaptado).
+a figura a seguir representa um circuito elétrico e o seu grafo equivalente.
+após aplicar a lei de kirchoff das correntes para os cortes x = {1, 4, 5}, y = {1, 2, 3, 5} e z = {1, 4, 3, 6}, 
+assinale a opção que apresenta equações válidas para a soma algébrica das correntes em dois 
+desses cortes.
+a	 i1 + i4 - i5 = 0 e i1 + i2 + i3 - i5 = 0
+b	 i1 + i4 + i5 = 0 e i1 + i2 + i3 + i5 = 0
+c	 i1 + i4 + i5 = 0 e i1 + i3 + i4 - i6 = 0
+d	 i1 + i2 - i3 - i5 = 0 e i1 + i3 + i4 - i6 = 0
+e	 i1 + i2 - i3 - i5 = 0 e i1 - i3 + i4 - i6 = 0
+r1
+r3
+c
+d
+b
+1
+2
+4
+3
+5
+6
+a
+c1
+r2
+l1
+i4
+i3
+i1
+i5
+i2
+i6
+d
+b
+c
+a
+v
+*r08202317*
+validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
+validinep2023validinep2023validin3p2023validinep2023validinep2validinep
+
+18
+engenharia de computação

@@ -1,0 +1,7 @@
+questão 09
+qual foi o tempo gasto por você para concluir a prova?
+a menos de uma hora.
+b entre uma e duas horas.
+c entre duas e três horas.
+d entre três e quatro horas.
+e quatro horas, e não consegui terminar.

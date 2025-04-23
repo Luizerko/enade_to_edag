@@ -1,0 +1,8 @@
+questão 01
+qual o grau de difi culdade desta prova na parte de 
+formação geral?
+a muito fácil.
+b fácil.
+c médio.
+d difí cil.
+e muito difí cil.

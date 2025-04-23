@@ -1,0 +1,44 @@
+questão 32
+suponha que uma empresa de transportes deseje calcular uma rota de manaus para são paulo 
+utilizando a estratégia da busca gulosa, técnica de busca local que seleciona a melhor alternativa 
+disponível a cada passo. observe, a seguir, um grafo de conexão de cidades até o destino final e o 
+quadro com estimativas de distância de são paulo até as demais cidades do grafo.
+macapá
+manaus
+belém
+palmas
+goiânia
+são paulo
+cuiabá
+porto velho
+cidade
+distância
+manaus
+2 693 km
+porto velho
+2 464 km
+macapá
+2 665 km
+belém
+2 463 km
+palmas
+1 489 km
+cuiabá
+1 326 km
+goiânia
+809 km
+são paulo
+0 km
+*r08202334*
+validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
+validinep2023validinep2023validin3p2023validinep2023validin3p2validinep
+
+engenharia de computação
+35
+com base nessas informações, é correto afirmar que a solução encontrada a partir da utilização do 
+algoritmo será
+a	 manaus → macapá → são paulo
+b	 manaus → porto velho → cuiabá → goiânia → são paulo
+c	 manaus → porto velho → palmas → goiânia → são paulo
+d	 manaus → macapá → belém → palmas → goiânia → são paulo
+e	 manaus → macapá → belém → palmas → porto velho → cuiabá → goiânia → são paulo

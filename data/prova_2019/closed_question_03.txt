@@ -1,0 +1,8 @@
+questão 03
+considerando a extensão da prova, em relação ao tempo 
+total, você considera que a prova foi
+a muito longa.
+b longa.
+c adequada.
+d curta.
+e muito curta.

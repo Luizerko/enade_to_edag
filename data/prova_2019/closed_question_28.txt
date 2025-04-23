@@ -1,0 +1,35 @@
+questão 28
+um sistema de tempo real satisfaz explicitamente 
+restrições de tempo de resposta, podendo ter 
+consequências como riscos ou falhas caso não 
+cumpra essas restrições. o circuito lógico a seguir 
+faz parte de um sistema de tempo real que realiza 
+o acionamento de um alarme.
+nesse 
+circuito 
+existem 
+vários 
+atrasos 
+de 
+propagação do sinal, que por sua vez geram atrasos 
+no acionamento do alarme. na forma como a 
+lógica está implementada, o circuito não atende o 
+requisito de tempo real especificado pelo sistema. 
+para cada porta lógica utilizada, os atrasos típicos, 
+em unidades de tempo (u.t.), são:
+porta 
+atraso (u.t.)
+and
+3
+or
+4
+not
+1
+após a simplificação do circuito, o menor tempo 
+possível para o acionamento do alarme é de
+a	 9 u.t.
+b	 10 u.t.
+c	 3 u.t.
+d	 4 u.t.
+e	 6 u.t.
+área livre

@@ -1,0 +1,58 @@
+questão 11
+o gestor de um hotel precisa satisfazer a demanda 
+de vários grupos de eventos pelo uso exclusivo de 
+auditórios por uma semana utilizando o menor 
+número possível de auditórios. a tabela apresenta 
+os conflitos de demandas dos grupos de eventos 
+para todos os dias na semana, em que o valor 1 
+em uma célula indica que um determinado grupo 
+precisará usar um auditório no mesmo horário que 
+outro grupo e o valor 0 indica que não há conflito 
+entre os dois grupos.
+g1
+g2
+g3
+g4
+g5
+g1
+-
+1
+1
+1
+1
+g2
+1
+-
+1
+1
+0
+g3
+1
+1
+-
+0
+1
+g4
+1
+1
+0
+-
+0
+g5
+1
+0
+1
+0
+-
+nessa situação, o número mínimo de auditórios 
+que satisfaz todas as demandas é de
+a	 um.
+b	 dois.
+c	 três.
+d	 quatro.
+e	 cinco.
+área livre
+*r09201917*
+
+engenharia de computação
+18

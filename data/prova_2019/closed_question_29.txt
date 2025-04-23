@@ -1,0 +1,55 @@
+questão 29
+a internet das coisas (internet of things (iot)) 
+pode ser definida como um ambiente de objetos 
+físicos interconectados com a internet por meio 
+de sensores/atuadores embutidos, criando um 
+ecossistema de computação onipresente (ubíqua) e 
+introduzindo soluções funcionais nos processos do 
+dia-a-dia, sejam domésticos ou profissionais. é um 
+conjunto de tecnologias e protocolos associados 
+que permitem que objetos se conectem a uma 
+rede de comunicações e sejam identificados e 
+controlados por essa conexão. a iot usa conceitos, 
+tecnologias e soluções que envolvem sistemas 
+distribuídos e redes de comunicação.
+magrani, e. a internet das coisas. rio de janeiro:  
+fgv editora, 2018 (adaptado).
+nesse contexto, avalie as asserções a seguir e a 
+relação proposta entre elas.
+i.	 em soluções e aplicações para iot, é preciso 
+garantir que essas funcionarão de forma 
+consistente em um ambiente concorrente, 
+onde ocorrem várias requisições ao mesmo 
+recurso compartilhado.
+porque
+ii.	 em 
+soluções 
+atuais 
+de 
+iot 
+existe 
+heterogeneidade, ou seja, dentro do mesmo 
+ecossistema, uma variedade de sistemas 
+operacionais, hardware, linguagens de 
+programação e padrões de redes de 
+comunicação são utilizados.
+a respeito dessas asserções, assinale a alternativa 
+correta.
+a	 as asserções i e ii são proposições verdadeiras, 
+e a ii é uma justificativa correta de i.
+b	 as asserções i e ii são proposições verdadeiras, 
+mas a ii não é uma justificativa correta de i.
+c	 a asserção i é uma proposição verdadeira, e a ii 
+é uma proposição falsa.
+d	 a asserção i é uma proposição falsa, e a ii é uma 
+proposição verdadeira.
+e	 as asserções i e ii são proposições falsas.
+b
+a
+d
+y
+c
+*r09201932*
+
+engenharia de computação
+33

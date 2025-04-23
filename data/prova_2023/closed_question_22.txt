@@ -1,0 +1,53 @@
+questão 22
+considere um banco de dados relacional formado por três tabelas, conforme é apresentado na 
+figura a seguir. as chaves primárias das tabelas cliente e funcionario são chaves estrangeiras 
+da tabela pessoa.
+pessoa
+id_pessoa: int
+nome: varchar(255)
+cpf: varchar(255)
+rg:  varchar(255)
+data_cadastro: date
+cliente
+id_cliente: int
+data_cadastro: date
+limite_credito: decimal(10, 0)
+saldo_compras: decimal(10, 0)
+saldo_devedor: decimal(10, 0)
+funcionário
+funcionario
+id_funcionario: int
+data_cadastro: date
+cntps: varchar(255)
+matricula: varchar(255)
+pis: varchar(255)
+salario: decimal(10, 0)
+a partir dessas informações, considere que se queira realizar uma consulta que liste o nome e o saldo 
+devedor de um subconjunto dos clientes. essa consulta tem por objetivo encontrar clientes que são 
+funcionários e que possuem saldo devedor maior do que seu salário.
+com base nessas informações, assinale a opção que apresenta corretamente a consulta sql,  
+em ordem crescente por saldo devedor.
+a	select * from cliente as c inner join pessoa as p, funcionario as 
+f where c.saldo_devedor > f.salario and c.id_cliente=p.id_pessoa 
+and f.id_funcionario=p.id_pessoa order by c.saldo_devedor asc
+b	 select p.nome, c.saldo_devedor from cliente as c, pessoa as p where 
+c.saldo_devedor > f.salario and c.id_cliente=p.id_pessoa and  
+f.id_funcionario=p.id_pessoa order by c.saldo_devedor desc
+c	 select p.nome, c.saldo_devedor from cliente as c, pessoa as p, 
+funcionario as f where c.saldo_devedor < f.salario and  
+c.id_cliente=p.id_pessoa and f.id_funcionario=p.id_pessoa order by 
+c.saldo_devedor asc
+d	 select p.nome, c.saldo_devedor from cliente as c left outer join 
+pessoa as p on c.id_cliente=p.id_pessoa left outer join funcionario 
+as f on p.id_pessoa=f.id_funcionario where c.saldo_devedor > 
+f.salario order by f.salario, c.saldo_devedor asc
+e	 select p.nome, c.saldo_devedor from cliente as c right outer join 
+pessoa as p on c.id_cliente=p.id_pessoa right outer join funcionario 
+as f on p.id_pessoa=f.id_funcionario where c.saldo_devedor > 
+f.salario order by c.saldo_devedor asc
+*r08202325*
+validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
+validinep2023validinep2023validin3p2023validinep2023validinep2validinep
+
+26
+engenharia de computação

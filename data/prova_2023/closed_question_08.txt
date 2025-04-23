@@ -1,0 +1,8 @@
+questão 08
+qual o grau de dificuldade das questões do 
+componente específico?
+a  muito fácil.
+b  fácil.
+c  médio.
+d  difícil.
+e  muito difícil.

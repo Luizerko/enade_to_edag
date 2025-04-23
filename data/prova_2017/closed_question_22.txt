@@ -1,0 +1,177 @@
+questão 22
+žŷɛŝěğƌğ ž đſěŝőž ğŵ ͕ ă ɛğőƶŝƌ͕ đžŵɖŝůăěž ğŵ ƶŵ ɛŝɛƚğŵă đžŵɖƶƚăđŝžŷăů ěğ ϯϯ bits, ƌƶğ
+ğǆğŵɖůŝĩŝđăžƶɛžěžƚŝɖžěğěăěžɛɖžŷƚğŝƌž͘
+#include <stdio.h> 
+void main(void) {
+int salario1, salario2;
+int *ptr;
+salario1 = 6750;
+ptr = &salario1;
+salario2 = *ptr + 1000;
+}
+ ɖăƌɵƌ ěăɛ ŝŷĩžƌŵăĕɓğɛ ăɖƌğɛğŷƚăěăɛ͕ ăɛɛŝŷăůğ ă žɖĕćž ƌƶğ ăɖƌğɛğŷƚă ă ŵğŵſƌŝă ɖƌŝŷđŝɖăů ğ ɛğƶ
+đžŷƚğʒěž͕ăɖſɛžɖƌžőƌăŵăɛğƌğǆğđƶƚăěž.
+a
+endereço
+(byte)
+0x007b
+00
+00
+00
+70
+00
+00
+1e
+46
+00
+00
+1a
+5e
+0x007a
+0x0079
+0x0078
+0x0077
+0x0076
+0x0075
+0x0074
+0x0073
+0x0072
+0x0071
+0x0070
+ptr
+salario2
+salario1
+dado
+nome da variável
+d
+endereço
+(byte)
+0x007b
+5e
+1a
+00
+00
+e8
+0a
+00
+00
+5e
+1a
+00
+00
+0x007a
+0x0079
+0x0078
+0x0077
+0x0076
+0x0075
+0x0074
+0x0073
+0x0072
+0x0071
+0x0070
+ptr
+salario2
+salario1
+dado
+nome da variável
+b
+endereço
+(byte)
+0x007b
+00
+00
+1a
+5e
+00
+00
+04
+58
+00
+00
+1a
+5e
+0x007a
+0x0079
+0x0078
+0x0077
+0x0076
+0x0075
+0x0074
+0x0073
+0x0072
+0x0071
+0x0070
+ptr
+salario2
+salario1
+dado
+nome da variável
+e
+endereço
+(byte)
+0x007b
+00
+00
+1a
+5e
+00
+00
+04
+60
+00
+00
+1a
+5e
+0x007a
+0x0079
+0x0078
+0x0077
+0x0076
+0x0075
+0x0074
+0x0073
+0x0072
+0x0071
+0x0070
+ptr
+salario2
+salario1
+dado
+nome da variável
+c
+endereço
+(byte)
+0x007b
+70
+00
+00
+00
+46
+1e
+00
+00
+5e
+1a
+00
+00
+0x007a
+0x0079
+0x0078
+0x0077
+0x0076
+0x0075
+0x0074
+0x0073
+0x0072
+0x0071
+0x0070
+ptr
+salario2
+salario1
+dado
+nome da variável
+*r13201724*
+
+25
+engenharia de computação

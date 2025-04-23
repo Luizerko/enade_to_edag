@@ -1,0 +1,50 @@
+questão 15
+o método de regressão linear pelos mínimos quadrados é um dos mais difundidos para encontrar 
+aproximações para modelos lineares em diferentes áreas, como por exemplo, processamento gráfico, 
+aprendizagem de máquina e visão computacional.
+em um sistema superdeterminado do tipo ax = b, que não possua solução (devido a erros nos dados), a 
+solução mais próxima, segundo o critério dos mínimos quadrados, é dada pelo sistema: at ⋅ a x = at ⋅ b, 
+em que at é a transposta de a. considere o problema de encontrar a reta que melhor se ajusta a quatro pontos 
+no plano, segundo o critério dos mínimos quadrados, cujas coordenadas são:
+p1
+p2
+p3
+p4
+x
+1
+2
+3
+4
+y
+1
+3
+2
+5
+suponha que uma reta seja dada na forma funcional y = mx + c. ao se substituírem as coordenadas de 
+cada ponto nesta equação, forma-se um sistema de equações ax = b, em que x é o vetor de incógnitas 
+m
+c
+
+
+
+
+
+. a equação da reta que é solução dos mínimos quadrados é
+a	 y = 0,5x + 1.
+b	 y = x + 0,1.
+c	 y
+x
+
+
+4
+3
+1
+(
+).
+d	 y = 1,5x.
+e	 y = 1,1x.
+área livre
+*r09201921*
+
+engenharia de computação
+22

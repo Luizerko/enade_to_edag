@@ -1,0 +1,36 @@
+questão 33
+uma trilha de um pcb (printed circuit board) é uma conexão entre dois pontos com impedância controlada, 
+que depende de alguns parâmetros, tais como: frequência de operação, comprimento da trilha, tipo 
+de dielétrico e tipo de sinal. considerando que ela está sendo projetada com o tipo chamado stripline, 
+o plano de referência é o gnd (ground) e o dielétrico é o material fr4, cuja constante dielétrica k é 
+aproximadamente igual a 4, o que implica na velocidade de propagação vp de um sinal elétrico em uma 
+stripline ser a metade da velocidade no ar, portanto, aproximadamente 15 cm por nanosegundo.
+em uma linha de transmissão utilizada para sinais digitais, deve-se considerar o tempo entre uma subida 
+e uma descida th do sinal, que é a metade do período t da frequência máxima do sinal. o comprimento 
+crítico lc de uma trilha é o limite máximo para o qual a trilha ainda pode ser entendida como uma simples 
+conexão entre 2 pontos, sem necessidade de controlar sua impedância, e é dado por l
+v t
+c
+p
+h
+
+2
+. 
+para uma trilha operar como uma conexão simples entre 2 pontos, seu comprimento l deve ser, no 
+máximo, igual a lc
+1 5
+,
+.
+no caso da interface pci express, cuja frequência máxima de operação especificada é de 1,25 ghz,  
+o comprimento l máximo da trilha para que a mesma se comporte como uma simples conexão 
+entre 2 pontos é de
+a	 2 cm.
+b	 3 cm.
+c	 4 cm.
+d	 6 cm.
+e	 8 cm.
+área livre
+*r09201936*
+
+engenharia de computação
+37

@@ -1,0 +1,49 @@
+questão 15
+memory leak, ou vazamento de memória, é um problema que ocorre em sistemas computacionais 
+quando uma parte da memória, alocada para uma determinada operação, não é liberada quando se 
+torna desnecessária. na linguagem c, esse tipo de problema é quase sempre relacionado ao uso 
+incorreto das funções malloc( ) e free( ). esse erro de programação pode levar a falhas no 
+sistema se a memória for completamente consumida.
+a partir dessas informações, assinale a opção que apresenta um trecho com memory leak.
+a	 void f( ){  
+   void *s;  
+   s = malloc(50);  
+   free(s);  
+}
+b	 int f( ){  
+    float *a;  
+    return 0;  
+}
+c	 int f(char *data){ 
+   void *s;  
+   s = malloc(50);  
+   int size = strlen(data);  
+   if (size > 50)  
+     return(-1);  
+   free(s);  
+   return 0;  
+}
+d	 int *f(int n){  
+   int *num = malloc(sizeof(int)*n);  
+   return num;  
+}  
+int main(void){  
+   int *num;  
+   num = f(10);  
+   free(num);  
+   return 0;  
+}
+e	 void f(int n){  
+   char *m = malloc(10);  
+   char *n = malloc(10);  
+   free(m);  
+   m = n;  
+   free(m);  
+   free(n);  
+}
+*r08202319*
+validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
+validinep2023validinep2023validin3p2023validinep2023validinep2validinep
+
+20
+engenharia de computação

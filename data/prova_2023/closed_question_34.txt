@@ -1,0 +1,33 @@
+questão 34
+cada roteador em redes de computadores precisa implementar alguma estratégia de enfileiramento 
+para controlar como os pacotes são armazenados em buffer enquanto esperam para serem transmitidos, 
+independentemente do mecanismo de alocação de recursos. o algoritmo de enfileiramento aloca 
+tanto largura de banda, ao transmitir pacotes, quanto espaço de buffer, ao decidir quais pacotes  
+são descartados.
+peterson, l. l.; davie, b. s. redes de computadores: uma abordagem de sistemas.  
+rio de janeiro: elsevier, 2013 (adaptado).
+considerando as informações apresentadas, avalie as afirmações a seguir.
+i.	 o algoritmo fifo (first-in, first-out) é adequado para situações em que o tráfego de dados com 
+rajadas de longa duração provoca descarte de pacotes.
+ii.	 o algoritmo de enfileiramento justo ponderado (wfq, do inglês weighted fair queuing) permite 
+definir um peso para cada fila, definindo quantos bits são transmitidos sempre que o roteador 
+atender a uma determinada fila.
+iii.	 o algoritmo de enfileiramento por prioridade (pq, do inglês priority queuing) evita que uma fila 
+de menor prioridade fique indefinidamente sem ser atendida (starvation), utilizando o algoritmo 
+round-robin para servir a todas as filas.
+iv.	 os roteadores que implementam o algoritmo de detecção antecipada aleatória (red, do inglês 
+random early detection) mantêm a média acumulada do tamanho de suas filas e, quando 
+esse tamanho ultrapassa, em algum enlace, um determinado limiar, uma fração dos pacotes é 
+descartada aleatoriamente.
+é correto apenas o que se afirma em
+a	 i e iii.
+b	 i e iv.
+c	 ii e iv.
+d	 i, ii e iii.
+e	 ii, iii e iv.
+*r08202336*
+validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
+validinep2023validinep2023validin3p2023validinep2023validin3p2validinep
+
+engenharia de computação
+37

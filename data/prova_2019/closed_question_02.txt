@@ -1,0 +1,8 @@
+questão 02
+qual o grau de difi culdade desta prova na parte de 
+componente específi co?
+a muito fácil.
+b fácil.
+c médio.
+d difí cil.
+e muito difí cil.

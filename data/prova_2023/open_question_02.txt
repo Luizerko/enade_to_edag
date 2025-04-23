@@ -1,0 +1,79 @@
+questão discursiva 02
+considere que uma rede de varejo resolva consolidar a base de dados de suas m lojas, o que resulta em 
+uma tabela x não ordenada com n registros de clientes, possivelmente repetidos. devido à necessidade 
+de se criar uma tabela y contendo os clientes da tabela x com as repetições eliminadas, cogita-se utilizar 
+dois possíveis algoritmos, os quais são apresentados a seguir.
+algoritmo a, que executa as seguintes ações:
+1.	 cria uma tabela y inicialmente vazia; 
+2.	 percorre a tabela x, cliente por cliente, verificando se cada um deles já está na tabela y. caso não esteja, 
+insere na tabela y o cliente que está faltando.
+algoritmo b, que executa as seguintes ações:
+1.	 cria uma tabela y inicialmente vazia;
+2.	 ordena a tabela x usando o algoritmo quicksort; 
+3.	 insere, na tabela y, o cliente da primeira posição da tabela x; 
+4.	 percorre a tabela x, cliente por cliente, a partir do segundo cliente, verificando se cada cliente é 
+igual ao anterior. caso não seja, insere o cliente na tabela y.
+como resultado das ações tanto do algoritmo a quanto do algoritmo b, a tabela y gerada ao final 
+conterá os clientes da tabela x com as repetições eliminadas.
+a partir dessas informações, observe o código em linguagem c apresentado a seguir.
+void quicksort(int *v, int ini, int fim) { 
+// v é o vetor a ser ordenado 
+// ini é o índice do primeiro elemento a ser ordenado 
+// fim é o índice do último elemento a ser ordenado 
+     if(ini < fim) { 
+           x = particiona(v, ini, fim,(ini+fim)/2); 
+            // atribuir os valores para a, b, c e d 
+            quicksort(v,a,b); 
+            quicksort(v,c,d); 
+       } 
+}
+int particiona (int *vetor, int ini, int fim, int pivot){ 
+// implementar uma função que reorganiza o vetor e retorna a posição 
+final x do pivot. ao final do processo, os elementos menores ou iguais a 
+vetor[pivot] devem ter índice menor do que x; os elementos maiores que 
+vetor[pivot] devem ter índice maior do que x. 
+}
+void troca (int *vetor, int i, int j) { 
+// função auxiliar que permuta os conteúdos das posições i e j do 
+vetor 
+aux = vetor[i]; 
+vetor[i] = vetor[j]; 
+vetor[j] = aux; 
+}
+componente específico
+*r08202312*
+validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
+validinep2023validinep2023validin3p2023validinep2023validin3p2validinep
+
+engenharia de computação
+13
+com base nos dados apresentados, faça o que se pede nos itens a seguir.
+a)	 determine o número máximo de comparações executadas no passo 2 do algoritmo a.  
+(valor: 2,0 pontos)
+b)	 determine o número máximo de comparações executadas no passo 4 do algoritmo b. (valor: 2,0 pontos)
+c)	 na implementação recursiva do programa apresentado, quais são os valores dos parâmetros a, b, 
+c e d? (valor: 2,0 pontos)
+d)	 escreva o corpo da função particiona em linguagem c utilizando a função auxiliar troca, 
+a qual foi definida anteriormente. (valor: 4,0 pontos)
+rascunho
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+*r08202313*
+validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
+validinep2023validinep2023validin3p2023validinep2023validinep2validinep
+
+14
+engenharia de computação

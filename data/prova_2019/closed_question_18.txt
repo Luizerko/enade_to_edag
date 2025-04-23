@@ -1,0 +1,34 @@
+questão 18
+o algoritmo de criptografia data encryption 
+standard (des) cifra blocos de 64 bits utilizando 
+chaves simétricas de 56 bits. atualmente o des 
+não é mais considerado uma cifra segura devido 
+ao pequeno número de bits utilizado para a chave. 
+para resolver o tamanho da chave, foi proposto 
+o des triplo (3des), que utiliza três execuções do 
+des e chaves de até 168 bits. a chave k para o 
+3des é dividida em três partes (ka, kb, kc) e cada 
+uma destas partes é utilizada na execução de uma 
+instância do des.
+stallings, w. criptografia e segurança de redes: princípios e práticas. 
+4ª ed. são paulo: pearson prentice hall, 2008 (adaptado).
+o algoritmo des define uma função c(m, k1)que 
+cifra uma mensagem m com uma chave k1 e uma 
+função (dc, k1) que decifra uma mensagem c 
+cifrada com a chave k1. para que o 3des seja capaz 
+de decifrar mensagens cifradas com o des, sua 
+implementação deve ser
+a	 d(c(d(m, ka), kb), kc), sendo ka ≠ kb ≠ kc 
+partes da chave usada no 3des e ka a chave 
+usada no des.
+b	 d(d(d(m, ka), kb), kc), sendo ka ≠ kb ≠ kc, partes 
+da chave do 3des e ka a chave usada no des.
+c	 d(d(d(m, ka), kb), kc), sendo ka = kb = kc, partes 
+da chave do 3des e ka a chave usada no des.
+d	 d(c(d(m, ka), kb), kc), sendo ka = kb = kc 
+partes da chave usada no 3des e ka a chave 
+usada no des.
+e	 d(d(c(m, ka), kb), kc), sendo ka = kb = kc 
+partes da chave usada no 3des e ka a chave 
+usada no des.
+área livre

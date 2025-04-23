@@ -1,0 +1,82 @@
+questão 26
+proporcional-integral-derivativo (pid) é o algoritmo de controle que mais tem sido utilizado na indústria 
+e no mundo para sistemas de controle industrial. a popularidade de controladores pid pode ser parcialmente 
+atribuída ao seu desempenho robusto em uma ampla gama de condições de funcionamento e parcialmente à 
+sua simplicidade funcional, que permite aos engenheiros operá-los de forma simples e direta.
+disponível em: <https://www.ni.com/pt-br/innovations/white-papers/06/pid-theory-explained.html >. acesso em 20 jun. 2019 (adaptado).
+a figura a seguir apresenta um esquema de controle pid para um processo de temperatura de um 
+forno industrial.
+cálculo dos termos e
+mulɵplicação de cada
+um pelo erro
+subtrair pv de sp
+sp
+erro
++
++
++
++
+−
+pv
+p
+i
+d
+sp: setpoint
+pv: valor real
+temperatura
+do forno
+função de
+transferência
+do processo
+adiciona os 
+3 termos
+sensor de 
+temperatura
+considere o trecho incompleto do código-fonte a seguir em que kp é o ganho proporcional (p),  
+ki o ganho integral (i) e kd o ganho derivativo (d).
+1 double iterm = 0, lasterro = 0; 
+2 int lasttime = 0; 
+3 double compute(int sampletime, double kp, double ki, double kd, double sp, double pv) 
+4 { 
+5 	
+unsigned long now = millis(); 
+6 	
+int timechange = (now - lasttime); 
+7 	
+if (timechange >= sampletime) 
+8 	
+{ 
+9 	
+	
+double erro = sp - pv; 
+10 	
+	
+iterm += erro * sampletime; 
+11 	
+	
+double derro =  (erro - lasterro); 
+12 	
+	
+double output = _______________ 
+13 	
+	
+lasterro = erro; 
+14 	
+	
+lasttime = now; 
+15 	
+} 
+16 	
+return output; 
+17 }
+considerando a necessidade de implementar o esquema de controle pid, assinale a opção que completa 
+corretamente a linha 12 desse código.
+a	 kp * erro + ki * iterm;
+b	 ki/kp * iterm + kd/kp * derro;
+c	 kp * erro + kd * derro * derro;
+d	 kp * erro + ki * iterm + kd * derro;
+e	 kp * erro + ki * iterm + kd * derro * derro;
+*r09201930*
+
+engenharia de computação
+31
