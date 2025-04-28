@@ -1,42 +1,72 @@
 questão 34
-^ƶɖžŷśăƌƶğƶŵďăŷđžěğŝŷǀğɛɵŵğŷƚžɛɖžɛɛƶăƶŵɛŝɛƚğŵăƌƶğđžŷƚƌžůă͕ɖăƌăđăěăđůŝğŷƚğ͕žɛɵɖžɛěğ
-ŝŷǀğɛɵŵğŷƚžɛƌƶğğůğɛŵğɛŵžɛƌğăůŝǌăŵăžůžŷőžěžƚğŵɖž͘ăěăđůŝğŷƚğɖžěğƚğƌăɖğŷăɛƶŵăăɖůŝđăĕćžěğ
-đăěăɵɖžěğŝŷǀğɛɵŵğŷƚžžĩğƌğđŝěžɖğůžďăŷđž͘
-žŷɛŝěğƌğ ăɛ ƚăďğůăɛ ůŝğŷƚğ͕ dŝɖž/ŷǀğɛɵŵğŷƚž ğ /ŷǀğɛɵŵğŷƚž ɖğƌƚğŷđğŷƚğɛ ă ƶŵ ŵžěğůž ƌğůăđŝžŷăů ěž
-ɛŝɛƚğŵăđŝƚăěž;ăɛđśăǀğɛɖƌŝŵąƌŝăɛğɛƚćžɛƶďůŝŷśăěăɛϳ͘
-&olhqwhfrg&olhqwhqrph&olhqwhhqghu&olhqwhflgdgh&olhqwhdqr,qjuhvvr&olhqwh
-7lsr,qyhvwlphqwrfrg,qyhvwlphqwrghvfulfdr,qyhvwlphqwrwd[d5hpxqhudfdr
-,qyhvwlphqwrfrg&olhqwhfrg,qyhvwlphqwrydorugdwd'hsrvlwr
-ɖăƌɵƌěžŵžěğůžƌğůăđŝžŷăůăɖƌğɛğŷƚăěž͕ăǀăůŝğăɛăįƌŵăĕɓğɛăɛğőƶŝƌ͘
-/͘ kđžŵăŷěž^y>ƌƶğůŝɛƚăƚžěžɛžɛɖăƌğɛěğđůŝğŷƚğɛƌƶğƌğɛŝěğŵŷăŵğɛŵăđŝěăěğġ͗
-vhohfwf1rph&olhqwhf1rph&olhqwh
-iurp&olhqwhf&olhqwhf
-zkhuhf&lgdgh&olhqwh f&lgdgh&olhqwh
-dqgf&rg&olhqwhf&rg&olhqwh
-//͘ kđžŵăŷěž^y>ƌƶğƌğƚžƌŷă͕ɖăƌăđăěăđŝěăěğ͕žɛđůŝğŷƚğɛŵăŝɛăŷɵőžɛġ͗
-vhohfwfrg&olhqwhqrph&olhqwhflgdgh&olhqwhdqr,qjuhvvr&olhqwh
-iurp&olhqwh
-zkhuhdqr,qjuhvvr&olhqwhlqvhohfwplqdqr,qjuhvvr&olhqwh
-iurp&olhqwh
-jurxse\flgdgh&olhqwh
-///͘ kđžŵăŷěž^y>ƌƶğƌğƚžƌŷă͕ɖăƌăđăěăđŝěăěğ;ěğƶŵđůŝğŷƚğϳ͕žăŷžěğŝŷőƌğɛɛžŵăŝɛăŷɵőž͕ɖžƌġŵ
-ăɖğŷăɛɖăƌăăɛđŝěăěğɛđžŵŵăŝɛěğƶŵđůŝğŷƚğ͕ġ͗
-vhohfwflgdgh&olhqwhplq$qr,qjuhvvr&olhqwh
-iurp&olhqwh
-jurxse\flgdgh&olhqwh
-kdylqjfrxqw!
-/s͘ kđžŵăŷěž^y>ƌƶğƌğƚžƌŷăžŵăŝžƌǀăůžƌěğđăěăŝŷǀğɛɵŵğŷƚžěğđăěăđůŝğŷƚğġ͗
-vhohfwfrg&olhqwhpd[ydoru
-iurp&olhqwhf,qyhvwlphqwrl
-zkhuhffrg&olhqwh lfrg&olhqwh
-jurxse\frg&olhqwhfrg,qyhvwlphqwr
-đžƌƌğƚžăɖğŷăɛžƌƶğɛğăįƌŵăğŵ
-a /͘
-b //͘
-c /ğ///͘
-d //ğ/s͘
-e ///ğ/s͘
-*r14201428*
+suponha que um banco de investimentos possua um sistema que controla, para cada cliente, os tipos de
+investimentos que eles mesmos realizam ao longo do tempo. cada cliente pode ter apenas uma aplicação de
+cada tipo de investimento oferecido pelo banco.
 
-29
-e'e,z/kdwhdk
+considere as tabelas cliente, tipolnvestimento e investimento pertencentes a um modelo relacional do
+sistema citado (as chaves primárias estão sublinhadas).
+
+cliente (codcliente, nomecliente, endercliente, cidadecliente, anoingressocliente)
+tipoinvestimento (codinvestimento, descricaoinvestimento, taxaremuneracao)
+
+investimento (codcliente, codinvestimento, valor, datadeposito)
+
+a partir do modelo relacional apresentado, avalie as afirmações a seguir.
+|. o comando sql que lista todos os pares de clientes que residem na mesma cidade é:
+
+select cl.nomecliente, c2.nomecliente
+
+from cliente cl, cliente c2
+
+where cl.cidadecliente = c2.cidadecliente
+and ci.codcliente < c2.codcliente;
+
+il. o comando sql que retorna, para cada cidade, os clientes mais antigos é:
+
+select codcliente, nomecliente, cidadecliente, anoingressocliente
+from cliente
+
+where anoingressocliente in (select min (anoingressocliente)
+
+from cliente
+
+group by cidadecliente);
+
+ill. o comando sql que retorna, para cada cidade (de um cliente), o ano de ingresso mais antigo, porém
+apenas para as cidades com mais de um cliente, é:
+
+select cidadecliente, min (anoingressocliente)
+from cliente
+
+group by cidadecliente
+
+having count (*) > 1;
+
+iv. o comando sql que retorna o maior valor de cada investimento de cada cliente é:
+
+select codcliente, max (valor)
+
+from cliente c, investimento i
+where c.codcliente = i.codcliente
+group hby codcliente, codinvestimento
+
+é correto apenas o que se afirma em
+
+q |.
+o 1.
+o lei.
+o lelv.
+o ileiv.
+
+ 
+
+28
+engenharia de computação
+
++ ra
+
+ 
+
+enade 2014
+
+exame nacional de desempenho dos estudantes

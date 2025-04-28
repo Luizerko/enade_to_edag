@@ -1,177 +1,70 @@
 questão 22
-žŷɛŝěğƌğ ž đſěŝőž ğŵ ͕ ă ɛğőƶŝƌ͕ đžŵɖŝůăěž ğŵ ƶŵ ɛŝɛƚğŵă đžŵɖƶƚăđŝžŷăů ěğ ϯϯ bits, ƌƶğ
-ğǆğŵɖůŝĩŝđăžƶɛžěžƚŝɖžěğěăěžɛɖžŷƚğŝƌž͘
-#include <stdio.h> 
-void main(void) {
-int salario1, salario2;
-int *ptr;
-salario1 = 6750;
-ptr = &salario1;
-salario2 = *ptr + 1000;
-}
- ɖăƌɵƌ ěăɛ ŝŷĩžƌŵăĕɓğɛ ăɖƌğɛğŷƚăěăɛ͕ ăɛɛŝŷăůğ ă žɖĕćž ƌƶğ ăɖƌğɛğŷƚă ă ŵğŵſƌŝă ɖƌŝŷđŝɖăů ğ ɛğƶ
-đžŷƚğʒěž͕ăɖſɛžɖƌžőƌăŵăɛğƌğǆğđƶƚăěž.
-a
-endereço
-(byte)
-0x007b
-00
-00
-00
-70
-00
-00
-1e
-46
-00
-00
-1a
-5e
-0x007a
-0x0079
-0x0078
-0x0077
-0x0076
-0x0075
-0x0074
-0x0073
-0x0072
-0x0071
-0x0070
-ptr
-salario2
-salario1
-dado
-nome da variável
-d
-endereço
-(byte)
-0x007b
-5e
-1a
-00
-00
-e8
-0a
-00
-00
-5e
-1a
-00
-00
-0x007a
-0x0079
-0x0078
-0x0077
-0x0076
-0x0075
-0x0074
-0x0073
-0x0072
-0x0071
-0x0070
-ptr
-salario2
-salario1
-dado
-nome da variável
-b
-endereço
-(byte)
-0x007b
-00
-00
-1a
-5e
-00
-00
-04
-58
-00
-00
-1a
-5e
-0x007a
-0x0079
-0x0078
-0x0077
-0x0076
-0x0075
-0x0074
-0x0073
-0x0072
-0x0071
-0x0070
-ptr
-salario2
-salario1
-dado
-nome da variável
-e
-endereço
-(byte)
-0x007b
-00
-00
-1a
-5e
-00
-00
-04
-60
-00
-00
-1a
-5e
-0x007a
-0x0079
-0x0078
-0x0077
-0x0076
-0x0075
-0x0074
-0x0073
-0x0072
-0x0071
-0x0070
-ptr
-salario2
-salario1
-dado
-nome da variável
-c
-endereço
-(byte)
-0x007b
-70
-00
-00
-00
-46
-1e
-00
-00
-5e
-1a
-00
-00
-0x007a
-0x0079
-0x0078
-0x0077
-0x0076
-0x0075
-0x0074
-0x0073
-0x0072
-0x0071
-0x0070
-ptr
-salario2
-salario1
-dado
-nome da variável
-*r13201724*
+considere o código em c, a seguir, compilado em um sistema computacional de 32 bits, que
+exemplifica o uso do tipo de dados ponteiro.
 
-25
-engenharia de computação
+finclude <stdio.h>
+
+void main(void) f
+int salariol, salario2;
+int *ptr;
+salariol = 6750;
+ptr = &salariol;
+salario2 = *ptr + 1000;
+)
+a partir das informações apresentadas, assinale a opção que apresenta a memória principal e seu
+
+conteúdo, após o programa ser executado.
+
+  
+
+ 
+
+ 
+
+  
+
+ 
+
+ 
+
+endereço dado | nome da variável endereço dado | nome da variável
+(byte) (byte)
+oxoo7b[ 00 |
+oxooza) 00 |
+oxo7o[ 00 || p! ptr
+0x0078
+0x0077| 00 |
+| 00 |
+q pa de | f salario2 o salario2
+0x0074 j
+oxoor3) 00 |
+0x0072] 00 tl lo.
+0x0071 salario 1 salario1
+0x0070
+endereço dado | nome da variável endereço dado | nome da variável
+(byte) (byte)
+oxoo7b[ 00 | oxoo7b[ 00 |
+oxorap 00 |l oxoo7a) 00 | '
+0x0079 p 0x0079 p
+0x0078 d 0x0078
+0x0077| 00 | 0x0077| 00 |
+| 0 | | 00 |
+o mos | seara o as sata?
+0x0074 0x0074) 60 |
+0x0073) 00 | 0x0073) 00 |
+0x0072 l 0x0072 .
+0x0071 salario 1 0x0071 salario1
+0x0070 0x0070
+endereço, dado | nome da variável
+(byte) 1 1
+ptr
+o salario?
+salario 1
+1 1
+24 engenharia de computação
+
+2017
+enade a
+
+exame nacional de desempenho
+dos estudantes

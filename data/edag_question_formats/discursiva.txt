@@ -1,0 +1,13 @@
+PERGUNTA:
+Os itens discursivos são conhecidos também como dissertativos, abertos, descritivos, tipo ensaio ou de resposta livre. Inclui todas as informações necessárias para a resolução do item, fornecendo textos motivadores e informações técnicas específicas (quando necessário).
+
+formato:
+<texto auxiliar>
+
+<questão>
+
+JUSTIFICATIVA:
+O padrão de resposta deve ser claro e objetivo, todos os itens possíveis de serem respondidos devem ser enumerados, lembrando que o aluno responderá, preferencialmente de forma dissertativa, em apenas 15 linhas.
+
+formato:
+<justificativa>

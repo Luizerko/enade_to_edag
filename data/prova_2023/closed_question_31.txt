@@ -1,19 +1,19 @@
 questão 31
-um sinal em tempo contínuo pode ser processado, a partir de suas amostras, por um sistema que opere 
-em tempo discreto. para isso, é importante manter a taxa de amostragem do sinal suficientemente alta 
+Um sinal em tempo contínuo pode ser processado, a partir de suas amostras, por um sistema que opere 
+em tempo discreto. Para isso, é importante manter a taxa de amostragem do sinal suficientemente alta 
 para permitir a reconstrução do sinal original sem erro ou com um erro dentro de uma dada tolerância.
- lathi, b. p. sinais e sistemas lineares, 2. ed., porto alegre: bookman, 2007 (adaptado).
-nesse contexto, considerando o teorema da amostragem, avalie as asserções a seguir e a relação 
+ LATHI, B. P. Sinais e Sistemas Lineares, 2. ed., Porto Alegre: Bookman, 2007 (adaptado).
+Nesse contexto, considerando o teorema da amostragem, avalie as asserções a seguir e a relação 
 proposta entre elas.
-i.	 para que um sinal contínuo seja reconstruído a partir de suas amostras é necessário que ele 
+I.	 Para que um sinal contínuo seja reconstruído a partir de suas amostras é necessário que ele 
 possua um espectro em frequência limitado e que a frequência de amostragem seja maior do 
 que duas vezes a largura de faixa do sinal.
-porque
-ii.	 na situação proposta, o espectro do sinal amostrado, será limitado em frequência, o que permitirá 
+PORQUE
+II.	 Na situação proposta, o espectro do sinal amostrado, será limitado em frequência, o que permitirá 
 a reconstrução do sinal original antes da amostragem.
-a respeito dessas asserções, assinale a opção correta.
-a	 as asserções i e ii são proposições verdadeiras, e a ii é uma justificativa correta da i.
-b	 as asserções i e ii são proposições verdadeiras, mas a ii não é uma justificativa correta da i.
-c	 a asserção i é uma proposição verdadeira, e a ii é uma proposição falsa.
-d	 a asserção i é uma proposição falsa, e a ii é uma proposição verdadeira.
-e	 as asserções i e ii são proposições falsas.
+A respeito dessas asserções, assinale a opção correta.
+A	 As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.
+B	 As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.
+C	 A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.
+D	 A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.
+E	 As asserções I e II são proposições falsas.

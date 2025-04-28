@@ -1,0 +1,30 @@
+PERGUNTA:
+A questão do tipo ASSERÇÃO-RAZÃO é fechada com 5 alternativas e tem como objetivo a análise de relações de veracidade ou falsidade, e também da existência ou não de relação de causalidade entre as proposições. Inserir suporte mínimo, conforme o solicitado: Gráfico e/ou Tabela e/ou Texto e/ou Charge e/ou Tirinha e/ou Fluxograma e/ou Figura o suporte deve auxiliar o estudante/leitor a responder a questão. Você deve apresentar duas proposições ligadas pela palavra PORQUE.
+
+formato:
+<texto auxiliar>
+
+Nesse contexto, avalie as asserções a seguir e a relação proposta entre elas
+
+I. <primeira alternativa>
+
+PORQUE
+
+II. <segunda alternativa>
+
+À respeito dessas asserções, assinale a opção correta:
+
+(A) As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.
+(B) As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.
+(C) A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.
+(D) A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.
+(E) As asserções I e II são proposições falsas.
+
+JUSTIFICATIVA:
+Cada asserção deve ter uma justificativa, indicando se é uma afirmativa correta ou incorreta, além de justificar se existe ou não a relação de causalidade entre as duas proposições. Se as assertivas I e II forem verdadeiras, justifique se existe uma relação entre elas. Caso contrário, deixe o espaço de justificativa abaixo em branco.
+
+formato:
+I. Verdaderia/Falsa: <explicação>
+II. Verdaderia/Falsa: <explicação>
+
+<justificativa>

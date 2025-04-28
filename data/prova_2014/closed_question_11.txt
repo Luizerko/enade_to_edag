@@ -1,60 +1,118 @@
 questão 11
-k;ğŵăŷěăŝžƌƶşŵŝđăěğkǆŝőġŷŝžϳěğƶŵăăŵžɛƚƌăěğąőƶăġăƌƶăŷɵěăěğěğžǆŝőġŷŝžŷğđğɛɛąƌŝă
-ɖăƌăžǆŝěăƌăŵăƚġƌŝăžƌőąŷŝđăɖžƌěğđžŵɖžɛŝĕćžăğƌſďŝă͘yƶăŷěžăăŵžɛƚƌăġőƶăƌěăěăɖžƌϱěŝăɛğŵƶŵă
-ƚğŵɖğƌăƚƶƌăěğŝŷđƶďăĕćžěğϯϭς͕ğůăġƌğĩğƌŝěăđžŵžkϱ͕ϯϭ͕ƌƶğġŷžƌŵăůŵğŷƚğƶɵůŝǌăěăđžŵžƶŵěžɛ
-ɖăƌąŵğƚƌžɛɖăƌăǀğƌŝįđăĕćžěăƌƶăůŝěăěğěăąőƶă͘
-kɛğőƶŝŷƚğƌƶăěƌžđůăɛɛŝįđăƶŵđƶƌɛžě͛ąőƶăğŵĩƶŷĕćžěăɛƶăkϱ͕ϯϭ
-ůăɛɛŝįđăĕćž
-dbo5,20 (mg/l)
-dƶŝƚžůŝŵɖž
-ƚġϭ
->ŝŵɖž
-dăŝžƌƌƶğϭăƚġϯ
-zăǌžąǀğů
-dăŝžƌƌƶğϯăƚġϰ
-zƶŝŵ
-dăŝžƌƌƶğϰăƚġϲ
-wġɛɛŝŵž
-dăŝžƌƌƶğϲ
-ŝŵăőğŵăďăŝǆžŵžɛƚƌăƶŵƚƌğđśžěğƶŵƌŝžđžŵϱɛğĕɓğɛ;y͕z͕͕tğdϳ͕ğŵƌƶğɛćžđžůğƚăěăɛăŵžɛƚƌăɛ
-ěğąőƶăɖăƌăăěğƚğƌŵŝŷăĕćžěğkϱ͕ϯϭğŵůăďžƌăƚſƌŝž͘
-ponto de
-lançamento de
-esgoto
-ponto de
-lançamento de
-esgoto
-ponto de
-lançamento de
-esgoto
-x
-y
-z
-w
-t
-imagem sem escala
-q
-kƌƶăěƌžăďăŝǆžăɖƌğɛğŷƚăžɛƌğɛƶůƚăěžɛ͕ğŵěŝĩğƌğŷƚğɛƶŷŝěăěğɛ͕ěăɛăŵžɛƚƌăɛđžůśŝěăɛ͘
-seção
-dbo5,20
-x
-ϭ͕ϰőͬŵϯ
-y
-ϯθϱϭŵőͬŵϯ
-z
-ϯϱϭϭŵőͬŵϯ
-w
-ϯϭϭϭŵőͬŵϯ
-t
-ϭ͕ϭϭŭőͬŵϯ
-žŷɛŝěğƌăŷěžƌƶğɖžěğžđžƌƌğƌăƶƚžěğɖƶƌăĕćžŷžƌŝž͕ğŵƌƶăůɛğĕćžěğůğăąőƶăŷćžɖžěğɛğƌđůăɛɛŝįđăěă͕
-ŷžŵşŷŝŵž͕đžŵž͞ƌăǌžąǀğů͍͟
-a y͘
-b z͘
-c ͘
-d t͘
-e d͘
-*r14201413*
+a dbo (demanda bioquímica de oxigênio) de uma amostra de água é a quantidade de oxigênio necessária
+para oxidar a matéria orgânica por decomposição aeróbia. quando a amostra é guardada por 5 dias em uma
+temperatura de incubação de 20ºc, ela é referida como dbo. .., que é normalmente utilizada como um dos
+parâmetros para verificação da qualidade da água.
 
-14
-e'e,z/kdwhdk
+o seguinte quadro classifica um curso d'água em função da sua dbo, ,,
+
+ 
+
+5,20"
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+muito limpo até 1
+limpo maior que 1 até 2
+razoável maior que 2 até 4
+ruim maior que 4 até 6
+péssimo maior que 6
+
+ 
+
+a imagem abaixo mostra um trecho de um rio com 5 seções (x, y, z, w e t), em que são coletadas amostras
+de água para a determinação de dbo, , em laboratório.
+
+ponto de
+lançamento de
+esgoto
+
+ponto de
+lançamento de
+esgoto,
+
+   
+   
+
+z
+
+1
+' !
+' 1!
+' 1
+1 !
+' 1!
+1 !
+' 1!
+1 !
+' 1!
+' 1
+1 !
+' 1
+' 1
+'
+
+1
+ponto de
+lançamento de
+imagem sem escala esgoto
+
+ 
+
+ 
+
+ 
+
+ 
+
+o quadro abaixo apresenta os resultados, em diferentes unidades, das amostras colhidas.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+x 0,4 g/mº
+y 3 850 mg/m?
+zz 2 500 mg/m?
+w 3 000 mg/m?
+t 0,01 kg/mº
+
+ 
+
+considerando que pode ocorrer autodepuração no rio, em qual seção dele a água não pode ser classificada,
+no mínimo, como “razoável”?
+ox
+oy.
+oz.
+om.
+et
+13
+engenharia de computação o
+
+enade 2014
+
+exame nacional de desempenho dos estudantes

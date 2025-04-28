@@ -1,43 +1,57 @@
 questão 26
-ɛƚƌƶƚƶƌăɛěğěăěžɛ͕ƚăŝɛđžŵžįůăɛğɖŝůśăɛ͕ɛćžƶɵůŝǌăěăɛğŵěŝǀğƌɛăɛăɖůŝđăĕɓğɛɖăƌăăƶƚžŵăĕćž
-ŝŷěƶɛƚƌŝăůɖžƌŵğŝžěğůŝŷőƶăőğŷɛěğɖƌžőƌăŵăĕćžƚğǆƚƶăŝɛ͘kƚğǆƚžğɛƚƌƶƚƶƌăěž;^dϳġƶŵăěăɛžɖĕɓğɛ
-ěğ ůŝŷőƶăőğŵ ěğ ɖƌžőƌăŵăĕćž ěğįŷŝěăɛ ɖğůă ŷžƌŵă / ϲϭϭϯϭͳϯ͘ k ƚƌğđśž ěğ đſěŝőž ă ɛğőƶŝƌ ĩžŝ
-ŝŵɖůğŵğŷƚăěžŷğɛɛğđžŷƚğǆƚž͘
-gh¿qh0$;
-struct eventos {
-   char ocorrencia[200];
-   char datahora[50];
-};
-vwuxfwhyhqwrvhyh>0$;@
-int inicio = 0;
-lqw¿p 
-int processaevento (struct eventos *recuperado) {
-lilqlflr  ¿p^
-     return - 1;
-   }
-   else {
-     inicio++;
-     copiaevento (recuperado, eve[inicio - 1]);
-     return 0;
-   }
-}
-int insereevento (struct eventos *novo) {
-li¿p  0$;^
-      return -1;
-   }
-   else {
-frsld(yhqwrhyh>¿p@qryr
-¿p
-     return 0;
-   }
-}
-đžƌƌğƚžăįƌŵăƌƌƶğăğɛƚƌƶƚƶƌăěğěăěžɛğăĩƶŷđŝžŷăůŝěăěğěğɛɛğđſěŝőžƚƌăƚăŵͳɛğěğ
-a ƶŵăįůăƌƶğɖƌžđğɛɛăɖƌŝŵğŝƌžžɛğǀğŷƚžɛŵăŝɛăŷɵőžɛ͘
-b ƶŵăɖŝůśăƌƶğɖƌžđğɛɛăɖƌŝŵğŝƌžžɛğǀğŷƚžɛŵăŝɛăŷɵőžɛ͘
-c ƶŵăɖŝůśăƌƶğɖƌžđğɛɛăɖƌŝŵğŝƌžžɛğǀğŷƚžɛŵăŝɛƌğđğŷƚğɛ͘
-d ƶŵăɖŝůśăƌƶğɖƌžđğɛɛăžɛğǀğŷƚžɛŷăžƌěğŵğɛđžůśŝěăɖğůžžɖğƌăěžƌ͘
-e ƶŵăįůăƌƶğɖƌžđğɛɛăžɛğǀğŷƚžɛěğăđžƌěžđžŵɛğƶƌğɛɖğđɵǀžőƌăƶěğɖƌŝžƌŝěăěğ͘
-*r13201727*
+estruturas de dados, tais como filas e pilhas, são utilizadas em diversas aplicações para automação
+industrial por meio de linguagens de programação textuais. o texto estruturado (st) é uma das opções
+de linguagem de programação definidas pela norma iec 61131-3. o trecho de código a seguir foi
+implementado nesse contexto.
 
-ϯθ
-engenharia de computação
+fdefine max 1000
+
+struct eventos (
+char ocorrencia [200];
+char datahora [50] ;
+:;
+struct eventos eve [max] ;
+int inicio = 0;
+int fim = 0;
+int processaevento (struct eventos *recuperado) f
+if (inicio == fim) (
+return - 1;
+3
+else í
+inicio++;
+copiaevento (recuperado, eve[linicio - 1]);
+
+return 0;
+
+)
+int insereevento (struct eventos *novo) f
+1f (fim == max) (
+return -1;
+)
+else í
+copiakvento (eve[fim], novo);
+fim++;
+return 0;
+
+)
+é correto afirmar que a estrutura de dados e a funcionalidade desse código tratam-se de
+
+uma fila que processa primeiro os eventos mais antigos.
+uma pilha que processa primeiro os eventos mais antigos.
+uma pilha que processa primeiro os eventos mais recentes.
+
+uma pilha que processa os eventos na ordem escolhida pelo operador.
+
+vovoo
+
+uma fila que processa os eventos de acordo com seu respectivo grau de prioridade.
+
+ 
+
+engenharia de computação 27
+
+2017
+e enade
+
+exame nacional de desempenho
+dos estudantes

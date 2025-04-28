@@ -1,37 +1,46 @@
 questão 24
-đğƌđăěžɖƌžƚžđžůžěğƚƌăŷɛɖžƌƚğdw;transmission 
-control protocolϳƶɵůŝǌăěžŷă/ŷƚğƌŷğƚ͕đžŷɛŝěğƌğž
-ğɛƌƶğŵă ăďăŝǆž͕ ƌƶğ ŵžɛƚƌă ă đžŵƶŷŝđăĕćž ğŷƚƌğ
-ěžŝɛɖƌžđğɛɛžɛğ͘ežěŝăőƌăŵă͕žƚğŵɖžđƌğɛđğ
-ěğđŝŵăɖăƌăďăŝǆžğăɛɛğƚăɛěŝăőžŷăŝɛƌğɖƌğɛğŷƚăŵ
-ɛğőŵğŷƚžɛdwğŷǀŝăěžɛěğɖăƌăžƶěğɖăƌă͕
-ěğɖğŷěğŷěžěăžƌŝğŷƚăĕćžěăɛğƚă͘kɛŷʒŵğƌžɛěğ
-ɛğƌƶġŷđŝăěžɛěăěžɛěğăɖůŝđăĕćžğŷǀŝăěžɛěğɖăƌă
-ğɛƚćžŝŷěŝđăěžɛɛžďƌğăɛɛğƚăɛ͘kɖƌžđğɛɛžğŷǀŝžƶ
-ɛğőŵğŷƚžɛ đžŵ ϰϭ bytes ěğ ěăěžɛ ěğ ăɖůŝđăĕćž
-ɖăƌă ͘ k ŷʒŵğƌž ěğ ɛğƌƶġŷđŝă ěž ɖƌŝŵğŝƌž byte
-ğŷǀŝăěžăƚƌăǀġɛěăđžŷğǆćžěğɖăƌăĩžŝϯϭ͘žɛ
-ƌƶăƚƌžɛğőŵğŷƚžɛğŷǀŝăěžɛěğɖăƌă͕žɛğőƶŷěž
-ɛğőŵğŷƚž ĩžŝ ɖğƌěŝěž ɖğůă ƌğěğ ğ ŷćž ăůđăŷĕžƶ ž
-ěğɛɵŷž͘
-a
-b
-seq = 60
-seq = 20
-seq = 100
-seq = 140
-ack = ?
-t0
-žŵďăɛğŷăɛŝƚƶăĕćžěğɛđƌŝƚăăđŝŵă͕žŷʒŵğƌžěğ
-đžŷįƌŵăĕćž;<ϳğŷǀŝăěžɖğůždwěğɖăƌă͕ŷž
-ŝŷɛƚăŷƚğěğƚğŵɖžƚϭ͕ġŝőƶăůă
-a 20.
-b 59.
-c 60.
-d 100.
-e 140.
-área livre 
-*r14201421*
+acerca do protocolo de transporte tcp (transmission
+control protocol) utilizado na internet, considere o
+esquema abaixo, que mostra a comunicação entre
+dois processos a e b. no diagrama, o tempo cresce
+de cima para baixo e as setas diagonais representam
+segmentos tcp enviados de a para bou de b para a,
+dependendo da orientação da seta. os números de
+sequência dos dados de aplicação enviados de a para
+b estão indicados sobre as setas. o processo a enviou
+segmentos com 40 bytes de dados de aplicação
+para b. o número de sequência do primeiro byte
+enviado através da conexão de a para b foi 20. dos
+quatro segmentos enviados de a para b, o segundo
+segmento foi perdido pela rede e não alcançou o
+destino.
 
-22
-e'e,z/kdwhdk
+ 
+
+com base na situação descrita acima, o número de
+confirmação (ack) enviado pelo tcp de b para a, no
+instante de tempo to, é igual a
+
+q 20.
+
+o 59.
+
+o 60.
+
+o 100.
+
+e 140.
+
+área livre
+
+ 
+
+ 
+
+engenharia de computação
+
+4 r142 0142 1%
+
+enade 2014
+
+exame nacional de desempenho dos estudantes

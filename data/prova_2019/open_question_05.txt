@@ -1,11 +1,11 @@
 questão discursiva 05
-um circuito elétrico de corrente contínua é aquele em que todas as tensões são constantes no tempo. 
-circuitos de corrente alternada, por sua vez, possuem valores de tensão variantes no tempo. as variações 
-de tensão senoidal são expressas pela equação v(t) = vmsen(2pft) em que vm representa o valor de 
-pico, f representa a frequência do sinal e t o tempo. os gráficos a seguir mostram a tensão e a corrente 
+Um circuito elétrico de corrente contínua é aquele em que todas as tensões são constantes no tempo. 
+Circuitos de corrente alternada, por sua vez, possuem valores de tensão variantes no tempo. As variações 
+de tensão senoidal são expressas pela equação V(t) = Vmsen(2pft) em que Vm representa o valor de 
+pico, f representa a frequência do sinal e t o tempo. Os gráficos a seguir mostram a tensão e a corrente 
 em uma carga.
-tensão senoidal v(t)
-corrente senoidal i(t)
+Tensão senoidal v(t)
+Corrente senoidal i(t)
 t (segundos)
 t (segundos)
 15
@@ -32,18 +32,18 @@ t (segundos)
 0,04
 0,05
 0,06
-v (volts)
-i (ampères)
-*r09201914*
+V (volts)
+i (Ampères)
+*R09201914*
 
-engenharia de computação
+ENGENHARIA DE COMPUTAÇÃO
 15
-com base nas informações e nos gráficos, faça o que se pede nos itens a seguir.
-a)	 determine a natureza da carga (resistiva, capacitiva ou indutiva) e justifique. (valor: 2,5 pontos)
-b)	 calcule o valor da impedância da carga. (valor: 2,5 pontos)
-c)	 apresente a equação da forma de onda da corrente alternada. (valor: 2,5 pontos)
-d)	 calcule a tensão eficaz (rms) do circuito de corrente alternada. (valor: 2,5 pontos)
-rascunho
+Com base nas informações e nos gráficos, faça o que se pede nos itens a seguir.
+a)	 Determine a natureza da carga (resistiva, capacitiva ou indutiva) e justifique. (valor: 2,5 pontos)
+b)	 Calcule o valor da impedância da carga. (valor: 2,5 pontos)
+c)	 Apresente a equação da forma de onda da corrente alternada. (valor: 2,5 pontos)
+d)	 Calcule a tensão eficaz (RMS) do circuito de corrente alternada. (valor: 2,5 pontos)
+RASCUNHO
 1
 2
 3
@@ -59,8 +59,8 @@ rascunho
 13
 14
 15
-área livre
-*r09201915*
+Área livre
+*R09201915*
 
-engenharia de computação
+ENGENHARIA DE COMPUTAÇÃO
 16

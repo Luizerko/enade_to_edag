@@ -1,21 +1,21 @@
 questão 37
-a segurança de sistemas de computação é uma preocupação crescente devido à constante 
-evolução das ameaças e das vulnerabilidades presentes no ambiente digital. garantir a integridade,  
+A segurança de sistemas de computação é uma preocupação crescente devido à constante 
+evolução das ameaças e das vulnerabilidades presentes no ambiente digital. Garantir a integridade,  
 a confidencialidade e a disponibilidade de dados e de recursos é essencial para proteger os sistemas 
-e as informações sensíveis. a segurança abrange, também, aspectos como autenticação, controle  
+e as informações sensíveis. A segurança abrange, também, aspectos como autenticação, controle  
 de acesso, criptografia, detecção e prevenção de intrusões, entre outros mecanismos de proteção.
-a respeito da segurança de sistemas de computação, avalie as afirmações a seguir.
-i.	 a criptografia é um mecanismo que permite detectar a vulnerabilidade dos dados, tornando-os 
+A respeito da segurança de sistemas de computação, avalie as afirmações a seguir.
+I.	 A criptografia é um mecanismo que permite detectar a vulnerabilidade dos dados, tornando-os 
 ilegíveis para usuários não autorizados.
-ii.	 a auditoria de segurança é o processo de verificação de identidade de um usuário ou de  
+II.	 A auditoria de segurança é o processo de verificação de identidade de um usuário ou de  
 um sistema, garantindo que apenas entidades confiáveis tenham acesso aos recursos.
-iii.	 o controle de acesso consiste em definir e em gerenciar as permissões de usuários e de sistemas 
+III.	 O controle de acesso consiste em definir e em gerenciar as permissões de usuários e de sistemas 
 para acessar recursos e para realizar operações específicas.
-iv.	 a detecção e a prevenção de intrusão são técnicas utilizadas para identificar atividades 
+IV.	 A detecção e a prevenção de intrusão são técnicas utilizadas para identificar atividades 
 maliciosas em um sistema e para tomar medidas a fim de evitar a ocorrência dessas atividades.
-é correto apenas o que se afirma em
-a	 i e ii.
-b	 i e iv.
-c	 iii e iv.
-d	 i, ii e iii.
-e	 ii, iii e iv.
+É correto apenas o que se afirma em
+A	 I e II.
+B	 I e IV.
+C	 III e IV.
+D	 I, II e III.
+E	 II, III e IV.

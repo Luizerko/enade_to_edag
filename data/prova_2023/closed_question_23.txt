@@ -1,35 +1,35 @@
 questão 23
-as figuras a seguir representam dois circuitos que possuem a finalidade de construção de filtros para 
+As figuras a seguir representam dois circuitos que possuem a finalidade de construção de filtros para 
 sinais analógicos.
-figura 1
- figura 2
-considerando que os amplificadores operacionais apresentados são ideais, avalie as afirmações a seguir.
-i.	 existe uma faixa de frequências na qual a impedância de entrada do circuito da figura 1 é inferior 
-à do circuito da figura 2.
-ii.	 ambos os circuitos realizam a função de filtro passa-baixa de primeira ordem.
-iii.	 a frequência de corte de ambos os filtros é igual.
-é correto o que se afirma em
-a	 i, apenas.
-b	 ii, apenas.
-c	 i e iii, apenas.
-d	 ii e iii, apenas.
-e	 i, ii e iii.
-180pf
-10kw
+Figura 1
+ Figura 2
+Considerando que os amplificadores operacionais apresentados são ideais, avalie as afirmações a seguir.
+I.	 Existe uma faixa de frequências na qual a impedância de entrada do circuito da Figura 1 é inferior 
+à do circuito da Figura 2.
+II.	 Ambos os circuitos realizam a função de filtro passa-baixa de primeira ordem.
+III.	 A frequência de corte de ambos os filtros é igual.
+É correto o que se afirma em
+A	 I, apenas.
+B	 II, apenas.
+C	 I e III, apenas.
+D	 II e III, apenas.
+E	 I, II e III.
+180pF
+10kW
 vo (t)
 vin (t)
 +
 –
-100pf
-1,8kw
-18kw
+100pF
+1,8kW
+18kW
 vo (t)
 vin (t)
 +
 –
-*r08202326*
-validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
-validinep2023validinep2023validin3p2023validinep2023validin3p2validinep
+*R08202326*
+VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDIN3P2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023
+VALIDINEP2023VALIDINEP2023VALIDIN3P2023VALIDINEP2023VALIDIN3P2VALIDINEP
 
-engenharia de computação
+Engenharia de Computação
 27

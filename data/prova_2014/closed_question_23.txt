@@ -1,27 +1,49 @@
 questão 23
-hŵđžŵɖžŷğŷƚğďăɛƚăŷƚğƶɛăěžğŵđŝƌđƶŝƚžɛůſőŝđžɛ
-ġ ă ŵăƚƌŝǌ ůſőŝđă ɖƌžőƌăŵąǀğů ;žƶ w>͕ ěž ŝŷőůġɛ
-programmable logic arrayϳ͘ hŵă w> ƶɛă đžŵž
-ğŷƚƌăěăƶŵđžŷũƶŷƚžěğɛŝŷăŝɛğžɛđžŵɖůğŵğŷƚžɛ
-ěğɛɛğɛɛŝŷăŝɛ;ƌƶğɖžěğŵɛğƌŝŵɖůğŵğŷƚăěžɛɖžƌƶŵ
-đžŷũƶŷƚžěğŝŷǀğƌɛžƌğɛϳ͘ůſőŝđăġŝŵɖůğŵğŷƚăěăă
-ɖăƌɵƌěğěžŝɛğɛƚąőŝžɛ͗žɖƌŝŵğŝƌžġƶŵăŵăƚƌŝǌěğ
-ɖžƌƚăɛ e͕ ƌƶğ ĩžƌŵăŵ ž đžŷũƶŷƚž ěğ ƚğƌŵžɛͳ
-ɖƌžěƶƚž;ƚăŵďġŵđśăŵăěžɛmintermosϳ͖žɛğőƶŷěž
-ğɛƚąőŝž ġ ƶŵă ŵăƚƌŝǌ ěğ ɖžƌƚăɛ kz͕ đăěă ƶŵă
-ğĩğƚƶăŷěžƶŵăɛžŵăůſőŝđăěğƌƶăůƌƶğƌƌƶăŷɵěăěğ
-ěžɛŵŝŷƚğƌŵžɛ͘ăěăƶŵěžɛŵŝŷƚğƌŵžɛɖžěğɛğƌž
-ƌğɛƶůƚăěžěžɖƌžěƶƚžůſőŝđžěğƌƶăůƌƶğƌěžɛɛŝŷăŝɛ
-ěğğŷƚƌăěăžƶěğɛğƶɛđžŵɖůğŵğŷƚžɛ͘
- đžŵƶŵ͕ ğŵ ůƶőăƌ ěğ ěğɛğŷśăƌ ƚžěăɛ ăɛ ɖžƌƚăɛ
-ůſőŝđăɛěğđăěăƶŵěžɛğɛƚąőŝžɛ͕ƌğɖƌğɛğŷƚăƌăɖğŷăɛ
-ăɖžɛŝĕćžěăɛɖžƌƚăɛůſőŝđăɛğŵƶŵăŵăƚƌŝǌ͕đžŷĩžƌŵğ
-ŝůƶɛƚƌăăįőƶƌăăɛğőƶŝƌ͘
- ɖăƌɵƌ ěă įőƶƌă ăɖƌğɛğŷƚăěă͕ ŝŷĩğƌğͳɛğ ƌƶğ ăɛ
-ğŷƚƌăěăɛ:<>сϭϭϭğ:<>сϭϭϭůğǀăŵăɛăşěăɛdek
-ŝőƶăŝɛ͕ƌğɛɖğđɵǀăŵğŷƚğ͕ă
-a 000 e 000.
-b 000 e 010.
-c 100 e 101.
-d 101 e 000.
-e 101 e 010.
+um componente bastante usado em circuitos lógicos
+é a matriz lógica programável (ou pla, do inglês
+programmable logic array). uma pla usa como
+entrada um conjunto de sinais e os complementos
+desses sinais (que podem ser implementados por um
+conjunto de inversores). a lógica é implementada a
+partir de dois estágios: o primeiro é uma matriz de
+portas and, que formam o conjunto de termos-
+produto (também chamados mintermos); o segundo
+estágio é uma matriz de portas or, cada uma
+efetuando uma soma lógica de qualquer quantidade
+dos mintermos. cada um dos mintermos pode ser o
+resultado do produto lógico de qualquer dos sinais
+de entrada ou de seus complementos.
+
+é comum, em lugar de desenhar todas as portas
+lógicas de cada um dos estágios, representar apenas
+a posição das portas lógicas em uma matriz, conforme
+ilustra a figura a seguir.
+
+j
+e estágio
+and
+l
+m
+estágio
+or n
+o
+
+a partir da figura apresentada, infere-se que as
+entradas jkl = 000 e jkl = 101 levam a saídas mno
+iguais, respectivamente, a
+
+oq 000 e 000.
+
+o 000€e 010.
+
+o 100 e 101.
+
+o 101 e 000.
+
+o 101 e 010.
+
+ 
+
+enade 2014
+
+exame nacional de desempenho dos estudantes

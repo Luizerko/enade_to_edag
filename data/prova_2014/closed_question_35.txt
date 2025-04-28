@@ -1,37 +1,52 @@
 questão 35
-kđſěŝőžăɛğőƶŝƌŵžɛƚƌăƶŵɖƌžőƌăŵăğɛđƌŝƚžŷăůŝŷőƶăőğŵěğɖƌžőƌăŵăĕćž:ăǀă͘
-sxeolffodvv-dyd^
-sulydwhvwdwlfyrlgwurfd%6wulqjd6wulqje^
-6wulqjwps d
-d e
-e wps
-`
-
-sulydwhvwdwlfyrlgwurfd&lqwduud\>@6wulqjd^
-irulqw[ [duud\ohqjwk[^
-duud\>[@ duud\>[@,qwhjhuydoxh2id
-`
-`
-
-sxeolfvwdwlfyrlgpdlq6wulqj>@dujv^
-lqwduud\>@ ^`
-6wulqjd ³´e ³´
-wurfd%de
-wurfd&duud\d
-6\vwhprxwsulqwd³³e³³
-irulqw[ [duud\ohqjwk[^
-6\vwhprxwsulqwduud\>[@³³
-`
-`
-`
-ɖſɛɛğƌğǆğđƶƚăěžžđſěŝőž͕žǀăůžƌŝŵɖƌğɛɛžŷăɛăşěăɖăěƌćžěžƶɛƶąƌŝžɛğƌą
-a 5 2 5 10 15 20 25.
-b ϯϱϯϰϲθϭϭ͘
-c ϱϯϯϰϲθϭϭ͘
-d ϱϯϭϯϯϰϱ͘
-e ϯϱϭϯϯϰϱ͘
-área livre
-*r14201429*
+o código a seguir mostra um programa escrito na linguagem de programação java.
 
-ϯϭ
-e'e,z/kdwhdk
+ 
+
+public class java (
+private static void trocab(string a, string b )(
+string tmp = a;
+a = b;
+b = tmp;
+
+private static void trocac(int arrayl[], string a)(
+for(int x = 0; x < array.length; x++) (
+array[x] = array[x] * integer.value0of (a);
+
+public static void main(stringl[] args) (
+int array[] = (1,2, 3, 4, 5);
+string a = “2”, db = “5”;
+trocab(a, db);
+trocac(array, a);
+system.out.print(a +“ “+ db+ vn;
+for(int x = 0; x < array.length; x++) (
+
+system.out.print(array[x] + “wn;
+
+)
+
+após ser executado o código, o valor impresso na saída padrão do usuário será
+q 52510152025.
+
+o 25246810.
+
+o 52246810.
+
+05212345.
+
+o 2512345.
+
+área livre
+
+ 
+
+ 
+
+9 &
+
+29
+engenharia de computação a
+
+enade 2014
+
+exame nacional de desempenho dos estudantes

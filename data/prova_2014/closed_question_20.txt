@@ -1,43 +1,63 @@
 questão 20
-kɛ įůƚƌžɛ ěŝőŝƚăŝɛ ɛćž ɖăƌƚğ ŝŵɖžƌƚăŷƚğ ěž
-ɖƌžđğɛɛăŵğŷƚžěŝőŝƚăůěğɛŝŷăŝɛ͕ěăěăăǀğƌɛăɵůŝěăěğ
-ğŵ ɛƶă ŝŵɖůğŵğŷƚăĕćž͕ ƌƶğ ġ ĩğŝƚă ɖžƌ ɛžōǁăƌğ.
-ɛɛğɛ įůƚƌžɛ ɛćž đůăɛɛŝįđăěžɛ ğŵ ƌğɛɖžɛƚă ŝŷįŷŝƚă
-ăžŝŵɖƶůɛž;//z͕žƶƌğđƶƌɛŝǀžɛϳğƌğɛɖžɛƚăįŷŝƚăăž
-ŝŵɖƶůɛž;&/z͕žƶŷćžƌğđƶƌɛŝǀžɛϳ͕ƚğŷěžđăěăđůăɛɛğ
-ǀăŷƚăőğŷɛ ğ ěğɛǀăŷƚăőğŷɛ ďğŵ ěğįŷŝěăɛ͘ hŵ
-ğǆğŵɖůž ěğ ăůőžƌŝƚŵž ğŵ wžƌƚƶőžů ɖăƌă ƶŵ įůƚƌž
-ěŝőŝƚăůġăɖƌğɛğŷƚăěžăɛğőƶŝƌ͘
-algoritmo
-ěğįŷău, x1, x2, y, numérico
-           x1←0;
-         x2←0;
-            repita
-                        leia u;
-                        y←2 * x1x2;
-                        x2←x1;
-                        x1←u;
-                        ğɛđƌğǀă y;
-            įŵͳƌğɖŝƚă
-įŵͳăůőžƌŝƚŵž
-ɖăƌɵƌěžăůőžƌŝƚŵžăɖƌğɛğŷƚăěž͕ăǀăůŝğăɛăɛɛğƌĕɓğɛ
-ăɛğőƶŝƌğăƌğůăĕćžɖƌžɖžɛƚăğŷƚƌğğůăɛ͘
-/͘ kįůƚƌžěŝőŝƚăůěžăůőžƌŝƚŵžġěžɵɖž&/z͘
-porque
-//͘ kįůƚƌžěŝőŝƚăůěžăůőžƌŝƚŵžŷćžɖžɛɛƶŝƚğƌŵž
-ěğƚƌăŷɛŵŝɛɛćžěŝƌğƚă͘
- ƌğɛɖğŝƚž ěăɛ ăɛɛğƌĕɓğɛ͕ ăɛɛŝŷăůğ ă ăįƌŵăĕćž
-đžƌƌğƚă͘
-a ɛăɛɛğƌĕɓğɛ/ğ//ɛćžɖƌžɖžɛŝĕɓğɛǀğƌěăěğŝƌăɛ͕ğ
-ă//ġƶŵăũƶɛɵįđăɵǀăđžƌƌğƚăěă/͘
-b ɛăɛɛğƌĕɓğɛ/ğ//ɛćžɖƌžɖžɛŝĕɓğɛǀğƌěăěğŝƌăɛ͕
-ŵăɛă//ŷćžġƶŵăũƶɛɵįđăɵǀăěă/͘
-c ăɛɛğƌĕćž/ġƶŵăɖƌžɖžɛŝĕćžǀğƌěăěğŝƌă͕ğă//ġ
-ƶŵăɖƌžɖžɛŝĕćžĩăůɛă͘
-d ăɛɛğƌĕćž/ġƶŵăɖƌžɖžɛŝĕćžĩăůɛă͕ğă//ġƶŵă
-ɖƌžɖžɛŝĕćžǀğƌěăěğŝƌă͘
-e ɛăɛɛğƌĕɓğɛ/ğ//ɛćžɖƌžɖžɛŝĕɓğɛĩăůɛăɛ͘
-*r14201419*
+os filtros digitais são parte importante do
+processamento digital de sinais, dada a versatilidade
+em sua implementação, que é feita por software.
+esses filtros são classificados em resposta infinita
+ao impulso (iir, ou recursivos) e resposta finita ao
+impulso (fir, ou não recursivos), tendo cada classe
+vantagens e desvantagens bem definidas. um
+exemplo de algoritmo em portugol para um filtro
+digital é apresentado a seguir.
 
-20
-e'e,z/kdwhdk
+ 
+
+algoritmo
+defina w, x, x, wy numérico
+x,€ 0;
+1,€ 0;
+repita
+leia u;
+ye2 tau;
+1,6%
+teu;
+escreva 1;
+fim-repita
+fim-algoritmo
+
+a partir do algoritmo apresentado, avalie as asserções
+a seguir e a relação proposta entre elas.
+
+1. o filtro digital do algoritmo é do tipo fir.
+
+porque
+il. o filtro digital do algoritmo não possui termo
+de transmissão direta.
+
+a respeito das asserções, assinale a afirmação
+correta.
+
+o as asserções le il são proposições verdadeiras, e
+a il é uma justificativa correta da |.
+
+o as asserções | e il são proposições verdadeiras,
+mas a il não é uma justificativa da |.
+
+o a asserção | é uma proposição verdadeira, e a il é
+uma proposição falsa.
+
+o a asserção | é uma proposição falsa, e a il é uma
+proposição verdadeira.
+
+o as asserções le il são proposições falsas.
+
+ 
+
+engenharia de computação
+
+ 
+
+19 +
+
+enade 2014
+
+exame nacional de desempenho dos estudantes

@@ -1,37 +1,68 @@
 questão discursiva 4
-đƌŝăĕćžěžɛɛğƌǀŝĕžɛğŵŷƶǀğŷɛ;cloudsϳƚğǀğđžŵžđžŷɛğƌƶġŷđŝăžĩăƚžěğăɛƚăƌğĩăɛěğɖƌžđğɛɛăŵğŷƚž
-;đžŵžĩğƌƌăŵğŷƚăɛɖăƌăğěŝĕćžěğěžđƶŵğŷƚžɛϳ͕ăƌŵăǌğŷăŵğŷƚžěğěăěžɛ;đžŵžăƌƌƶŝǀžɛğěžđƶŵğŷƚžɛϳğ
-ŵğŷɛăőğŷɛ;webmailϳěğŝǆăƌğŵěğɛğƌğǆğđƶƚăěăɛğŵğɛƚăĕɓğɛđůŝğŷƚğůžđăŝɛɛğŵđžŷğǆćžăƌğěğğɖăɛɛăƌğŵ
-ăɛğƌěğůğőăěăɛăğƌƶŝɖăŵğŷƚžɛƌğŵžƚžɛđžŷğđƚăěžɛăƚƌăǀġɛěă/ŷƚğƌŷğƚ͘
-ăěăǀğǌŵăŝɛɛƶƌőğŵğŵɖƌğɛăɛƌƶğžĩğƌğđğŵŷƶǀğŷɛěğğƌƶŝɖăŵğŷƚžɛđžŷğđƚăěžɛăƚƌăǀġɛěă/ŷƚğƌŷğƚ͕
-đžŵclustersěğğƌƶŝɖăŵğŷƚžɛğƌğěƶŷěąŷđŝăğŵŵʒůɵɖůžɛsitesɖăƌăɖƌğɛƚăĕćžƚğƌđğŝƌŝǌăěăěğɛɛğɵɖžěğ
-ɛğƌǀŝĕž͕ěğŵžěžăžĩğƌğđğƌŵăŝžƌěğɛğŵɖğŷśžğěŝɛɖžŷŝďŝůŝěăěğ͘wžƌžƶƚƌžůăěž͕ăƶŵğŷƚăŵžɛƌŝɛđžɛěğ
-ƌƶğďƌăěăɖƌŝǀăđŝěăěğěžɛěăěžɛăƌŵăǌğŷăěžɛ͘
-eğɛɛğđžŷƚğǆƚžěğŵƶěăŷĕăěğƶŵɛŝɛƚğŵăůžđăůɖăƌăăăěžĕćžěğɛğƌǀŝĕžɛğŵŷƶǀğŷɛ͕ƌğɛɖžŷěăăɛƌƶğɛƚɓğɛ
-ăɛğőƶŝƌ͘
-ăϳ žŵžŵƶěăŵžɛƌğƌƶŝɛŝƚžɛěăɖůăƚăĩžƌŵăěžđůŝğŷƚğ͍;ǀăůžƌ͗ϯ͕ϱɖžŷƚžɛϳ
-ďϳ yƶğ ƌğƌƶŝɛŝƚžɛ ěğǀğŵ ɛğƌ ăƚğŷěŝěžɛ ɖğůă ŝŷĩƌăğɛƚƌƶƚƶƌă ůžđăů ěğ ƌğěğ ğ ƚğůğđžŵƶŷŝđăĕɓğɛ͍
-;ǀăůžƌ͗ϯ͕ϱɖžŷƚžɛϳ
-đϳ žŵžğɛɛğɵɖžěğɛğƌǀŝĕžɖžěğăɖƌğɛğŷƚăƌŵğůśžƌěŝɛɖžŷŝďŝůŝěăěğğŵğŷžƌƌŝɛđžěğɖğƌěăěğěăěžɛ͍
-;ǀăůžƌ͗ϯ͕ϱɖžŷƚžɛϳ
-ěϳ yƶğďğŷği̇đŝžɛɛćžğɛɖğƌăěžɛđžŵăăěžĕćžěğɛğƌǀŝĕžɛğŵŷƶǀğŷɛ͍;ǀăůžƌ͗ϯ͕ϱɖžŷƚžɛϳ
+a criação dos serviços em nuvens (clouds) teve como consequência o fato de as tarefas de processamento
+(como ferramentas para edição de documentos), armazenamento de dados (como arquivos e documentos) e
+mensagens (webmail) deixarem de ser executadas em estações cliente locais sem conexão à rede e passarem
+a ser delegadas a equipamentos remotos conectados através da internet.
+
+ 
+
+cada vez mais surgem empresas que oferecem nuvens de equipamentos conectados através da internet,
+com clusters de equipamentos e redundância em múltiplos sites para prestação terceirizada desse tipo de
+serviço, de modo a oferecer maior desempenho e disponibilidade. por outro lado, aumentam os riscos de
+quebra da privacidade dos dados armazenados.
+
+nesse contexto de mudança de um sistema local para a adoção de serviços em nuvens, responda as questões
+a seguir.
+
+a) como mudam os requisitos da plataforma do cliente? (valor: 2,5 pontos)
+
+b) que requisitos devem ser atendidos pela infraestrutura local de rede e telecomunicações?
+(valor: 2,5 pontos)
+
+c) como esse tipo de serviço pode apresentar melhor disponibilidade e menor risco de perda de dados?
+(valor: 2,5 pontos)
+
+) que benefícios são esperados com a adoção de serviços em nuvens? (valor: 2,5 pontos)
+
 rascunho
-1
-2
-ϯ
-4
-5
-6
-7
-θ
+
+ 
+
+ 
+
+ 
+
+ 
+
+ped] qq
+dr
+e
+ed
+pdt
+fd
 9
+
 10
-11
-12
-ϭϯ
-14
-15
-*r14201410*
 
 11
-e'e,z/kdwhdk
+
+e
+pdot
+ed
+
+ 
+
+10
+dm engenharia de computação
+
+ra 42
+
+ 
+
+ 
+
+ 
+
+enade 2014
+
+exame nacional de desempenho dos estudantes

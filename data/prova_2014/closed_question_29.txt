@@ -1,21 +1,26 @@
 questão 29
-ǆɖƌğɛɛɓğɛ ƌğőƶůăƌğɛ đžŷɛɵƚƶğŵ ĩžƌŵăɛ ɛƶđŝŷƚăɛ
-ěğ ěğɛđƌğǀğƌ ůŝŷőƶăőğŷɛ ƌğőƶůăƌğɛ͘ hŵă ěğ ɛƶăɛ
-ăɖůŝđăĕɓğɛġěğɛđƌğǀğƌɖăěƌɓğɛăɛğƌğŵɖƌžđƶƌăěžɛ
-ğŵƶŵƚğǆƚž͘ɛğǆɖƌğɛɛɓğɛƌğőƶůăƌğɛzϭ͕zϯ͕zϯğ
-zϰăɛğőƶŝƌƶɵůŝǌăŵăɛğőƶŝŷƚğđžŷǀğŷĕćž͗žĩğđśžěğ
-<ůğğŷğġěğŷžƚăěžɖžƌύğăƶŷŝćžġěğŷžƚăěăɖğůž
-ɛşŵďžůžͮ͘
-ͻ zϭсăύďăύďăύďăύ
-ͻ zϯсăύ;ăͮďϳă;ăͮďϳύ
-ͻ zϯсăύăďύă;ăͮďϳ
-ͻ zϰс;ăͮďϳύ
-ŵƌğůăĕćžăɛůŝŷőƶăőğŷɛěğįŷŝěăɛɖğůăɛğǆɖƌğɛɛɓğɛ
-ƌğőƶůăƌğɛăɖƌğɛğŷƚăěăɛ͕đžŷđůƶŝͳɛğƌƶğăđăěğŝăabbb
-ğɛƚąđžŷɵěăăɖğŷăɛŷăɛůŝŷőƶăőğŷɛěğįŷŝěăɛɖžƌ
-a zϭğzϰ͘
-b zϯğzϯ͘
-c zϯğzϰ͘
-d zϭğzϯ͘
-e zϯ͕zϯğzϰ͘
+expressões regulares constituem formas sucintas
+de descrever linguagens regulares. uma de suas
+aplicações é descrever padrões a serem procurados
+em um texto. as expressões regulares r1, r2, r3 e
+r4 a seguir utilizam a seguinte convenção: o fecho de
+kleene é denotado por * e a união é denotada pelo
+símbolo |.
+
+e r1=a*ba*ba*ba*
+
+e r2=a*(alb)a(a|b)*
+
+e r3=a*ab*a(alb)
+
+e r4=(alb)*
+em relação às linguagens definidas pelas expressões
+regulares apresentadas, conclui-se que a cadeia abbb
+está contida apenas nas linguagens definidas por
+oq rier4.
+o r2er3.
+o r2er4.
+o r1er3.
+o r2,r3€r4.
+
 área livre

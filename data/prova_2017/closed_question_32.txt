@@ -1,46 +1,82 @@
 questão 32
-ƶŷŝěăěğěğɖƌžđğɛɛăŵğŷƚžőƌąįđž;'wh͕graphics processing unitϳ͕žƌŝőŝŷăůŵğŷƚğɖƌžũğƚăěăɖăƌă
-ɛşŷƚğɛğ ěğ ŝŵăőğŷɛ ěğ ăůƚă ƌƶăůŝěăěğ͕ ɖžěğ ɛğƌ ğŷđžŷƚƌăěă ğŵďăƌđăěă ğŵ ƶŵă ɖůăđă ěğ ǀşěğž
-ěğěŝđăěăžƶŝŷƚğőƌăěăěŝƌğƚăŵğŷƚğğŵƶŵăɖůăđăͳŵćğ͘ŷƚƌğăɛɛƶăɛŝŷƚğƌĩăđğɛěğɖƌžőƌăŵăĕćžěğ
-ăɖůŝđăɵǀžɛ͕ěğɛƚăđăͳɛğăw/kɖğŷ'>͘ǀğƌɛćžkɖğŷ'>ϰ͘ϭăďɛƚƌăŝăăƌƌƶŝƚğƚƶƌăěă'whđžŵžƶŵňƶǆž
-ěğƌğŷěğƌŝǌăĕćžƌƶğđžŷɛğőƶğƚƌăŷɛĩžƌŵăƌƶŵăğɛɖğđŝįđăĕćžěžɛǀġƌɵđğɛěğžďũğƚžɛěğŝŷƚğƌğɛɛğ
-ěăěžɛğŵƶŵğɛɖăĕžǀğƚžƌŝăůɖăƌăƶŵăŝŵăőğŵěŝőŝƚăůĩžƚžͳƌğăůşɛɵđă͕ɵƌăŷěžŵąǆŝŵžɖƌžǀğŝƚžěžɛ
-đŝƌđƶŝƚžɛ ěğěŝđăěžɛ ěğ ƌğŷěğƌŝǌăĕćž ěğ ɖƌŝŵŝɵǀăɛ ďąɛŝđăɛ͕ đžŵž ɖžŷƚžɛ͕ ɛğőŵğŷƚžɛ ğ ƚƌŝąŷőƶůžɛ͘
-kěŝăőƌăŵăăɛğőƶŝƌŵžɛƚƌăƌƶğžňƶǆžěğƌğŷěğƌŝǌăĕćžɖăɛɛăɖžƌǀąƌŝžɛďůžđžɛěğĩƶŷĕɓğɛ͘
-especificação
-de vértices
-imagem
-operações
-por pixel
-vertex shader
-tesselation shader
-fragment shader
-geometry shader
-rasterização
-pós
-processamento
-montagem
-de
-primitivas básicas
-ŝɛɖžŷşǀğůğŵ͗фśʃɖɛ͗ͬͬǁǁǁ͘ŭśƌžŷžɛ͘žƌőх͘đğɛɛžğŵ͗ϱũƶů͘ϯϭϭϳ;ăěăɖƚăěžϳ͘
-žŵ ďăɛğ ŷž ěŝăőƌăŵă ăɖƌğɛğŷƚăěž ğ ŷž ɖƌžđğěŝŵğŷƚž ěğ ƌğŷěğƌŝǌăĕćž ěğ ŝŵăőğŷɛ ěğ ŵăůśăɛ
-ƚƌŝăŷőƶůăƌğɛ͕ġđžƌƌğƚžăįƌŵăƌƌƶğ
-a žɛǀġƌɵđğɛěăɛĩăđğƚăɛƚƌŝăŷőƶůăƌğɛěğƶŵăŵăůśăɖƌğđŝɛăŵƚğƌɛƶăɛđžžƌěğŷăěăɛɖƌžũğƚăěăɛŷžɖůăŷž
-ěăŝŵăőğŵɖğůăăɖůŝđăĕćž͕ăŷƚğɛěžɛğƶğŷǀŝžɖăƌăžďůžđžsğƌƚğǆ^śăěğƌ.
-b śąɖƌžđğěŝŵğŷƚžɛěğžɵŵŝǌăĕćž͕đžŵžžěğɛđăƌƚğěğĩăđğƚăɛŷćžǀŝɛşǀğŝɛğžƌğđžƌƚğěğƶŵăđğŷă
-đžŵɖůğƚăğŵƶŵăɛƶďđğŷăğŷƌƶăěƌăěăɖğůžɛɖăƌąŵğƚƌžɛěğđąŵğƌă͕ăŷƚğɛěăɖăɛɛăőğŵɖăƌăžďůžđž
-ěğzăɛƚğƌŝǌăĕćž͘
-c ăɛđžžƌěğŷăěăɛěğƚğǆƚƶƌăěğǀğŵɛğƌăɛɛžđŝăěăɛăžɛǀġƌɵđğɛěăŵăůśăƚƌŝăŷőƶůăƌƌƶăŷěžɛğěğɛğũă
-ƚğǆƚƶƌŝǌąͳůă͕ɖžŝɛğɛɛăɛđžžƌěğŷăěăɛɛćžƶɵůŝǌăěăɛŷžďůžđžsğƌƚğǆ^śăěğƌɖăƌăăđğɛɛžăžɛěăěžɛěğ
-ƚğǆƚƶƌă͘
-d žŵžěğůžěğƚžŷăůŝǌăĕćžěğwśžŷő͕ƌƶğđžŷɛŝɛƚğŷăŝŷƚğƌɖžůăĕćžěžɛǀğƚžƌğɛŷžƌŵăŝɛăƚƌŝďƶşěžɛăžɛ
-ǀġƌɵđğɛ͕ěğǀğɛğƌɖƌžőƌăŵăěžŷžďůžđžsğƌƚğǆ^śăěğƌɖăƌăɛğđžŵɖƶƚăƌăđžƌěăɛƶɖğƌi̇đŝğěăŵăůśă
-ƌğŷěğƌŝǌăěă͘
-e ăɛŝŷĩžƌŵăĕɓğɛƌğĩğƌğŷƚğɛăɖžɛŝĕɓğɛ͕đžƌğɛ͕ǀğƚžƌğɛŷžƌŵăŝɛěăɛƶɖğƌi̇đŝğ͕đžğįđŝğŷƚğɛěžŵăƚğƌŝăů
-ěăɛƶɖğƌi̇đŝğğđžžƌěğŷăěăɛěğƚğǆƚƶƌăěžɛǀġƌɵđğɛɛćžɛƶįđŝğŷƚğɛɖăƌăőğƌăĕćžěğƶŵăŝŵăőğŵ
-ĩžƚžͳƌğăůşɛɵđă͘
-ƌğăůŝǀƌğ
-*r13201731*
+a unidade de processamento gráfico (gpu, graphics processing unit), originalmente projetada para
+síntese de imagens de alta qualidade, pode ser encontrada embarcada em uma placa de vídeo
+dedicada ou integrada diretamente em uma placa-mãe. entre as suas interfaces de programação de
+aplicativos, destaca-se a api opengl. a versão opengl 4.0 abstrai a arquitetura da gpu como um fluxo
+de renderização que consegue transformar uma especificação dos vértices de objetos de interesse
+dados em um espaço vetorial para uma imagem digital foto-realística, tirando máximo proveito dos
+circuitos dedicados de renderização de primitivas básicas, como pontos, segmentos e triângulos.
+o diagrama a seguir mostra que o fluxo de renderização passa por vários blocos de funções.
 
-ϯϯ
-engenharia de computação
+especificação e po, , pós
+de vértices vertex shader | tesselation shaderr 1 geometry shader | pcessamento
+
+server secr |
+
+operações montagem
+imagem <— or pixel <——— fragment shader|<—— rasterização pe de
+p primitivas básicas
+
+disponível em: <https://www.khronos.org>. acesso em: 5 jul. 2017 (adaptado).
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+com base no diagrama apresentado e no procedimento de renderização de imagens de malhas
+triangulares, é correto afirmar que
+
+o os vértices das facetas triangulares de uma malha precisam ter suas coordenadas projetadas no plano
+da imagem pela aplicação, antes do seu envio para o bloco vertex shader.
+
+o há procedimentos de otimização, como o descarte de facetas não visíveis e o recorte de uma cena
+completa em uma subcena enquadrada pelos parâmetros de câmera, antes da passagem para o bloco
+de rasterização.
+
+o as coordenadas de textura devem ser associadas aos vértices da malha triangular quando se deseja
+texturizá-la, pois essas coordenadas são utilizadas no bloco vertex shader para acesso aos dados de
+textura.
+
+o o modelo de tonalização de phong, que consiste na interpolação dos vetores normais atribuídos aos
+vértices, deve ser programado no bloco vertex shader para se computar a cor da superfície da malha
+renderizada.
+
+o as informações referentes a posições, cores, vetores normais da superfície, coeficientes do material
+da superfície e coordenadas de textura dos vértices são suficientes para geração de uma imagem
+foto-realística.
+
+área livre
+
+ 
+
+engenharia de computação 31
+
+2017
+e enade
+
+exame nacional de desempenho
+dos estudantes

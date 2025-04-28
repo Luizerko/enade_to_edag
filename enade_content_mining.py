@@ -8,6 +8,8 @@ import fitz
 from bs4 import BeautifulSoup
 import pandas as pd
 import requests
+from pdf2image import convert_from_bytes
+import pytesseract
 
 # Normalizing text for when we want to compare strings
 def normalize(text):
@@ -29,6 +31,21 @@ def safe_get(url, retries=5, backoff_factor=1.2):
         except Exception as e:
             print(f"Falha no request {i+1} de {retries}: {e}\n")
             time.sleep(backoff_factor*(2**i))
+
+# Function to figure out if a text is garbage we did not manage to decode or proper text
+def garbage_text(text, threshold=0.5):
+    # Removing spaces and punctuation
+    cleaned_text = re.sub(r'[\W_]+', '', text)
+    
+    # Check if the text is either empty or only symbols (garbage)
+    if not cleaned_text:
+        return True
+
+    # Counting latin alphabet characters
+    latin_chars = re.findall(r'[A-Za-zÀ-ÿ]', cleaned_text)
+    ratio = len(latin_chars)/len(cleaned_text)
+
+    return ratio<threshold
 
 # Parsing PDF to extract ENADE theoretical content
 def parse_pdf_theoretical(url, course, year):
@@ -88,6 +105,7 @@ def parse_pdf_theoretical(url, course, year):
                         content = match.group(2).strip()[:-1]
                         content_list.append(content)
 
+        content_list.append('outros')
         return content_list
 
     except Exception as e:
@@ -136,6 +154,7 @@ def parse_html_theoretical(url, course, year):
                     content = match.group(2).strip()[:-1]
                     content_list.append(content)
 
+        content_list.append('outros')
         return content_list
 
     except Exception as e:
@@ -158,9 +177,37 @@ def parse_pdf_test(url, year):
         full_text = "\n".join([page.get_text() for page in doc])
         full_text = normalize(full_text)
 
+        # Using OCR if we cannot properly decode PDF
+        if garbage_text(full_text, threshold=0.5):
+            images = convert_from_bytes(response.content)
+            ocr_texts = []
+            for img in images:
+                text = pytesseract.image_to_string(img, lang="por")
+                ocr_texts.append(text)
+            full_text = "\n".join(ocr_texts)
+            full_text = normalize(full_text)
+            # Trimming document
+            end_marker = "questionário de percepção da prova"
+            end_index = full_text.rfind(end_marker)
+            if end_index != -1:
+                full_text = full_text[:end_index]
+
+        # In case we don't need OCR, we need to get full text one page at a time to remove end_marker's page 
+        else:
+            end_marker = "questionário de percepção da prova"
+            pages_before_marker = []
+            for page in doc:
+                raw = page.get_text()
+                norm = normalize(raw)
+                if end_marker in norm:
+                    break
+                pages_before_marker.append(raw)
+
+            # Now joinning just those pages
+            full_text = "\n".join(pages_before_marker)
+
         # Finding all question headers
         question_pattern = re.compile(r"(questão(?: discursiva)?\s+\d+)", re.IGNORECASE)
-        end_marker = "questionário de percepção da prova"
 
         matches = list(question_pattern.finditer(full_text))
 
@@ -170,10 +217,7 @@ def parse_pdf_test(url, year):
             start_pos = match.end()
 
             # Defining end of current question
-            end_pos = matches[i+1].start() if i+1 < len(matches) else full_text.find(end_marker)
-            if end_pos == -1:
-                end_pos = len(full_text)
-                print(f'Final da prova de {year} não foi encontrado!\n')
+            end_pos = matches[i+1].start() if i+1 < len(matches) else len(full_text)
 
             # Extracting content
             question_text = full_text[start_pos:end_pos].strip()
@@ -190,14 +234,14 @@ def parse_pdf_test(url, year):
             with open(filepath, "w", encoding="utf-8") as f:
                 f.write(full_question)
 
-            print(f"Questão {q_number} ({q_type}) de {year} salva em: {filepath}")
+            # print(f"Questão {q_number} ({q_type}) de {year} salva em: {filepath}")
 
-        print(f"Extração das questões de prova de {year} completa: {len(matches)} questões salvas")
+        print(f"Extração das questões de prova de {year} completa: {len(matches)} questões salvas\n")
 
     except Exception as e:
         print(f"Não foi possível parsear o PDF {url}: {e}\n")
 
-# Function to parse and extract content. Basically a wrapper of th other functions
+# Function to parse and extract content. Basically a wrapper of the other functions
 def parse_and_extract(page, df, target_courses, extraction_type='edital'):
     # Getting all year tabs and filtering everything before 2014
     year_elements = page.locator(".govbr-tabs a").all()
@@ -274,7 +318,7 @@ with sync_playwright() as p:
     df = {'course': [], 'year': [], 'theoretical_content': [], 'test_content': []}
 
     # Launchung browser and navigating to desired URL
-    browser = p.chromium.launch(headless=False)
+    browser = p.chromium.launch(headless=True)
     page = browser.new_page()
 
     # Navigating to edital page
@@ -286,12 +330,11 @@ with sync_playwright() as p:
     page.wait_for_selector(".govbr-tabs")
 
     # Parsing and extracting content from edital page
-    # parse_and_extract(page, df, target_courses, extraction_type='edital')
+    parse_and_extract(page, df, target_courses, extraction_type='edital')
 
     # Repeating the process for the prova page
     url = "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade/provas-e-gabaritos"
     page.goto(url)
-    # reject_cookies(page)
     page.wait_for_selector(".govbr-tabs")
     parse_and_extract(page, df, target_courses, extraction_type='prova')
 

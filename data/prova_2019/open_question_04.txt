@@ -1,16 +1,16 @@
 questão discursiva 04
-na matemática, um produtório é definido como:
+Na matemática, um produtório é definido como:
  
-com base nessa equação, e considerando que x
+Com base nessa equação, e considerando que x
 i
 i
 i 
  1 , com i > 0 , faça o que se pede nos itens a seguir.
-a)	 escreva uma função iterativa, em linguagem c, que receba os parâmetros de limite inferior m e de 
+a)	 Escreva uma função iterativa, em linguagem C, que receba os parâmetros de limite inferior m e de 
 limite superior n, calcule e retorne o resultado do produtório. (valor: 5,0 pontos).
-b)	 escreva uma função recursiva, em linguagem c, que receba os parâmetros de limite inferior m e de 
+b)	 Escreva uma função recursiva, em linguagem C, que receba os parâmetros de limite inferior m e de 
 limite superior n, calcule e retorne o resultado do produtório. (valor: 5,0 pontos).
-rascunho
+RASCUNHO
 1
 2
 3
@@ -26,7 +26,7 @@ rascunho
 13
 14
 15
-área livre
+Área livre
 x
 x
 x
@@ -55,7 +55,7 @@ n
 2
 1
 .
-*r09201913*
+*R09201913*
 
-engenharia de computação
+ENGENHARIA DE COMPUTAÇÃO
 14

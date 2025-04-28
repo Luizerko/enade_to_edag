@@ -1,35 +1,50 @@
 questão 21
-hŵ ŵŝđƌžđžŷƚƌžůăěžƌ đžŷƚƌžůă ž ěŝɛɖžɛŝɵǀž
-ğŵ ƌƶğ ğůğ ɛğ ğŷđžŷƚƌă ğŵďƶɵěž ăƚƌăǀġɛ ěă
-ɛƶă ŝŷƚğƌĩăđğ ěğ ɖƌžőƌăŵăĕćž ěğ ăɖůŝđăɵǀžɛ
-;w/ϳ͘ ɛɛğŷđŝăůŵğŷƚğ͕ ğɛɛă ŝŷƚğƌĩăđğ đžŷɛŝɛƚğ
-ğŵ ƶŵ đžŷũƶŷƚž ěğ ƌğőŝɛƚƌăěžƌğɛ ěğ ěăěžɛ͕ ěğ
-đžŷƚƌžůğ ğ ěğ ğɛƚăěž͘ ŵ ƶŵ ŵŝđƌžđžŷƚƌžůăěžƌ
-śŝɖžƚġɵđž͕ žɛ bits ϱ͕ ϰ ğ ϯ ěž ƌğőŝɛƚƌăěžƌ ěğ
-đžŷƚƌžůğ dkksedk ěğ ϭϲ bits đžŷƚƌžůăŵ
-ă đžŷįőƶƌăĕćž ěž ɵɖž ěğ ğǀğŷƚž ƌƶğ őğƌă ƶŵ
-őăɵůśž ğŵ ƶŵ ɖŝŷž ğɛɖğđşįđž͕ đžŷĩžƌŵğ ă
-ɛğőƶŝŷƚğđžěŝįđăĕćžďŝŷąƌŝă͗ϭϭϭсěğɛăďŝůŝƚăěž͖
-ϭϭϭсɛğŷɛşǀğůăďžƌěăěğɛƶďŝěă͖ϭϭϭсɛğŷɛşǀğů
-ă ďžƌěă ěğ ěğɛđŝěă͖ ϭϭϭ с ɛğŷɛşǀğů ă ăŵďăɛ ăɛ
-ďžƌěăɛ͖ϭϭϭсɛğŷɛşǀğůăŷşǀğůăůƚž͖ϭϭϭсɛğŷɛşǀğů
-ăŷşǀğůďăŝǆž͘kbitϭ͕ăğǆƚƌğŵăěŝƌğŝƚă͕ġžŵğŷžɛ
-ɛŝőŷŝįđăɵǀž͕ğžbitϭϱ͕žŵăŝɛɛŝőŷŝįđăɵǀž͘
-žŷɛŝěğƌăŷěžͳɛğ ğɛɛă ɛŝƚƶăĕćž ğ ɛăďğŷěžͳɛğ
-ƌƶğ͕ ğŵ ůŝŷőƶăőğŵ ͕ žɛ ɛşŵďžůžɛ |͕ & e ~
-đžƌƌğɛɖžŷěğŵ ăžɛ žɖğƌăěžƌğɛ ůſőŝđžɛ bit ă bit
-kz͕eğekd͕ƌğɛɖğđɵǀăŵğŷƚğ͕ƌƶăůŝŷɛƚƌƶĕćž
-ğŵěğǀğɛğƌƶɵůŝǌăěăɖăƌăđžŷįőƶƌăƌžɖŝŷž͕ěğ
-ĩžƌŵăƌƶğğůğįƌƶğɛğŷɛşǀğůăăŵďăɛăɛďžƌěăɛ͍
-a modoevento = 0x0018
-b modoevento |= 0x0018
-c modoevento &= ~0x0018
-d modoevento = (modoevento | 0x0018) 
-& ~0x0038
-e modoevento = (modoevento & ~0x0038)
-| 0x0018
-ƌğăůŝǀƌğ
-*r13201723*
+um microcontrolador controla o dispositivo
+em que ele se encontra embutido através da
+sua interface de programação de aplicativos
+(api). essencialmente, essa interface consiste
+em um conjunto de registradores de dados, de
+controle e de estado. em um microcontrolador
+hipotético, os bits 5, 4 e 3 do registrador de
+controle modoevento de 16 bits controlam
+a configuração do tipo de evento que gera um
+gatilho em um pino específico, conforme a
+seguinte codificação binária: 000 = desabilitado;
+001 = sensível a borda de subida; 010 = sensível
+a borda de descida; 011 = sensível a ambas as
+bordas; 100 = sensível a nível alto; 101 = sensível
+a nível baixo. o bit o, à extrema direita, é o menos
+significativo, e o bit 15, o mais significativo.
 
-24
-engenharia de computação
+considerando-se essa situação e sabendo-se
+que, em linguagem c, os símbolos |, & e -
+correspondem aos operadores lógicos bit a bit
+or, and e not, respectivamente, qual instrução
+em c deve ser utilizada para configurar o pino, de
+forma que ele fique sensível a ambas as bordas?
+
+o modoevento = 0x0018
+o modoevento |= 0x0018
+o modoevento &= -0x0018
+
+o modoevento = (modoevento | 0x0018)
+& -0x0038
+
+e modoevento = (modoevento & - 0x0038)
+| 0x0018
+
+área livre
+
+ 
+
+engenharia de computação 23
+
+ 
+
+2017
+nm enade
+
+exame nacional de desempenho
+dos estudantes
+
+*r1 320172

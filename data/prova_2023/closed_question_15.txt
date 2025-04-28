@@ -1,20 +1,20 @@
 questão 15
-memory leak, ou vazamento de memória, é um problema que ocorre em sistemas computacionais 
+Memory leak, ou vazamento de memória, é um problema que ocorre em sistemas computacionais 
 quando uma parte da memória, alocada para uma determinada operação, não é liberada quando se 
-torna desnecessária. na linguagem c, esse tipo de problema é quase sempre relacionado ao uso 
-incorreto das funções malloc( ) e free( ). esse erro de programação pode levar a falhas no 
+torna desnecessária. Na linguagem C, esse tipo de problema é quase sempre relacionado ao uso 
+incorreto das funções malloc( ) e free( ). Esse erro de programação pode levar a falhas no 
 sistema se a memória for completamente consumida.
-a partir dessas informações, assinale a opção que apresenta um trecho com memory leak.
-a	 void f( ){  
+A partir dessas informações, assinale a opção que apresenta um trecho com memory leak.
+A	 void f( ){  
    void *s;  
    s = malloc(50);  
    free(s);  
 }
-b	 int f( ){  
+B	 int f( ){  
     float *a;  
     return 0;  
 }
-c	 int f(char *data){ 
+C	 int f(char *data){ 
    void *s;  
    s = malloc(50);  
    int size = strlen(data);  
@@ -23,7 +23,7 @@ c	 int f(char *data){
    free(s);  
    return 0;  
 }
-d	 int *f(int n){  
+D	 int *f(int n){  
    int *num = malloc(sizeof(int)*n);  
    return num;  
 }  
@@ -33,7 +33,7 @@ int main(void){
    free(num);  
    return 0;  
 }
-e	 void f(int n){  
+E	 void f(int n){  
    char *m = malloc(10);  
    char *n = malloc(10);  
    free(m);  
@@ -41,9 +41,9 @@ e	 void f(int n){
    free(m);  
    free(n);  
 }
-*r08202319*
-validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
-validinep2023validinep2023validin3p2023validinep2023validinep2validinep
+*R08202319*
+VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDIN3P2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023
+VALIDINEP2023VALIDINEP2023VALIDIN3P2023VALIDINEP2023VALIDINEP2VALIDINEP
 
 20
-engenharia de computação
+Engenharia de Computação

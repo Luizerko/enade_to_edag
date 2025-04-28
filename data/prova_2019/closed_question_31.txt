@@ -1,30 +1,30 @@
 questão 31
-em um sistema computacional, os processos submetidos à execução podem estar em um dos estágios do 
-seu ciclo de vida que são classificados como em execução, em espera ou pronto. quando o processo tem 
-a posse do processador, está em execução. se o processo não puder ser executado, por estar aguardando 
-algum dado por exemplo, é considerado um processo em espera. se não houver impedimentos para sua 
-execução, o processo deve aguardar sua vez para ser executado na fila dos processos prontos. o diagrama 
+Em um sistema computacional, os processos submetidos à execução podem estar em um dos estágios do 
+seu ciclo de vida que são classificados como em execução, em espera ou pronto. Quando o processo tem 
+a posse do processador, está em execução. Se o processo não puder ser executado, por estar aguardando 
+algum dado por exemplo, é considerado um processo em espera. Se não houver impedimentos para sua 
+execução, o processo deve aguardar sua vez para ser executado na fila dos processos prontos. O diagrama 
 a seguir representa os estados dos processos de alguns tipos de sistemas operacionais.
-com base no texto e no diagrama de estados, avalie as afirmações a seguir.
-i.	 um novo processo criado é inicializado no estado "espera".
-ii.	 pode haver mais de um processo em estado "pronto".
-iii.	 a transição b indica que o diagrama refere-se a um sistema operacional multitarefa.
-iv.	 o diagrama é inadequado para representar um sistema monotarefa.
- é correto apenas o que se afirma em
-a	 i e ii.
-b	 i e iii.
-c	 iii e iv.
-d	 i, ii e iv.
-e	 ii, iii e iv.
-área livre
-espera
-pronto
-execução
-c
-b
-a
-d
-*r09201934*
+Com base no texto e no diagrama de estados, avalie as afirmações a seguir.
+I.	 Um novo processo criado é inicializado no estado "espera".
+II.	 Pode haver mais de um processo em estado "pronto".
+III.	 A transição B indica que o diagrama refere-se a um sistema operacional multitarefa.
+IV.	 O diagrama é inadequado para representar um sistema monotarefa.
+ É correto apenas o que se afirma em
+A	 I e II.
+B	 I e III.
+C	 III e IV.
+D	 I, II e IV.
+E	 II, III e IV.
+Área livre
+Espera
+Pronto
+Execução
+C
+B
+A
+D
+*R09201934*
 
-engenharia de computação
+ENGENHARIA DE COMPUTAÇÃO
 35

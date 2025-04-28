@@ -1,20 +1,20 @@
 questão 14
-filtros normalizados são resultantes da compressão da faixa de frequência infinitamente longa  
-– ∞ < ω < ∞ de um filtro analógico (tempo contínuo) para a faixa de frequência finita – π < ω < π 
+Filtros normalizados são resultantes da compressão da faixa de frequência infinitamente longa  
+– ∞ < ω < ∞ de um filtro analógico (tempo contínuo) para a faixa de frequência finita – π < Ω < π 
 de um filtro digital (tempo discreto), com período 2π.
-haykin, s; veen, b.v. sinais e sistemas. porto alegre: bookman, 2001 (adaptado).
-a mudança da escala de frequências também pode ser pensada como uma normalização do eixo das 
+HAYKIN, S; VEEN, B.V. Sinais e sistemas. Porto Alegre: Bookman, 2001 (adaptado).
+A mudança da escala de frequências também pode ser pensada como uma normalização do eixo das 
 frequências em que a frequência de amostragem ωs corresponde a ±π e qualquer outra frequência em 
-hz, ω, corresponde à frequência discreta ±ω.
-oppenheim, a. v; schafer, r. w. discrete-time signal processing. 3. ed. nj: prentice hall, 1998 (adaptado).
-considerando um sistema de transmissão de dados com a máxima frequência do sinal de informação de 
-4 000 hz, e frequência de amostragem de 20 000 amostras por segundo com um filtro digital de resposta 
-ideal que rejeite os sinais de frequências superiores a 6 000 hz, a resposta em frequência do filtro que 
+Hz, ω, corresponde à frequência discreta ±Ω.
+OPPENHEIM, A. V; SCHAFER, R. W. Discrete-time signal processing. 3. ed. NJ: Prentice Hall, 1998 (adaptado).
+Considerando um sistema de transmissão de dados com a máxima frequência do sinal de informação de 
+4 000 Hz, e frequência de amostragem de 20 000 amostras por segundo com um filtro digital de resposta 
+ideal que rejeite os sinais de frequências superiores a 6 000 Hz, a resposta em frequência do filtro que 
 atenda essas especificações é
-a	  
-ω
-h(e j    )
-ω
+A	  
+Ω
+H(e j    )
+Ω
 −2π
 2π
 −π
@@ -23,10 +23,10 @@ h(e j    )
 0,3π
 0
 1
-b	  
-h(e j    )
-ω
-ω
+B	  
+H(e j    )
+Ω
+Ω
 −2π
 2π
 −π
@@ -35,10 +35,10 @@ h(e j    )
 0,3π
 0
 1
-c	  
-ω
-h(e j    )
-ω
+C	  
+Ω
+H(e j    )
+Ω
 −2π
 −1,7π
 1,7π
@@ -49,10 +49,10 @@ h(e j    )
 0,3π
 0
 1
-d	  
-ω
-h(e j    )
-ω
+D	  
+Ω
+H(e j    )
+Ω
 −2π
 2π
 −π
@@ -63,10 +63,10 @@ h(e j    )
 0,3π
 0
 1
-e	  
-ω
-h(e j    )
-ω
+E	  
+Ω
+H(e j    )
+Ω
 −2π
 2π
 −π
@@ -75,7 +75,7 @@ h(e j    )
 0,3π
 0
 1
-*r09201920*
+*R09201920*
 
-engenharia de computação
+ENGENHARIA DE COMPUTAÇÃO
 21

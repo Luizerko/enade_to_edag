@@ -1,26 +1,40 @@
 questão 02
-^ğőƶŷěžžƌğůăƚſƌŝžěăkƌőăŷŝǌăĕćžěăɛeăĕɓğɛhŷŝěăɛɖăƌăăůŝŵğŷƚăĕćžğăőƌŝđƶůƚƶƌăěğϯϭϭϰ͕
-ăăőƌŝđƶůƚƶƌăĩăŵŝůŝăƌɖƌžěƶǌđğƌđăěğθϭйěžɛăůŝŵğŷƚžɛŷžŵƶŷěžğġőƶăƌěŝćěğăɖƌžǆŝŵăěăŵğŷƚğϳϱй
-ěğƚžěžɛžɛƌğđƶƌɛžɛăőƌşđžůăɛěžɖůăŷğƚă͘eğɛɛğɛğŷɵěž͕ăăőƌŝđƶůƚƶƌăĩăŵŝůŝăƌġĩƶŷěăŵğŷƚăůɖăƌăă
-ŵğůśžƌŝăěăɛƶɛƚğŷƚăďŝůŝěăěğğđžůſőŝđă͘
-ŝɛɖžŷşǀğůğŵ͗фśʃɖ͗ͬͬǁǁǁ͘ĩăž͘žƌőх͘đğɛɛžğŵ͗ϯϵăőž͘ϯϭϭϳ;ăěăɖƚăěžϳ͘
-žŷɛŝěğƌăŷěžăɛŝŷĩžƌŵăĕɓğɛăɖƌğɛğŷƚăěăɛŷžƚğǆƚž͕ăǀăůŝğăɛăįƌŵăĕɓğɛăɛğőƶŝƌ͘
-/͘ kɛ ɖƌŝŷđŝɖăŝɛ ěğɛăĩŝžɛ ěă ăőƌŝđƶůƚƶƌă ĩăŵŝůŝăƌ ğɛƚćž ƌğůăđŝžŷăěžɛ ă ɛğőƶƌăŷĕă ăůŝŵğŷƚăƌ͕
-ăɛƶɛƚğŷƚăďŝůŝěăěğăŵďŝğŷƚăůğăđăɖăđŝěăěğɖƌžěƶƚŝǀă͘
-//͘ ɛ ɖžůşƚŝđăɛ ɖʒďůŝđăɛ ɖăƌă ž ěğɛğŷǀžůǀŝŵğŷƚž ěă ăőƌŝđƶůƚƶƌă ĩăŵŝůŝăƌ ěğǀğŵ ĩžŵğŷƚăƌ ă
-ŝŷžǀăĕćž͕ƌğɛɖğŝƚăŷěžžƚăŵăŷśžěăɛɖƌžɖƌŝğěăěğɛ͕ăɛƚğđŷžůžőŝăɛƶƚŝůŝǌăěăɛ͕ăŝŷƚğőƌăĕćž
-ěğŵğƌđăěžɛğăɛđžŷĩŝőƶƌăĕɓğɛğđžůſőŝđăɛ͘
-///͘ŵăŝžƌŝăěăɛɖƌžɖƌŝğěăěğɛăőƌşđžůăɛŷžŵƶŷěžƚğŵđăƌąƚğƌĩăŵŝůŝăƌ͕ğŷƚƌğƚăŷƚžžƚƌăďăůśž
-ƌğăůŝǌăěž ŷğɛɛăɛ ɖƌžɖƌŝğěăěğɛ ġ ŵăũžƌŝƚăƌŝăŵğŷƚğ ƌğɛƶůƚăŷƚğ ěă đžŷƚƌăƚăĕćž ěğ ŵćž ěğ
-žďƌăăɛɛăůăƌŝăěă͘
-đžƌƌğƚžžƌƶğɛğăįƌŵăğŵ
-a /͕ăɖğŷăɛ͘
-b ///͕ăɖğŷăɛ͘
-c /ğ//͕ăɖğŷăɛ͘
-d //ğ///͕ăɖğŷăɛ͘
-e /͕//ğ///͘
-ƌğăůŝǀƌğ
-*r1320176*
+segundo o relatório da organização das nações unidas para a alimentação e a agricultura de 2014,
+a agricultura familiar produz cerca de 80% dos alimentos no mundo e é guardiã de aproximadamente 75%
+de todos os recursos agrícolas do planeta. nesse sentido, a agricultura familiar é fundamental para a
+melhoria da sustentabilidade ecológica.
 
-7
-engenharia de computação
+disponível em: <http://www.fao.org>. acesso em: 29 ago. 2017 (adaptado).
+considerando as informações apresentadas no texto, avalie as afirmações a seguir.
+
+il. os principais desafios da agricultura familiar estão relacionados à segurança alimentar,
+à sustentabilidade ambiental e à capacidade produtiva.
+
+ih. as políticas públicas para o desenvolvimento da agricultura familiar devem fomentar a
+inovação, respeitando o tamanho das propriedades, as tecnologias utilizadas, a integração
+de mercados e as configurações ecológicas.
+
+hi. a maioria das propriedades agrícolas no mundo tem caráter familiar, entretanto o trabalho
+realizado nessas propriedades é majoritariamente resultante da contratação de mão de
+obra assalariada.
+
+é correto o que se afirma em
+
+o | apenas.
+
+o ill, apenas.
+
+o lell, apenas.
+o lei, apenas.
+
+ 
+
+o liell.
+área livre
+6 engenharia de computação
+
+2017
+enade e
+
+exame nacional de desempenho
+los estudantes

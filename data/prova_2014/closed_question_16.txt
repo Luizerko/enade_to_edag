@@ -1,48 +1,61 @@
 questão 16
-hŵă ŝŷěʒɛƚƌŝă ěğ ďůžđžɛ đğƌąŵŝđžɛ ɖƌğƚğŷěğ
-ƶɵůŝǌăƌƌƶğŝŵăěğďŝžŵăɛɛăƌğɛƶůƚăŷƚğěğƌğɛşěƶžɛ
-ěğ ŵăěğŝƌă͕ ɖăƌă őğƌăƌ ğŷğƌőŝă ƚġƌŵŝđă ɖăƌă ɛğƶɛ
-ĩžƌŷžɛ͕ ƌƶğ͕ ăƚƶăůŵğŷƚğ͕ ƶɵůŝǌăŵ őąɛ ŷăƚƶƌăů͘ dăů
-ŝŷŝđŝăɵǀăɖžěğƌąƌğěƶǌŝƌžđžŷɛƶŵžěğđžŵďƶɛơǀğů͕
-ɖžƌġŵɛğƌąŷğđğɛɛąƌŝžƶŵŝŷǀğɛɵŵğŷƚžŷžǀăůžƌěğ
-ϯϭйěžđžŷɛƶŵžͬăŷžăƚƶăůěğđžŵďƶɛơǀğů͕ǀŝɛăŷěž
-ă ăěăɖƚăĕćž ěžɛ ĩžƌŷžɛ͘ ůġŵ ěŝɛɛž͕ ž ƚƌăŷɛɖžƌƚğ
-ăŷƶăůěžɛƌğɛşěƶžɛěăĩžŷƚğőğƌăěžƌăăƚġăŝŷěʒɛƚƌŝă
-ŝƌąđƶɛƚăƌϱйěžđžŷɛƶŵžͬăŷžăƚƶăůěğđžŵďƶɛơǀğů͘
-ɛɵŵăͳɛğ ƌƶğ ğɛɛă ăůƚğƌăĕćž ɖƌžŵžǀă ƶŵă
-ğđžŷžŵŝă͕ ŷž đžŷɛƶŵžͬăŷž ăƚƶăů ěğ đžŵďƶɛơǀğů͕
-ěğϭϭйăžăŷž͘
-ɖăƌɵƌěăɛŝƚƶăĕćžěğɛđƌŝƚă͕ăǀăůŝğăɛăįƌŵăĕɓğɛă
-ɛğőƶŝƌ͘
-/͘ ɖăƌɵƌěžƌƶŝŷƚžăŷž͕ăŝŷěʒɛƚƌŝăđžŵğĕăƌŝă
-ăƚğƌďğŷği̇đŝžɛğđžŷƀŵŝđžɛ͘
-//͘ eă
-ɖƌžɖžɛƚă
-ăɖƌğɛğŷƚăěă͕
-ă
-ŝŷěʒɛƚƌŝă
-ɛƶďɛɵƚƶŝƌŝăžđžŵďƶɛơǀğůăƚƶăůɖžƌƶŵăĩžŷƚğ
-ěğğŷğƌőŝăđžŵŵğŷžƌɖƌžěƶĕćžğğŵŝɛɛćžěğ
-ɖăƌơđƶůăɛěğǀŝěžăžɖƌžđğɛɛžěğđžŵďƶɛƚćž
-;ɖăƌɵđƶůăěžɛϳ͘
-///͘ eă
-ɖƌžɖžɛƚă
-ăɖƌğɛğŷƚăěă͕
-ă
-ŝŷěʒɛƚƌŝă
-ɛƶďɛɵƚƶŝƌŝăžđžŵďƶɛơǀğůăƚƶăůɖžƌƶŵăĩžŷƚğ
-ƌğŷžǀąǀğůěğğŷğƌőŝă͘
-/s͘ kǀăůžƌěžŝŷǀğɛɵŵğŷƚžɛƶɖğƌăžɛďğŷği̇đŝžɛ
-ɖƌžŵžǀŝěžɛđžŵăğđžŷžŵŝăěğđžŵďƶɛơǀğů
-ěƶƌăŷƚğžɛϱɖƌŝŵğŝƌžɛăŷžɛ͘
-đžƌƌğƚžăɖğŷăɛžƌƶğɛğăįƌŵăğŵ
-a //͘
-b /s͘
-c /ğ//͘
-d /ğ///͘
-e ///ğ/s͘
-área livre
-*r14201416*
+uma indústria de blocos cerâmicos pretende
+utilizar queima de biomassa resultante de resíduos
+de madeira, para gerar energia térmica para seus
+fornos, que, atualmente, utilizam gás natural. tal
+iniciativa poderá reduzir o consumo de combustível,
+porém será necessário um investimento no valor de
+20% do consumo/ano atual de combustível, visando
+à adaptação dos fornos. além disso, o transporte
+anual dos resíduos da fonte geradora até a indústria
+irá custar 5% do consumo/ano atual de combustível.
+estima-se que essa alteração promova uma
+economia, no consumo/ano atual de combustível,
+de 10% ao ano.
 
-17
-e'e,z/kdwhdk
+ 
+
+a partir da situação descrita, avalie as afirmações a
+seguir.
+
+|. a partir do quinto ano, a indústria começaria
+a ter benefícios econômicos.
+
+na proposta apresentada, a indústria
+substituiria o combustível atual por uma fonte
+de energia com menor produção e emissão de
+partículas devido ao processo de combustão
+(particulados).
+
+na proposta apresentada, a indústria
+substituiria o combustível atual por uma fonte
+renovável de energia.
+
+o valor do investimento supera os benefícios
+promovidos com a economia de combustível
+durante os 5 primeiros anos.
+
+é correto apenas o que se afirma em
+
+o 1ú.
+
+o |v.
+
+o el.
+
+o eli.
+o illeiv.
+
+área livre
+
+ 
+
+ 
+
+16
+
+engenharia de computação
+
+enade 2014
+
+exame nacional de desempenho dos estudantes

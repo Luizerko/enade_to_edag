@@ -21,9 +21,17 @@ idna==3.10
 numpy==2.2.5
     # via pandas
 packaging==25.0
-    # via build
+    # via
+    #   build
+    #   pytesseract
 pandas==2.2.3
     # via -r requirements.in
+pdf2image==1.17.0
+    # via -r requirements.in
+pillow==11.2.1
+    # via
+    #   pdf2image
+    #   pytesseract
 pip-tools==7.4.1
     # via -r requirements.in
 playwright==1.51.0
@@ -36,6 +44,8 @@ pyproject-hooks==1.2.0
     # via
     #   build
     #   pip-tools
+pytesseract==0.3.13
+    # via -r requirements.in
 python-dateutil==2.9.0.post0
     # via pandas
 pytz==2025.2

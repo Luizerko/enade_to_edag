@@ -1,55 +1,97 @@
 questão 01
-kɛďƌŝƚąŷŝđžɛěğđŝěŝƌăŵɛăŝƌěăhŷŝćžƶƌžɖğŝă;hϳ͘ěğđŝɛćžěžƌğĩğƌğŷěžăďăůžƶžɛŵğƌđăěžɛ
-ĩŝŷăŷđğŝƌžɛğŵŵğŝžăɛŝŷđğƌƚğǌăɛɛžďƌğžɛɖžɛɛşǀğŝɛŝŵɖăđƚžɛěğɛɛăɛăşěă͘
-kɛőƌąįđžɛăɛğőƶŝƌăɖƌğɛğŷƚăŵ͕ƌğɛɖğđɵǀăŵğŷƚğ͕ăɛđžŷƚƌŝďƶŝĕɓğɛěžɛɖăşɛğɛŝŷƚğőƌăŷƚğɛěžďůžđž
-ɖăƌăăh͕ğŵϯϭϭϰ͕ƌƶğɛžŵăŵφϭϰϰ͕ϵďŝůśɓğɛěğğƶƌžɛ͕ğăđžŵɖăƌăĕćžğŷƚƌğăđžŷƚƌŝďƶŝĕćžěž
-zğŝŷžhŷŝěžɖăƌăăhğăđžŷƚƌăɖăƌɵěăěžɛőăɛƚžɛěăhđžŵžzğŝŷžhŷŝěž͘
-ŝɛɖžŷşǀğůğŵ͗фśʃɖ͗ͬͬǁǁǁ͘őϭ͘őůžďž͘đžŵх͘đğɛɛžğŵ͗ϲɛğƚ͘ϯϭϭϳ;ăěăɖƚăěžϳ͘
-žŷɛŝěğƌăŷěžžƚğǆƚžğăɛŝŷĩžƌŵăĕɓğɛăɖƌğɛğŷƚăěăɛŷžɛőƌąįđžɛăđŝŵă͕ăɛɛŝŷăůğăžɖĕćžđžƌƌğƚă͘
-a đžŷƚƌŝďƶŝĕćžěžɛƌƶăƚƌžŵăŝžƌğɛɖăşɛğɛěžďůžđžɛžŵžƶϰϭ͕ϭϯй͘
-b kőƌƶɖž͞kƶƚƌžɛɖăşɛğɛ͟đžŷƚƌŝďƶŝƶɖăƌăğɛɛğďůžđžğđžŷƀŵŝđžđžŵϰϯ͕ϭй͘
-c ěŝĩğƌğŷĕăěăđžŷƚƌŝďƶŝĕćžěžzğŝŷžhŷŝěžğŵƌğůăĕćžăžƌğđğďŝěžěžďůžđžğđžŷƀŵŝđžĩžŝϯθ͕ϵϰй͘
-d ɛžŵăěăɛɖăƌɵđŝɖăĕɓğɛěžɛƚƌġɛɖăşɛğɛđžŵŵăŝžƌđžŷƚƌŝďƶŝĕćžɖăƌăžďůžđžğđžŷƀŵŝđžɛƶɖğƌăϱϭй͘
-e kɖğƌđğŷƚƶăůěğɖăƌɵđŝɖăĕćžěžzğŝŷžhŷŝěžđžŵžďůžđžğđžŷƀŵŝđžğŵϯϭϭϰĩžŝěğϭϳ͕θй͕žƌƶğž
-đžůžđžƶğŷƚƌğžɛƌƶăƚƌžŵăŝžƌğɛɖăƌɵđŝɖăŷƚğɛ͘
-contribuições para a ue
-dados de 2014, em € bilhões 
-40
-30
-20
-10
-0
-alemanha
-frança
-itália
-reino unido
-espanha
-holanda
-suécia
-bélgica
-polônia
-áustria
-dinamarca
-outros países
-50
-42,1
-25,8
-19,5
-14,3
-11,3 9,9
-6,3
-3,8 3,6 3,5 2,6 2,2
-reino unido e ue
-dados de 2014, em € bilhões
-contribuição do reino unido com a ue
-gasto da ue com o reino unido
-15
-11,3
-6,9
-10
-5
-0
-*r1320175*
+os britânicos decidiram sair da união europeia (ue). a decisão do referendo abalou os mercados
+financeiros em meio às incertezas sobre os possíveis impactos dessa saída.
 
-6
-engenharia de computação
+os gráficos a seguir apresentam, respectivamente, as contribuições dos países integrantes do bloco
+para a ue, em 2014, que somam £€ 144,9 bilhões de euros, e a comparação entre a contribuição do
+reino unido para a ue e a contrapartida dos gastos da ue com o reino unido.
+
+ 
+
+ 
+
+contribuições para a ue reino unido e ue
+dados de 2014, em € bilhões dados de 2014, em € bilhões
+50 15
+
+42,1 11,3
+
+ 
+
+ 
+
+pan
+to
+un
+
+ 
+
+tw
+tw
+
+ 
+
+frança (na
+.: õ
+itália o
+
+áustria em
+dinamarca
+
+alemanha
+
+reino unido [da +
+to
+espanha [hh 5
+o
+holanda [hh
+z vw
+suécia hj
+vw
+bélgica hs,
+a w
+polônia e,
+nx
+o
+mm
+mm
+
+40 10
+6,9
+30 5
+25,8
+20 0
+10
+e contribuição do reino unido com a ue
+0 e gasto da ue com o reino unido
+ã “o
+o
+q
+e
+5
+5
+õ
+
+disponível em: <http://www.g1.globo.com>. acesso em: 6 set. 2017 (adaptado).
+
+considerando o texto e as informações apresentadas nos gráficos acima, assinale a opção correta.
+
+oq a contribuição dos quatro maiores países do bloco somou 41,13%.
+
+o o grupo “outros países” contribuiu para esse bloco econômico com 42,1%.
+
+o a diferença da contribuição do reino unido em relação ao recebido do bloco econômico foi 38,94%.
+o asoma das participações dos três países com maior contribuição para o bloco econômico supera 50%.
+
+o o percentual de participação do reino unido com o bloco econômico em 2014 foi de 17,8%, o que o
+colocou entre os quatro maiores participantes.
+
+ 
+
+engenharia de computação 5
+
+2017
+een enade
+
+exame nacional de desempenho
+dos estudantes

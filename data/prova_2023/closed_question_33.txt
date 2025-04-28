@@ -1,24 +1,24 @@
 questão 33
-considere que uma empresa planeje desenvolver um sistema de controle automático para manter, em um 
+Considere que uma empresa planeje desenvolver um sistema de controle automático para manter, em um 
 ambiente industrial, a temperatura constante por meio de um controlador proporcional-integral-derivativo 
-(pid). o controlador pid pode ser implementado em qualquer linguagem que possua estruturas de dados 
+(PID). O controlador PID pode ser implementado em qualquer linguagem que possua estruturas de dados 
 adequadas para a manutenção do histórico e da taxa de mudança do sinal de erro.
-considerando essa situação, avalie as afirmações a seguir.
-i.	 a implementação do componente integral requer a soma de todos os erros acumulados desde o 
+Considerando essa situação, avalie as afirmações a seguir.
+I.	 A implementação do componente Integral requer a soma de todos os erros acumulados desde o 
 início da operação do sistema, o que torna necessário o uso de uma estrutura de dados do tipo fila.
-ii.	 a parte proporcional do controlador pid é implementada ao ajustar, proporcionalmente,  
+II.	 A parte Proporcional do controlador PID é implementada ao ajustar, proporcionalmente,  
 a variável de controle à diferença entre a temperatura desejada e a temperatura atual.
-iii.	 uma pilha é adequada para o componente derivativo, pois a taxa de mudança do erro é 
+III.	 Uma pilha é adequada para o componente Derivativo, pois a taxa de mudança do erro é 
 calculada apenas com a amostra mais recente e a anterior do sinal de erro.
-é correto o que se afirma em
-a	 i, apenas.
-b	 ii, apenas.
-c	 i e iii, apenas.
-d	 ii e iii, apenas.
-e	 i, ii e iii.
-*r08202335*
-validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
-validinep2023validinep2023validin3p2023validinep2023validinep2validinep
+É correto o que se afirma em
+A	 I, apenas.
+B	 II, apenas.
+C	 I e III, apenas.
+D	 II e III, apenas.
+E	 I, II e III.
+*R08202335*
+VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDIN3P2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023
+VALIDINEP2023VALIDINEP2023VALIDIN3P2023VALIDINEP2023VALIDINEP2VALIDINEP
 
 36
-engenharia de computação
+Engenharia de Computação

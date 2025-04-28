@@ -1,73 +1,119 @@
 questão 26
-ɖſɛžƚƌğŝŷăŵğŷƚž͕ƶŵăƌğěğŷğƶƌăůperceptronđžŵϯɛŝŷăŝɛěğğŷƚƌăěăğƶŵŷğƶƌƀŷŝžěğɛăşěăɛğƌąđăɖăǌ
-ěğđůăɛɛŝįđăƌƌƶăƚƌžŝŷěŝǀşěƶžɛ;/1͕/2͕/ϯ͕/4ϳğŵěƶăɛđůăɛɛğɛ͕đžŷĩžƌŵğžƌƶăěƌžăɛğőƶŝƌ͘
-wƌžĩğɛɛžƌ
-ğŷɵɛƚă
-/1
-y
-/2
-y
-/ϯ
-y
-/4
-y
-kɖƌŝŵğŝƌžɖăɛɛžġđžěŝįđăƌăɛŝŷĩžƌŵăĕɓğɛğŵďăɛğďŝŷąƌŝă͘kɛɛŝŷăŝɛěğǀğŵɛğƌƌğɖƌğɛğŷƚăěžɛěăɛğőƶŝŷƚğĩžƌŵă͗
-entrada:
-/1 = 00
-/2 = 01
-/ϯ = 10
-/4 = 11
-saída:
-wƌžĩğɛɛžƌсϭ
-ğŷɵɛƚăсϭ
-žŷɛŝěğƌăŷěžăɖƌğŷěŝǌăěžɛƶɖğƌǀŝɛŝžŷăěž;đžŵƶɛžěžăůőžƌŝƚŵžěğđžƌƌğĕćžěğğƌƌžɛϳ͕ǀğƌŝįƌƶğɛğđăěă
-ŝŷěŝǀşěƶžġɖƌžĩğɛɛžƌ;ϭϳžƶěğŷɵɛƚă;ϭϳ͘žŷɛŝěğƌğƶŵăƚăǆăěğăɖƌğŷěŝǌăőğŵŝőƶăůăϭ͕ɖğɛžɛŝŷŝđŝăŝɛŝőƶăŝɛ
-ăǌğƌžɖăƌăđăěăğŷƚƌăěăğăɛğőƶŝŷƚğĩƶŷĕćžěğăɵǀăĕćž͗^ğǆхϭ͕ğŷƚćžĩ;ǆϳсϭ͕đăɛžđžŷƚƌąƌŝžĩ;ǆϳсϭ͘
-kƌƶăěƌžăɛğőƶŝƌăɖƌğɛğŷƚăăğŷƚƌăěăěžɛěăěžɛ͕ăɛăşěăđăůđƶůăěăɖğůăzeğăɛăşěăğɛɖğƌăěă͘
-/ŷěŝǀşěƶž
-entrada
-saída calculada pela rna
-saída esperada
-w (peso)
-΀ϭ͕ϭ΁
-/5
-11
-ϭ͖ĩ;ϭϳсϭ
-1
-͍
-/6
-01
-ϭ͖ĩ;ϭϳсϭ
-0
-͍
-/7
-10
-ϭ͖ĩ;ϭϳсϭ
-1
-͍
-/θ
-00
-ϭ͖ĩ;ϭϳсϭ
-0
-͍
-/5
-11
-ϭ͖ĩ;ϭϳсϭ
-1
-͍
-/6
-01
-ϭ͖ĩ;ϭϳсϭ
-0
-͍
-žŵďăɛğŷăɛŝŷĩžƌŵăĕɓğɛăɖƌğɛğŷƚăěăɛ͕đžŷđůƶŝͳɛğƌƶğăăƚƶăůŝǌăĕćžěžɛɖğɛžɛăđăěăŷžǀăğŷƚƌăěă͕ŷž
-ƚƌğŝŷăŵğŷƚžěğɛɛăƌğěğŷğƶƌăů͕ġŝőƶăůă
-a ΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͘
-b ΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͘
-c ΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͘
-d ΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͘
-e ΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͕΀ϭ͕ϭ΁͘
-*r14201423*
+após o treinamento, uma rede neural perceptron com 2 sinais de entrada e um neurônio de saída será capaz
+de classificar quatro indivíduos (1, | |,) em duas classes, conforme o quadro a seguir.
 
-24
-e'e,z/kdwhdk
+ 
+
+2” ly,
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+professor dentista
+l x
+l, x
+l, x
+, x
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+o primeiro passo é codificar as informações em base binária. os sinais devem ser representados da seguinte forma:
+
+ 
+
+ 
+
+ 
+
+entrada: saída:
+1, =00 professor = o
+l=01 dentista = 1
+1,=10
+1,=11
+
+ 
+
+ 
+
+ 
+
+considerando aprendizado supervisionado (com uso do algoritmo de correção de erros), verifique se cada
+indivíduo é professor (0) ou dentista (1). considere uma taxa de aprendizagem igual a 1, pesos iniciais iguais
+a zero para cada entrada e a seguinte função de ativação: se x > 0, então f(x) = 1, caso contrário f(x) = o.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+o quadro a seguir apresenta a entrada dos dados, a saída calculada pela rna e a saída esperada.
+indivíduo | entrada | saída calculada pela rna | saída esperada | w (peso)
+[0,0]
+i, 11 0:f(0)=0 1 ?
+i 01 1: f(1)=1 0 ?
+l, 10 1:f(1)=1 1 ?
+, 00 0:f(0)=0 0 ?
+i, 11 1:f(1)=1 1 ?
+i 01 0:f(0)=0 0 ?
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+com base nas informações apresentadas, conclui-se que a atualização dos pesos a cada nova entrada, no
+treinamento dessa rede neural, é igual a
+
+o [2,1], [1,0], [1,0], [1,0], [1,0], [1,0].
+
+o [7,1], [1,0], [0,0], [0,0], [1,0], [1,0].
+
+o [7,0], [1,1], [1,1], [1,1], [0,0], [1,0].
+
+o [7,1], [1,0], [2,0], [0,0], [0,0], [1,0].
+
+o [7,1], [1,0], [2,0], [0,0], [0,0], [0,0].
+
+23
+engenharia de computação am
+
+enade 2014
+
+exame nacional de desempenho dos estudantes

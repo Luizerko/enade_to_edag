@@ -1,17 +1,17 @@
 questão 13
-considere a modelagem matemática de um processo e a resposta à excitação do tipo degrau unitário 
+Considere a modelagem matemática de um processo e a resposta à excitação do tipo degrau unitário 
 apresentados a seguir.
-nesse processo, o tempo de estabilização é de 1 segundo para o critério de 4 constantes de tempo,  a função 
-de transferência de malha fechada é t s
-y s
-r s
+Nesse processo, o tempo de estabilização é de 1 segundo para o critério de 4 constantes de tempo,  a função 
+de transferência de malha fechada é T s
+Y s
+R s
 ( )
 ( )
 ( )
 =
- e a função de transferência no ramo direto é g(s).
-com base nas informações apresentadas, avalie as asserções a seguir e a relação proposta entre elas.
-i.	 a função de transferência do ramo direto é g s
+ e a função de transferência no ramo direto é G(s).
+Com base nas informações apresentadas, avalie as asserções a seguir e a relação proposta entre elas.
+I.	 A função de transferência do ramo direto é G s
 s
 ( )
 ,
@@ -21,8 +21,8 @@ s
 3 2
 0 8
 .
-porque
-ii.	 a função de transferência de malha fechada é t s
+PORQUE
+II.	 A função de transferência de malha fechada é T s
 s
 ( )
 ,
@@ -31,19 +31,19 @@ s
 3 2
 4
 .
-a respeito dessas asserções, assinale a opção correta.
-a	 as asserções i e ii são proposições verdadeiras, e a ii é uma justificativa da i.
-b	 as asserções i e ii são proposições verdadeiras, mas a ii não é uma justificativa da i.
-c	 a asserção i é uma proposição verdadeira, mas a ii é uma proposição falsa.
-d	 a asserção i é uma proposição falsa, mas a ii é uma proposição verdadeira.
-e	 as asserções i e ii são proposições falsas.
-r(s)
-y(s)
-g(s)
+A respeito dessas asserções, assinale a opção correta.
+A	 As asserções I e II são proposições verdadeiras, e a II é uma justificativa da I.
+B	 As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa da I.
+C	 A asserção I é uma proposição verdadeira, mas a II é uma proposição falsa.
+D	 A asserção I é uma proposição falsa, mas a II é uma proposição verdadeira.
+E	 As asserções I e II são proposições falsas.
+R(s)
+Y(s)
+G(s)
 +
 −
-resposta ao degrau
-tempo (segundos)
+Resposta ao degrau
+Tempo (segundos)
 1
 0,1
 00
@@ -59,8 +59,8 @@ tempo (segundos)
 0,4
 0,3
 0,2
-y(t)
-*r09201919*
+Y(t)
+*R09201919*
 
-engenharia de computação
+ENGENHARIA DE COMPUTAÇÃO
 20

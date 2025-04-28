@@ -1,49 +1,49 @@
 questão 20
-rigidez é a tendência de um software ser difícil de modificar. cada mudança causa uma cascata de 
-mudanças subsequentes em módulos dependentes. o trecho de código a seguir faz parte de um sistema 
+Rigidez é a tendência de um software ser difícil de modificar. Cada mudança causa uma cascata de 
+mudanças subsequentes em módulos dependentes. O trecho de código a seguir faz parte de um sistema 
 com suporte à comunicação entre diferentes dispositivos de comunicação via rádio (modems):
-1 struct modem { enum type {hayes, courrier, ernie) type; }; 
-2 struct hayes { 
-3     modem::type type; 
-4     // detalhes do modem tipo hayes 
+1 struct Modem { enum Type {hayes, courrier, ernie) type; }; 
+2 struct Hayes { 
+3     Modem::Type type; 
+4     // Detalhes do modem tipo Hayes 
 5 }; 
-6 struct courrier { 
-7     modem::type type; 
-8     // detalhes do modem tipo courrier 
+6 struct Courrier { 
+7     Modem::Type type; 
+8     // Detalhes do modem tipo Courrier 
 9 }; 
-10 struct ernie { 
-11     modem::type type; 
-12     // detalhes do modem tipo ernie 
+10 struct Ernie { 
+11     Modem::Type type; 
+12     // Detalhes do modem tipo Ernie 
 13 }; 
-14 void logon(modem& m, string& frq, string& user, string& pw) { 
-15     if (m.type == modem::hayes) 
-16         openhayeschannel((hayes&)m, frq); 
-17     else opencourrierchannel((courrier&)m, frq); 
+14 void LogOn(Modem& m, string& frq, string& user, string& pw) { 
+15     if (m.type == Modem::hayes) 
+16         OpenHayesChannel((Hayes&)m, frq); 
+17     else OpenCourrierChannel((Courrier&)m, frq); 
 18     // depois de conectado, enviar user, pw, etc. 
 19     // (continua)
-disponível em: <http://www.staff.cs.utu.fi/staff/jouni.smed/doos_06/material/designprinciplesandpatterns.pdf>.  
-acesso em: 15 jun. 2019 (adaptado).
-nesse trecho, cada tipo de modem tem suas particularidades e foram criadas estruturas específicas 
-para cada tipo (linhas 2 a 13). um "enumeration" (linha 1) é utilizado para identificar o tipo de modem.  
-o procedimento logon (linhas 14 a 19) é responsável por realizar a conexão a um modem. dados o tipo 
+Disponível em: <http://www.staff.cs.utu.fi/staff/jouni.smed/doos_06/material/DesignPrinciplesAndPatterns.pdf>.  
+Acesso em: 15 jun. 2019 (adaptado).
+Nesse trecho, cada tipo de modem tem suas particularidades e foram criadas estruturas específicas 
+para cada tipo (linhas 2 a 13). Um "enumeration" (linha 1) é utilizado para identificar o tipo de modem.  
+O procedimento LogOn (linhas 14 a 19) é responsável por realizar a conexão a um modem. Dados o tipo 
 do modem (m), a frequência (frq), o nome de usuário (user) e a senha (pw), inicialmente, é feita a 
 abertura do canal de comunicação, que corresponde a uma chamada específica para cada tipo de modem 
-(linhas 15 a 17). como os modems do tipo courrier e ernie são similares em termos de abertura de 
-canal, o programador decidiu otimizar o código, utilizando a função do modem courrier para ambos 
-(opencourrierchannel - linha 17). uma vez conectado, o código continua o processo de logon na 
+(linhas 15 a 17). Como os modems do tipo Courrier e Ernie são similares em termos de abertura de 
+canal, o programador decidiu otimizar o código, utilizando a função do modem Courrier para ambos 
+(OpenCourrierChannel - linha 17). Uma vez conectado, o código continua o processo de LogOn na 
 linha 18 em diante.
-nesse projeto do código um sintoma de rigidez é que
-a	 se o suporte ao modem do tipo ernie for removido do sistema, será necessário remover a estrutura 
-ernie do código.
-b	 se um novo tipo de modem for adicionado, será necessário alterar o número de parâmetros definidos 
-no procedimento logon.
-c	 se um novo tipo de modem for adicionado, é necessário copiar e colar todo o código de uma das 
+Nesse projeto do código um sintoma de rigidez é que
+A	 se o suporte ao modem do tipo Ernie for removido do sistema, será necessário remover a estrutura 
+Ernie do código.
+B	 se um novo tipo de modem for adicionado, será necessário alterar o número de parâmetros definidos 
+no procedimento LogOn.
+C	 se um novo tipo de modem for adicionado, é necessário copiar e colar todo o código de uma das 
 outras estruturas de modems para incluir novos detalhes.
-d	 se a política de comunicação do modem do tipo hayes sofrer alteração, pode ser necessário alterar 
-o procedimento openhayeschannel e a estrutura hayes.
-e	 se a política de comunicação do modem do tipo courrier sofrer alteração, pode ser necessário 
-alterar opencourrierchannel e logon e criar um novo procedimento openerniechannel.
-*r09201925*
+D	 se a política de comunicação do modem do tipo Hayes sofrer alteração, pode ser necessário alterar 
+o procedimento OpenHayesChannel e a estrutura Hayes.
+E	 se a política de comunicação do modem do tipo Courrier sofrer alteração, pode ser necessário 
+alterar OpenCourrierChannel e LogOn e criar um novo procedimento OpenErnieChannel.
+*R09201925*
 
-engenharia de computação
+ENGENHARIA DE COMPUTAÇÃO
 26

@@ -1,32 +1,32 @@
 questão 28
-alguns sistemas com memória virtual utilizam uma técnica chamada de paginação. nesses sistemas, 
+Alguns sistemas com memória virtual utilizam uma técnica chamada de paginação. Nesses sistemas, 
 existe um conjunto de endereços de memória, denominados endereços virtuais, que são gerados durante 
 a execução dos programas, com o uso de indexação, de registradores-base, de registradores-segmento 
-ou de outras técnicas. um endereço virtual é dividido em número de página virtual e deslocamento. 
-o número de página virtual é usado como índice dentro da tabela de páginas para encontrar o  
-quadro correspondente. o endereço físico de memória é a concatenação entre o endereço do quadro 
+ou de outras técnicas. Um endereço virtual é dividido em número de página virtual e deslocamento. 
+O número de página virtual é usado como índice dentro da tabela de páginas para encontrar o  
+quadro correspondente. O endereço físico de memória é a concatenação entre o endereço do quadro 
 com o deslocamento do endereço virtual.
-um mecanismo denominado tlb (do inglês, translation lookaside buffer), tipicamente implementado 
+Um mecanismo denominado TLB (do inglês, translation lookaside buffer), tipicamente implementado 
 em hardware, fornece auxílio durante a atividade de mapeamento de endereços virtuais para 
-endereços físicos sem passar pela tabela de página. a função do tlb é agilizar o processo de tradução 
+endereços físicos sem passar pela tabela de página. A função do TLB é agilizar o processo de tradução 
 de endereços lógicos para físicos.
-tanenbaum, a. s. sistemas operacionais modernos. 3. ed. são paulo: pearson prentice hall, 2009 (adaptado).
-com relação à memória paginada, avalie as asserções a seguir e a relação proposta entre elas.
-i.	 quando um processo é escalonado para execução, tanto a mmu (memory management unit) 
-quanto o tlb são reconfigurados para o novo processo.
-porque
-ii.	 para livrar-se de resíduos do processo executado anteriormente, a tabela de páginas do novo 
+TANENBAUM, A. S. Sistemas Operacionais Modernos. 3. ed. São Paulo: Pearson Prentice Hall, 2009 (adaptado).
+Com relação à memória paginada, avalie as asserções a seguir e a relação proposta entre elas.
+I.	 Quando um processo é escalonado para execução, tanto a MMU (Memory Management Unit) 
+quanto o TLB são reconfigurados para o novo processo.
+PORQUE
+II.	 Para livrar-se de resíduos do processo executado anteriormente, a tabela de páginas do novo 
 processo deve tornar-se a tabela atual, o que, em geral, é feito por meio da cópia da tabela ou de 
 um ponteiro para ela em registradores em hardware.
-a respeito dessas asserções, assinale a opção correta.
-a	 as asserções i e ii são proposições verdadeiras, e a ii é uma justificativa correta da i.
-b	 as asserções i e ii são proposições verdadeiras, mas a ii não é uma justificativa correta da i.
-c	 a asserção i é uma proposição verdadeira, e a ii é uma proposição falsa.
-d	 a asserção i é uma proposição falsa, e a ii é uma proposição verdadeira.
-e	 as asserções i e ii são proposições falsas.
-*r08202331*
-validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
-validinep2023validinep2023validin3p2023validinep2023validinep2validinep
+A respeito dessas asserções, assinale a opção correta.
+A	 As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.
+B	 As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.
+C	 A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.
+D	 A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.
+E	 As asserções I e II são proposições falsas.
+*R08202331*
+VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDIN3P2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023
+VALIDINEP2023VALIDINEP2023VALIDIN3P2023VALIDINEP2023VALIDINEP2VALIDINEP
 
 32
-engenharia de computação
+Engenharia de Computação

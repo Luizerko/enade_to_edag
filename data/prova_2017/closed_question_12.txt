@@ -1,109 +1,22 @@
 questão 12
-ğăđžƌěžđžŵă>ğŝěğzğɛĩƌŝăŵğŷƚžěğžƌɖžɛ͕ă
-ƚăǆăěğǀăƌŝăĕćžěăƚğŵɖğƌăƚƶƌăěğƶŵđžƌɖžğŵ
-ƌğůăĕćžăžƚğŵɖžġɖƌžɖžƌđŝžŷăůăěŝĩğƌğŷĕăğŷƚƌğ
-ăƚğŵɖğƌăƚƶƌăěžđžƌɖžğăƚğŵɖğƌăƚƶƌăăŵďŝğŷƚğ͘
-žŷɛŝěğƌğƌƶğt(t)ġăƚğŵɖğƌăƚƶƌăěžđžƌɖžğŵ
-ĩƶŷĕćžěžƚğŵɖž͕aġăƚğŵɖğƌăƚƶƌăěžăŵďŝğŷƚğ͕
-tġžƚğŵɖžğkġăđžŷɛƚăŷƚğěğɖƌžɖžƌđŝžŷăůŝěăěğ͘
-eğɛɛğ
-đžŷƚğǆƚž͕
-ž
-ŵžěğůž
-ŵăƚğŵąƚŝđž
-đžƌƌğɛɖžŷěğŷƚğă>ğŝěğzğɛĩƌŝăŵğŷƚžěğžƌɖžɛ
-ğăĩƶŷĕćžƌğɛƶůƚăŷƚğěğɛƶăƌğɛžůƶĕćžɛćžěăěžɛ͕
-ƌğɛɖğđɵǀăŵğŷƚğ͕ɖžƌ
-a
-dt
-dt
-k t
-a
-t t
-t
-a e
-a
-kt
-= −
-−
-=
-−
-+
-−
-(
-);
-( )
-( ( )
-)
-0
-b
-dt
-dt
-k t
-a
-t t
-t
-a e
-a
-kt
-=
-−
-=
-−
-+
-(
-);
-( )
-( ( )
-)
-0
-c
-dt
-dt
-k t
-a
-t t
-e
-a
-kt
-= −
-−
-=
-+
-−
-(
-);
-( )
-d
-dt
-dt
-k t
-a
-t t
-e
-a
-kt
-=
-−
-=
-+
-−
-(
-);
-( )
-e
-dt
-dt
-k t
-a
-t t
-e
-a
-kt
-=
-−
-=
-+
-(
-);
-( )
+de acordo com a lei de resfriamento de corpos, a
+taxa de variação da temperatura de um corpo em
+relação ao tempo é proporcional à diferença entre
+a temperatura do corpo e a temperatura ambiente.
+
+considere que t(t) é a temperatura do corpo em
+função do tempo, 4 é a temperatura do ambiente,
+té o tempo e ké a constante de proporcionalidade.
+
+nesse contexto, o modelo matemático
+correspondente à lei de resfriamento de corpos
+e à função resultante de sua resolução são dados,
+respectivamente, por
+
+q e ="w(t=a); t(t) =(t(0) - aje!! + a
+o - =wt=a); t(t) =(t(0) - aje”' + a
+o e ="kt-a); t()=e!+a
+
+o curas t0-e“+4
+
+e = =kt-a); t()=e"+a

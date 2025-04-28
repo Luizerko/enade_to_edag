@@ -1,23 +1,29 @@
 questão 20
-hŵ đžŵɖŝůăěžƌ ƚƌăŷɛĩžƌŵă ƶŵă ůŝŷőƶăőğŵ͕
-ğŵ őğƌăů ƚğǆƚƶăů͕ ğŵ žƶƚƌă ůŝŷőƶăőğŵ͘ hŵ ěžɛ
-ɵɖžɛ ěğ ůŝŷőƶăőğŷɛ ƌƶğ ƶŵ đžŵɖŝůăěžƌ ɖžěğ
-ƚƌăŷɛĩžƌŵăƌ ɛćž ăɛ ůŝŷőƶăőğŷɛ ƌğőƶůăƌğɛ͕ ƌƶğ
-ɖžěğŵ ɛğƌ ěğɛđƌŝƚăɛ ƶɵůŝǌăŷěžͳɛğ ğǆɖƌğɛɛɓğɛ
-ƌğőƶůăƌğɛ đžŵɖžɛƚăɛ ɖžƌ ɛşŵďžůžɛ ŝɛžůăěžɛ
-ăőƌƶɖăěžɛđžŵžɖğƌăěžƌğɛύğhğžƌőăŷŝǌăěăɛ
-đžŵăƶǆşůŝžěğɖăƌġŷƚğɛğɛ͘
-eğɛɛğđžŷƚğǆƚž͕ăǀăůŝğăɛăįƌŵăĕɓğɛăɛğőƶŝƌ͘
-/͘  ɖăůăǀƌă ϭϭϭϭϭϭϭϭ ɖğƌƚğŷđğ ă ůŝŷőƶăőğŵ
-ƌğɖƌğɛğŷƚăěăɖžƌ;ϭϭϭύϳύ͘
-//͘  ɖăůăǀƌă ϭϭϭϭϭ ɖğƌƚğŷđğ ă ůŝŷőƶăőğŵ
-ƌğɖƌğɛğŷƚăěăɖžƌ;ϭ;ϭϭϳύϭϳύ͘
-///͘ ǆŝɛƚğɛžŵğŷƚğƶŵăğǆɖƌğɛɛćžƌğőƶůăƌɖăƌă
-ƌğɖƌğɛğŷƚăƌƶŵăůŝŷőƶăőğŵƌğőƶůăƌ͘
-đžƌƌğƚžžƌƶğɛğăįƌŵăğŵ
-a /͕ăɖğŷăɛ͘
-b //͕ăɖğŷăɛ͘
-c /ğ///͕ăɖğŷăɛ͘
-d //ğ///͕ăɖğŷăɛ͘
-e /͕//ğ///͘
-ƌğăůŝǀƌğ
+um compilador transforma uma linguagem,
+em geral textual, em outra linguagem. um dos
+tipos de linguagens que um compilador pode
+transformar são as linguagens regulares, que
+podem ser descritas utilizando-se expressões
+regulares compostas por símbolos isolados
+agrupados com operadores * e u e organizadas
+com auxílio de parênteses.
+
+nesse contexto, avalie as afirmações a seguir.
+il. a palavra 10010100 pertence à linguagem
+representada por (100*)*.
+ih. a palavra 10010 pertence à linguagem
+representada por (1(10)*0)*.
+hi. existe somente uma expressão regular para
+representar uma linguagem regular.
+
+é correto o que se afirma em
+
+o | apenas.
+
+o il, apenas.
+
+o lelll, apenas.
+o lei, apenas.
+o llell.
+
+área livre

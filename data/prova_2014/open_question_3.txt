@@ -1,35 +1,63 @@
 questão discursiva 3
-hŵőƌăĩžžƌŝğŷƚăěžđžŵnǀġƌɵđğɛɖžěğɛğƌăƌŵăǌğŷăěžŷăɛğőƶŝŷƚğŵăƚƌŝǌěğăěũăđġŷđŝă͗ɖăƌăđăěăi, j͕đžŵ
-i, jn͕d΀i΁΀j΁сϭ͕ɛğăăƌğɛƚăžƌŝğŷƚăěă;i͕jϳɖğƌƚğŷđğăžđžŷũƶŷƚžěğăƌğɛƚăɛěžőƌăĩž͖đăɛžđžŷƚƌąƌŝž͕
-d΀i΁΀j] = 0.
-žŵďăɛğŷğɛɛăɛŝŷĩžƌŵăĕɓğɛ͕ĩăĕăžƌƶğɛğɖğěğŷžɛŝƚğŷɛăɛğőƶŝƌ͘
-ăϳ ɛđƌğǀăƶŵăůőžƌŝƚŵžƌƶğƌğđğďăđžŵžğŷƚƌăěăƶŵăŵăƚƌŝǌěğăěũăđġŷđŝăěğƶŵőƌăĩžžƌŝğŷƚăěžğɖƌžěƶǌă
-ăŵăƚƌŝǌěğăěũăđġŷđŝăěžőƌăĩžđžŵăɛăƌğɛƚăɛƌğǀğƌɛăɛ͘kőƌăĩžƌğɖƌğɛğŷƚăěžɖğůăŵăƚƌŝǌƌğɛƶůƚăŷƚğ
-ěğǀğƌąđžŷƚğƌăăƌğɛƚă;i͕ jϳɛğ͕ğɛžŵğŷƚğɛğ͕ăăƌğɛƚă;j͕ iϳɖğƌƚğŷđğăžőƌăĩžƌğɖƌğɛğŷƚăěžɖğůăŵăƚƌŝǌěğ
-ğŷƚƌăěă͘;ǀăůžƌ͗ϱ͕ϭɖžŷƚžɛϳ
-ďϳ ɛđƌğǀă ƶŵ ăůőžƌŝƚŵž ƌƶğ ƌğđğďăđžŵž ğŷƚƌăěă ƶŵă ŵăƚƌŝǌěğăěũăđġŷđŝă ěğƶŵ őƌăĩž žƌŝğŷƚăěžğ
-ŝŵɖƌŝŵăƚžěžɛžɛđŝđůžɛžƌŝğŷƚăěžɛěğƚăŵăŷśžϯěğɛɛğőƌăĩž͘wăƌăŝɛɛž͕đžŷɛŝěğƌğƌƶğžđŝđůžžƌŝğŷƚăěž
-;ϭ͕ϯ͕ϯϳġžŵğɛŵžƌƶğ;ϯ͕ϯ͕ϭϳ͕ɖžƌġŵžđŝđůžžƌŝğŷƚăěž;ϭ͕ϯ͕ϯϳġěŝĩğƌğŷƚğěžđŝđůžžƌŝğŷƚăěž;ϯ͕ϯ͕ϭϳ͕ěğ
-ĩžƌŵăƌƶğăŵďžɛěğǀğŵɛğƌŝŵɖƌğɛɛžɛ͕đăɛžɖğƌƚğŷĕăŵăžőƌăĩž͘;ǀăůžƌ͗ϱ͕ϭɖžŷƚžɛϳ
-kďɛğƌǀăĕćž͗yƶăůƌƶğƌŷžƚăĕćžğŵɖžƌƚƶőƶġɛğɛƚƌƶƚƶƌăěž͕ěğĩžƌŵăŝŵɖğƌăɵǀăžƶžƌŝğŷƚăěăăžďũğƚžɛ
-ɖžěğɛğƌƶɵůŝǌăěă͕ăɛɛŝŵđžŵžğŵƶŵăůŝŷőƶăőğŵěğăůƚžŷşǀğů͕đžŵžwăɛđăů͕žƶ:ăǀă͘
+um grafo orientado com n vértices pode ser armazenado na seguinte matriz de adjacência: para cada i, j, com
+1 <ijs on, m[ill]=1,sea aresta orientada (i, j) pertence ao conjunto de arestas do grafo; caso contrário,
+mi] = 0.
+
+com base nessas informações, faça o que se pede nos itens a seguir.
+
+a) escreva um algoritmo que receba como entrada uma matriz de adjacência de um grafo orientado e produza
+a matriz de adjacência do grafo com as arestas reversas. o grafo representado pela matriz resultante
+deverá conter a aresta (i, j) se, e somente se, a aresta (j, i) pertence ao grafo representado pela matriz de
+entrada. (valor: 5,0 pontos)
+
+b) escreva um algoritmo que receba como entrada uma matriz de adjacência de um grafo orientado e
+imprima todos os ciclos orientados de tamanho 3 desse grafo. para isso, considere que o ciclo orientado
+(1,2,3) é o mesmo que (2,3,1), porém o ciclo orientado (1,2,3) é diferente do ciclo orientado (3,2,1), de
+forma que ambos devem ser impressos, caso pertençam ao grafo. (valor: 5,0 pontos)
+
+observação: qualquer notação em português estruturado, de forma imperativa ou orientada a objetos
+pode ser utilizada, assim como em uma linguagem de alto nível, como pascal, c ou java.
+
 rascunho
 1
 2
-ϯ
-4
-5
-6
-7
-θ
-9
-10
-11
-12
-ϭϯ
-14
-15
-*r1420149*
+3
+
+ 
+
+ 
 
 10
-e'e,z/kdwhdk
+
+11
+
+12
+
+13
+
+ 
+
+14
+
+ 
+
+ 
+
+15
+
+ 
+
+ 
+
+9
+engenharia de computação uu
+
+ 
+
+0149 *
+
+“2
+
+enade 2014
+
+exame nacional de desempenho dos estudantes

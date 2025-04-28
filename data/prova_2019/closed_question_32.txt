@@ -1,59 +1,59 @@
 questão 32
-uma estação de monitoramento de temperatura utiliza um termógrafo para registrar continuamente 
-em um gráfico os valores detectados por seus sensores. um determinado ambiente foi monitorado ao 
-longo de três períodos distintos de um dia. o ambiente é considerado apropriado para um experimento 
-científico se, para qualquer período pi de monitoramento σ(pi) ≤ 2, em que σ(pi) denota o desvio 
-padrão populacional do período pi em que o ambiente foi monitorado.
-as medidas de temperatura em °c, obtidas após um processo de quantização do sinal, são apresentadas 
+Uma estação de monitoramento de temperatura utiliza um termógrafo para registrar continuamente 
+em um gráfico os valores detectados por seus sensores. Um determinado ambiente foi monitorado ao 
+longo de três períodos distintos de um dia. O ambiente é considerado apropriado para um experimento 
+científico se, para qualquer período Pi de monitoramento σ(Pi) ≤ 2, em que σ(Pi) denota o desvio 
+padrão populacional do período Pi em que o ambiente foi monitorado.
+As medidas de temperatura em °C, obtidas após um processo de quantização do sinal, são apresentadas 
 na tabela a seguir.
-período (pi)
-medida 1
-medida 2
-medida 3
-medida 4
-p1
+Período (Pi)
+Medida 1
+Medida 2
+Medida 3
+Medida 4
+P1
 33,5
 33,5
 33,0
 33,5
-p2
+P2
 27,5
 27
 27,5
 27,5
-p3
+P3
 2,0
 2,5
 2,0
 2,0
-a fim de automatizar o processamento dos sinais, o algoritmo a seguir foi desenvolvido, tendo como 
+A fim de automatizar o processamento dos sinais, o algoritmo a seguir foi desenvolvido, tendo como 
 entrada um período e como resultado um valor booleano que indica se o período é apropriado ou não.
-algoritmo: viavel(p)
-para p ∈ p faça
+Algoritmo: viavel(P)
+para p ∈ P faça
 retorna  
 fim
-total   total + (p - avg(p)) × (p - avg(p)) // avg denota a média de p
+total   total + (p - AVG(P)) × (p - AVG(P)) // AVG denota a média de P
 total 
 0
-entrada: p: um período
-saída  : um valor booleano que indica se p é apropriado para o experimento
+entrada: P: um período
+saída  : um valor booleano que indica se P é apropriado para o experimento
 2
 total
-p
+P
 ≤
-com base no caso apresentado, avalie as afirmações a seguir.
-i.	 conforme o funcionamento do algoritmo, os períodos p1, p2 e p3 são apropriados.
-ii.	 o algoritmo calcula o desvio padrão amostral e, portanto, não é adequado para o estudo.
-iii.	 caso executado sobre o período p = {p1, p2 e p3}, o algoritmo indica que ele é inapropriado 
+Com base no caso apresentado, avalie as afirmações a seguir.
+I.	 Conforme o funcionamento do algoritmo, os períodos P1, P2 e P3 são apropriados.
+II.	 O algoritmo calcula o desvio padrão amostral e, portanto, não é adequado para o estudo.
+III.	 Caso executado sobre o período P = {P1, P2 e P3}, o algoritmo indica que ele é inapropriado 
 para o experimento.
-é correto apenas o que se afirma em
-a	 i, apenas.
-b	 ii, apenas.
-c	 i e iii, apenas.
-d	 ii e iii, apenas. 
-e	 i, ii e iii. 
-área livre
-*r09201935*
+É correto apenas o que se afirma em
+A	 I, apenas.
+B	 II, apenas.
+C	 I e III, apenas.
+D	 II e III, apenas. 
+E	 I, II e III. 
+Área livre
+*R09201935*
 
-engenharia de computação
+ENGENHARIA DE COMPUTAÇÃO
 36

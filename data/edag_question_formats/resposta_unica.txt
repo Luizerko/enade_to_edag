@@ -1,0 +1,23 @@
+PERGUNTA:
+A questão do tipo RESPOSTA ÚNICA é fechada com 5 alternativas (apenas uma correta) e formulada a partir de uma provocação que constitui o enunciado. Esse tipo de questão também é conhecida como questão de interpretação. Inserir suporte mínimo, conforme o solicitado: Gráfico e/ou Tabela e/ou Texto e/ou Charge e/ou Tirinha e/ou Fluxograma e/ou Figura. O suporte deve auxiliar o estudante/leitor a responder a questão.
+
+formato:
+<texto auxiliar>
+
+<enunciado da questao>
+
+(A) <alternativa>
+(B) <alternativa>
+(C) <alternativa>
+(D) <alternativa>
+(E) <alternativa>
+
+JUSTIFICATIVA:
+Cada alternativa deve ter uma justificativa que indica qual é correta e quais são incorretas, conforme o modelo abaixo.
+
+formato:
+(A) Correta/Incorreta: <explicação>
+(B) Correta/Incorreta: <explicação>
+(C) Correta/Incorreta: <explicação>
+(D) Correta/Incorreta: <explicação>
+(E) Correta/Incorreta: <explicação>

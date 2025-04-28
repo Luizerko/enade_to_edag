@@ -1,49 +1,68 @@
 questão 25
-kůƶőăƌěăɛƌăşǌğɛ͕ƚăŵďġŵđśăŵăěžroot locus͕ġŝŵɖžƌƚăŷƚğɖƌžđğěŝŵğŷƚžɖăƌăăăŷąůŝɛğěğɛŝɛƚğŵăɛěğ
-đžŷƚƌžůğ͕ďğŵđžŵžɖăƌăăɛşŷƚğɛğěğđžŵɖğŷɛăěžƌğɛɖăƌăğɛɛğɛɛŝɛƚğŵăɛ͘wžƌğǆğŵɖůž͕ěğɛğũăͳɛğđžŷƚƌžůăƌ͕
-đžŵƶŵđžŵɖğŷɛăěžƌɛġƌŝğğƌğăůŝŵğŷƚăĕćžŷğőăɵǀăğƶŷŝƚąƌŝă͕ƶŵɛŝɛƚğŵăɛƶũğŝƚžăƶŵăğŷƚƌăěăěğőƌăƶ͕
-đƶũăɖůăŷƚăƚğŵĩƶŷĕćžěğƚƌăŷɛĩğƌġŷđŝă
-g(s) = 
-1
-s ;s нϯϳ
-ğđƶũžůƶőăƌěăɛƌăşǌğɛƚğŵăĩžƌŵăŝůƶɛƚƌăěăŷăįőƶƌăăďăŝǆž͘
+o lugar das raízes, também chamado root locus, é importante procedimento para a análise de sistemas de
+controle, bem como para a síntese de compensadores para esses sistemas. por exemplo, deseja-se controlar,
+com um compensador série e realimentação negativa e unitária, um sistema sujeito a uma entrada degrau,
+cuja planta tem função de transferência
+
+g(g) = s(s+3)
+
+e cujo lugar das raízes tem a forma ilustrada na figura abaixo.
+
 lugar das raízes de g(s)
-30
+304
 25
 20
-15
-10
-5
-0
-5
-10
-15
-20
-25
-3
-2.5
-2
-1.5
-1
-0.5
-0
-eixo real
-x
-x
-eixo imaginário
-ɖăƌɵƌěžɛŝɛƚğŵăăđŝŵă͕ăǀăůŝğăɛăɛɛğƌĕɓğɛăɛğőƶŝƌğăƌğůăĕćžɖƌžɖžɛƚăğŷƚƌğğůăɛ͘
-/͘ hŵđžŵɖğŷɛăěžƌɖƌžɖžƌđŝžŷăůɛğŵɖƌğɖƌžěƶǌƶŵɛŝɛƚğŵăğŵŵăůśăĩğđśăěăđžŷƚğŷěžƚğƌŵžɛěğ
-ƌğɛɖžɛƚăžɛđŝůăƚſƌŝă͘
-porque
-//͘ ɛƌăşǌğɛěžɛŝɛƚğŵăğŵŵăůśăĩğđśăěăɛćžđžŵɖůğǆăɛɖăƌăƶŵđžŵɖğŷɛăěžƌɖƌžɖžƌđŝžŷăůđžŵőăŷśž
-ăđŝŵăěğϯ͕ϯϱ͘
-ƌğɛɖğŝƚžěğɛɛăɛăɛɛğƌĕɓğɛ͕ăɛɛŝŷăůğăžɖĕćžđžƌƌğƚă͘
-a ɛăɛɛğƌĕɓğɛ/ğ//ɛćžɖƌžɖžɛŝĕɓğɛǀğƌěăěğŝƌăɛ͕ğă//ġƶŵăũƶɛɵįđăɵǀăđžƌƌğƚăěă/͘
-b ɛăɛɛğƌĕɓğɛ/ğ//ɛćžɖƌžɖžɛŝĕɓğɛǀğƌěăěğŝƌăɛ͕ŵăɛă//ŷćžġƶŵăũƶɛɵįđăɵǀăđžƌƌğƚăěă/͘
-c ăɛɛğƌĕćž/ġƶŵăɖƌžɖžɛŝĕćžǀğƌěăěğŝƌă͕ğă//ġƶŵăɖƌžɖžɛŝĕćžĩăůɛă͘
-d ăɛɛğƌĕćž/ġƶŵăɖƌžɖžɛŝĕćžĩăůɛă͕ğă//ġƶŵăɖƌžɖžɛŝĕćžǀğƌěăěğŝƌă͘
-e ɛăɛɛğƌĕɓğɛ/ğ//ɛćžɖƌžɖžɛŝĕɓğɛĩăůɛăɛ͘
-*r14201422*
+154
 
-ϯϯ
-e'e,z/kdwhdk
+107
+
+-5d
+
+eixo imaginário
+o
+1
+
+-10a
+
+-15a
+
+-20a
+
+-25a
+
+ 
+
+ 
+
+eixo real
+a partir do sistema acima, avalie as asserções a seguir e a relação proposta entre elas.
+il. um compensador proporcional sempre produz um sistema em malha fechada contendo termos de
+resposta oscilatória.
+
+porque
+il. as raízes do sistema em malha fechada são complexas para um compensador proporcional com ganho
+acima de 2,25.
+
+a respeito dessas asserções, assinale a opção correta.
+
+o as asserções le il são proposições verdadeiras, e a il é uma justificativa correta da |.
+
+o as asserções le il são proposições verdadeiras, mas a il não é uma justificativa correta da |.
+o a asserção | é uma proposição verdadeira, e a il é uma proposição falsa.
+
+o a asserção | é uma proposição falsa, e a il é uma proposição verdadeira.
+
+o as asserções le il são proposições falsas.
+
+ 
+
+22
+engenharia de computação
+
++ ra
+
+ 
+
+enade 2014
+
+exame nacional de desempenho dos estudantes

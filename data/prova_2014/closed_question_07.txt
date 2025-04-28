@@ -1,70 +1,82 @@
 questão 07
-k ƌƶăěƌž ă ɛğőƶŝƌ ăɖƌğɛğŷƚă ă ɖƌžɖžƌĕćž ;йϳ
-ěğ ƚƌăďăůśăěžƌğɛ ɖžƌ ĩăŝǆă ěğ ƚğŵɖž őăɛƚž ŷž
-ěğɛůžđăŵğŷƚž đăɛăͳƚƌăďăůśž͕ ŷž ƌăɛŝů ğ ğŵ ƚƌġɛ
-đŝěăěğɛďƌăɛŝůğŝƌăɛ͘
-tempo de 
-deslocamento
-brasil
-rio de 
-janeiro
-são
-paulo ƶƌŝɵďă
-até cinco minutos
-ϭϯ͕ϳϭ
-ϱ͕θϭ
-ϱ͕ϭϭ
-ϳ͕θϭ
-de seis minutos 
+o quadro a seguir apresenta a proporção (%)
+de trabalhadores por faixa de tempo gasto no
+deslocamento casa-trabalho, no brasil e em três
+cidades brasileiras.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+tempo de brasil rio de são curitiba
+
+deslocamento janeiro | paulo
+até cinco minutos | 12,70 5,80 5,10 7,80
+deseisminutos | 5,20 | 32,10 | 31,60 | 45,80
 até meia hora
-ϱϯ͕ϯϭ
-ϯϯ͕ϭϭ
-ϯϭ͕ϲϭ
-ϰϱ͕θϭ
-mais de meia hora 
+mais de meiahora | »3 60) | 33,50 | 34,60 | 32,40
 até uma hora
-ϯϯ͕ϲϭ
-ϯϯ͕ϱϭ
-ϯϰ͕ϲϭ
-ϯϯ͕ϰϭ
-mais de uma hora 
+mais de umahora | q 9) | 23,20 | 2330 | 12,90
 até duas horas
-ϵ͕θϭ
-ϯϯ͕ϯϭ
-ϯϯ͕ϯϭ
-ϭϯ͕ϵϭ
-mais de duas 
+mais de duas 180 | 5,50 | 530 | 1,20
 horas
-ϭ͕θϭ
-ϱ͕ϱϭ
-ϱ͕ϯϭ
-ϭ͕ϯϭ
-e^kϯϭϭϭͬ/';ăěăɖƚăěžϳ͘
-žŵďăɛğŷžɛ ěăěžɛăɖƌğɛğŷƚăěžɛğđžŷɛŝěğƌăŷěžă
-ěŝɛƚƌŝďƶŝĕćžěăɖžɖƶůăĕćžƚƌăďăůśăěžƌăŷăɛđŝěăěğɛğ
-ăɛɖžůşɵđăɛɖʒďůŝđăɛěŝƌğđŝžŷăěăɛăŵžďŝůŝěăěğƶƌďăŷă͕
-ăǀăůŝğăɛăįƌŵăĕɓğɛăɛğőƶŝƌ͘
-/͘ ěŝɛƚƌŝďƶŝĕćžěăɛɖğɛɛžăɛɖžƌĩăŝǆăěğƚğŵɖž
-ěğ ěğɛůžđăŵğŷƚž đăɛăͳƚƌăďăůśž ŷă ƌğőŝćž
-ŵğƚƌžɖžůŝƚăŷăěžzŝžěğ:ăŷğŝƌžġɖƌſǆŝŵăăƌƶğ
-ɛğǀğƌŝįđăğŵ^ćžwăƶůž͕ŵăɛŷćžğŵƶƌŝɵďăğ
-ŷăŵġěŝăďƌăɛŝůğŝƌă͘
-//͘ eăɛŵğƚƌſɖžůğɛ͕ğŵőğƌăů͕ăŵăŝžƌŝăěžɛɖžɛƚžɛ
-ěğ ƚƌăďăůśž ğɛƚą ůžđăůŝǌăěă ŷăɛ ąƌğăɛ ƶƌďăŷăɛ
-đğŷƚƌăŝɛ͕ğăɛƌğɛŝěġŷđŝăɛěăɖžɖƶůăĕćžěğďăŝǆă
-ƌğŷěăğɛƚćžđžŷđğŷƚƌăěăɛğŵąƌğăɛŝƌƌğőƶůăƌğɛ
-žƶŷăɖğƌŝĩğƌŝă͕žƌƶğăƶŵğŷƚăžƚğŵɖžőăɛƚžɖžƌ
-ğɛƚăɖžɖƶůăĕćžŷžěğɛůžđăŵğŷƚžđăɛăͳƚƌăďăůśžğ
-žđƶɛƚžěžƚƌăŷɛɖžƌƚğ͘
-///͘ ɛ ɖžůşɵđăɛ ɖʒďůŝđăɛ ƌğĩğƌğŷƚğɛ ă ƚƌăŷɛɖžƌƚğɛ
-ƶƌďăŷžɛ͕ đžŵž͕ ɖžƌ ğǆğŵɖůž͕ ŝůśğƚğ jŷŝđž
-ğ sğşđƶůž >ğǀğ ɛžďƌğ dƌŝůśžɛ ;s>dϳ͕ ăž ɛğƌğŵ
-ŝŵɖůğŵğŷƚăěăɛ͕ đžŷƚƌŝďƶğŵ ɖăƌă ƌğěƶĕćž ěž
-ƚğŵɖžőăɛƚžŷžěğɛůžđăŵğŷƚžđăɛăͳƚƌăďăůśžğ
-ěžđƶɛƚžěžƚƌăŷɛɖžƌƚğ͘
-đžƌƌğƚžžƌƶğɛğăįƌŵăğŵ
-a /͕ăɖğŷăɛ͘
-b ///͕ăɖğŷăɛ͘
-c /ğ//͕ăɖğŷăɛ͘
-d //ğ///͕ăɖğŷăɛ͘
-e /͕//ğ///͘
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+censo 2010/ibge (adaptado).
+
+com base nos dados apresentados e considerando a
+distribuição da população trabalhadora nas cidades e
+as políticas públicas direcionadas à mobilidade urbana,
+avalie as afirmações a seguir.
+
+1. a distribuição das pessoas por faixa de tempo
+de deslocamento casa-trabalho na região
+metropolitana do rio de janeiro é próxima à que
+se verifica em são paulo, mas não em curitiba e
+na média brasileira.
+
+il. nas metrópoles, em geral, a maioria dos postos
+de trabalho está localizada nas áreas urbanas
+centrais, e as residências da população de baixa
+renda estão concentradas em áreas irregulares
+ou na periferia, o que aumenta o tempo gasto por
+esta população no deslocamento casa-trabalho e
+o custo do transporte.
+
+as políticas públicas referentes a transportes
+urbanos, como, por exemplo, bilhete único
+e veículo leve sobre trilhos (vlt), ao serem
+implementadas, contribuem para redução do
+tempo gasto no deslocamento casa-trabalho e
+do custo do transporte.
+
+é correto o que se afirma em
+
+o | apenas.
+
+oq ill, apenas.
+
+o lei, apenas.
+o lle ll, apenas.
+o llell.

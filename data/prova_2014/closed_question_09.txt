@@ -1,30 +1,40 @@
 questão 09
-^ƶɖžŷśăƌƶğăěŝɛƚąŷđŝăɖğƌđžƌƌŝěăɖžƌƶŵđŝđůŝɛƚă
-ƌƶğ ɖğěăůă ƌğőƶůăƌŵğŷƚğ ɖžěğ ɛğƌ ŝŷĩğƌŝěă ɖğůă
-ǀăƌŝąǀğůăůğăƚſƌŝăx͕đžŵěğŷɛŝěăěğěğɖƌžďăďŝůŝěăěğ
-ŷžƌŵăů͕
-f(x; μ, σ2) =
+suponha que a distância percorrida por um ciclista
+que pedala regularmente pode ser inferida pela
+variável aleatória x, com densidade de probabilidade
+normal,
+
+o (e=n)2
+20
+
 1
-√
-2πσ2e−(x−μ)2
-2σ2
-đžŵ μ = 25km e σ2 = 25km2͘  ěƶƌăĕćž ŵġěŝă ěž
-ɛğƶƚƌğŝŷžġěğϭśϭϱŵŝŷ͘
-žŵďăɛğŷğɛɛğɛěăěžɛ͕ăǀăůŝğăɛăįƌŵăĕɓğɛăďăŝǆž͘
-/͘  ǀğůžđŝěăěğ ŵġěŝă ěğ đăěă ƚƌğŝŷž ġ ěğ
-ϯϭ͕ϳŭŵͬś͘
-//͘ ěŝɛƚąŷđŝăŵġěŝăɖğƌđžƌƌŝěăğŵđăěăƚƌğŝŷž
-ġěğϯϱŭŵ͘
-///͘ ąƌğăŵġěŝăɖğƌđžƌƌŝěăğŵđăěăƚƌğŝŷžġěğ
-ϯϱŭŵ2.
-/s͘ ěŝɛƚąŷđŝăɖğƌđžƌƌŝěăěğđăěăƚƌğŝŷž͕ğŵƶŵ
-ěğɛǀŝžͳɖăěƌćž͕ğɛƚąğŷƚƌğϯϭŭŵğϯϭŭŵ͘
-v.  ǀğůžđŝěăěğ ŵġěŝă ěğ đăěă ƚƌğŝŷž͕ ğŵ ƶŵ
-ěğɛǀŝžͳɖăěƌćž͕ğɛƚąğŷƚƌğϭϲŭŵͬśğϯϰŭŵͬś͘
-đžƌƌğƚžăɖğŷăɛžƌƶğɛğăįƌŵăğŵ
-a /͘
-b /ğ/s͘
-c //ğ///͘
-d ///ğs͘
-e //͕/sğs͘
+2
+f(1:1,093) = e
+v2n0?
+com u =25kme o? — 25km2. a duração média do
+seu treino é de 1h15min.
+
+com base nesses dados, avalie as afirmações abaixo.
+il. a velocidade média de cada treino é de
+21,7 km/h.
+il. a distância média percorrida em cada treino
+é de 25 km.
+ill. a área média percorrida em cada treino é de
+25 km2,
+iv. a distância percorrida de cada treino, em um
+desvio-padrão, está entre 20 km e 30 km.
+a velocidade média de cada treino, em um
+desvio-padrão, está entre 16 km/h e 24 km/h.
+
+na
+
+é correto apenas o que se afirma em
+
+01.
+
+o lelv.
+o lei.
+o ley.
+o ilivev.
+
 área livre

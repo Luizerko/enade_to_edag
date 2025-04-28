@@ -1,17 +1,31 @@
 questão 18
-ežƌăɛŝů͕ġđžŵğƌđŝăůŝǌăěăƶŵăđăěğŝƌăěğƌžěăɛěğăůƶŵşŷŝžđžŵɖğɛžăɖƌžǆŝŵăěžěğϭϯŭő͕ƌƶğƌğɖƌğɛğŷƚă
-đğƌđăěăŵğƚăěğěžɖğɛžěğƶŵŵžěğůžđžŷǀğŷđŝžŷăů͘žŷɛƚƌƶşěăğŵğɛƚƌƶƚƶƌăƚƶďƶůăƌěğƶŵăůŝőăěğ
-ăůƶŵşŷŝžăğƌžŷąƶɵđž͕ğɛɛăđăěğŝƌăěğƌžěăɛɖžɛɛƶŝăůƚăƌğɛŝɛƚġŷđŝăŵğđąŷŝđă͕ăůġŵěğƚğƌđƶɛƚžƌğěƶǌŝěž.
-ŝɛɖžŷşǀğůğŵ͗фśʃɖ͗ͬͬǁǁǁ͘śžɛɖŝƚăůăƌ͘đžŵх͘đğɛɛžğŵ͗ϯϲũƶů͘ϯϭϭϰ;ăěăɖƚăěžϳ͘
-kăůƶŵşŷŝžăğƌžŷąƶɵđžɖžɛɛƶŝƶŵăđžŵďŝŷăĕćžʒŷŝđăěğɖƌžɖƌŝğěăěğɛƌƶğžƚžƌŷăƶŵŵăƚğƌŝăůěğđžŷɛƚƌƶĕćž
-ǀğƌɛąɵů͕ăůƚăŵğŷƚğƶɵůŝǌąǀğůğăƚƌăɵǀž͘ɛɛăɛđăƌăđƚğƌşɛɵđăɛɛćžěğǀŝěăɛăƌƶăŝɛɖƌžɖƌŝğěăěğɛ͍
-a ůƚăƌğɛŝɛƚġŷđŝăŵğđąŷŝđăğďăŝǆăěğŷɛŝěăěğ͘
-b ăŝǆăɖůăɛɵđŝěăěğğăůƚžɖžŷƚžěğĩƶɛćž͘
-c ůƚăěƶƌğǌăăƌƶğŷƚğğďăŝǆăěƶɵůŝěăěğ͘
-d ăŝǆăɖůăɛɵđŝěăěğğăůƚăɛžůěăďŝůŝěăěğ͘
-e ůƚăěƶƌğǌăğăůƚăěğŷɛŝěăěğ.
-área livre
-*r14201418*
+no brasil, é comercializada uma cadeira de rodas de alumínio com peso aproximado de 12 kg, que representa
+cerca da metade do peso de um modelo convencional. construída em estrutura tubular de uma liga de
+alumínio aeronáutico, essa cadeira de rodas possui alta resistência mecânica, além de ter custo reduzido.
 
-19
-e'e,z/kdwhdk
+disponível em:<http://www.hospitalar.com>. acesso em: 26 jul. 2014 (adaptado).
+
+o alumínio aeronáutico possui uma combinação única de propriedades que o torna um material de construção
+versátil, altamente utilizável e atrativo. essas características são devidas a quais propriedades?
+
+o alta resistência mecânica e baixa densidade.
+o baixa plasticidade e alto ponto de fusão.
+
+o alta dureza a quente e baixa dutilidade.
+
+o baixa plasticidade e alta soldabilidade.
+
+o alta dureza e alta densidade.
+
+área livre
+
+ 
+
+ 
+
+18
+ot engenharia de computação
+
+ 
+
+4 r 14

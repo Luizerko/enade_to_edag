@@ -1,43 +1,59 @@
 questão 30
-hŵă ăƌƌƶŝƚğƚƶƌă đůąɛɛŝđă ěğ ϯϯ bits ěğ ğɛɖăĕž ěğ
-ğŷěğƌğĕăŵğŷƚž ěğ ŵğŵſƌŝă ɖğƌŵŝƚğ ăƚġ ϰ ' ěğ
-ŵğŵſƌŝă ɖƌŝŷđŝɖăů͘ wăƌă ƶŵ ďžŵ őğƌğŷđŝăŵğŷƚž
-ěğɛɛă ŵğŵſƌŝă͕ ăůőƶŵăɛ ƚġđŷŝđăɛ ɖžěğŵ ɛğƌ
-ƶɵůŝǌăěăɛ͗ɖăőŝŷăĕćž͕ɛğőŵğŷƚăĕćžğswapping.
-ŵ ƌğůăĕćž ă ğɛɛăɛ ƚġđŷŝđăɛ ěğ őğƌğŷđŝăŵğŷƚž ěğ
-ŵğŵſƌŝă͕ăǀăůŝğăɛăįƌŵăĕɓğɛăɛğőƶŝƌ͘
-/͘ hƚŝůŝǌăŷěž ɖąőŝŷăɛ ěğ ϰ < ěğ ƚăŵăŷśž͕
-ž ğŷěğƌğĕž ǀŝƌƚƶăů ěğ ŵğŵſƌŝă ƶƚŝůŝǌă žɛ
-220 bitsŵăŝɛɛŝőŷŝĩŝđăƚŝǀžɛɖăƌăžŷʒŵğƌž
-ěăɖąőŝŷăǀŝƌƚƶăůğžɛěğŵăŝɛϯϭϯbitsɖăƌă
-žěğɛůžđăŵğŷƚžŝŷƚğƌŷžěăɖąőŝŷă͘
-//͘ k ăđğɛɛž ă ŵğŵſƌŝă i̇ɛŝđă͕ ƶɵůŝǌăŷěž
-ɛğőŵğŷƚăĕćž͕ ġ ĩğŝƚž ɖžƌ ŵğŝž ěğ ƶŵă
-ğɛƚƌƶƚƶƌă
-ěğ
-hardware
-ğɛɖğđşįđă
-ěž
-ɖƌžđğɛɛăěžƌ͘
-///͘ hɵůŝǌăŷěž ă ɖăőŝŷăĕćž žƶ ă ɛğőŵğŷƚăĕćž͕
-ă ŵğŵſƌŝă i̇ɛŝđă ŷćž ɛžĩƌğƌą ĩƌăőŵğŷƚăĕćž
-ŝŷƚğƌŷăžƶğǆƚğƌŷă͘
-/s͘  ɖžɛɛşǀğů ƶɵůŝǌăƌ ă ƚġđŷŝđă ěğ swapping
-ɖăƌăƌƶăůƌƶğƌƚăŵăŷśžěğɖąőŝŷă͕ŵăɛŷćž
-ă ɛğőŵğŷƚăĕćž͕ ɖžŝɛ ğɛƚă ƚğŵ ğɛɖăĕž ěğ
-ğŷěğƌğĕăŵğŷƚžǀăƌŝąǀğů͘
-v. k ăůőžƌŝƚŵž ěğ ɛƶďɛɵƚƶŝĕćž ěğ ɖąőŝŷă͕
-ěğŷžŵŝŷăěž >&h͕ ƶɵůŝǌă ž ɖƌŝŷđşɖŝž ěğ
-ůžđăůŝěăěğ ƚğŵɖžƌăů͕ ğŷƌƶăŷƚž ž ăůőžƌŝƚŵž
->zhƶɵůŝǌăžɖƌŝŷđşɖŝžěğůžđăůŝěăěğğɛɖăđŝăů͘
-đžƌƌğƚžăɖğŷăɛžƌƶğɛğăįƌŵăğŵ
-a ///͘
-b /ğ//͘
-c /ğs͘
-d /sğs͘
-e //͕///ğ/s͘
-área livre
-*r14201426*
+uma arquitetura clássica de 32 bits de espaço de
+endereçamento de memória permite até 4 gb de
+memória principal. para um bom gerenciamento
+dessa memória, algumas técnicas podem ser
+utilizadas: paginação, segmentação e swapping.
 
-27
-e'e,z/kdwhdk
+em relação a essas técnicas de gerenciamento de
+memória, avalie as afirmações a seguir.
+
+|. utilizando páginas de 4 kb de tamanho,
+o endereço virtual de memória utiliza os
+220 bits mais significativos para o número
+da página virtual e os demais 212 bits para
+o deslocamento interno da página.
+
+. o acesso à memória física, utilizando
+segmentação, é feito por meio de uma
+estrutura de hardware específica do
+processador.
+
+il. utilizando a paginação ou a segmentação,
+a memória física não sofrerá fragmentação
+interna ou externa.
+
+. é possível utilizar a técnica de swapping
+para qualquer tamanho de página, mas não
+a segmentação, pois esta tem espaço de
+endereçamento variável.
+
+o algoritmo de substituição de página,
+denominado lfu, utiliza o princípio de
+localidade temporal, enquanto o algoritmo
+lru utiliza o princípio de localidade espacial.
+
+é correto apenas o que se afirma em
+
+qin.
+
+o el.
+
+o lev.
+
+o ivev.
+o il lllelv.
+
+área livre
+
+ 
+
+ 
+
+ 
+
+4 r14 2014 2 6 *
+
+26
+
+engenharia de computação

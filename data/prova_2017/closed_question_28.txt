@@ -1,71 +1,42 @@
 questão 28
-ŵ
-ɖğɛƌƶŝɛă
-žɖğƌăđŝžŷăů͕
-ɖƌžďůğŵăɛ
-ěğ
-wƌžőƌăŵăĕćž>ŝŷğăƌ;w>ϳɛćžăƌƶğůğɛɖăƌăžɛƌƶăŝɛ
-ăĩƶŷĕćžžďũğɵǀžğăɛƌğɛƚƌŝĕɓğɛɛćžƚžěăɛůŝŷğăƌğɛ͘
-hŵŝŵɖžƌƚăŷƚğɖƌžďůğŵăɖƌąɵđžŵžěğůăěžđžŵ
-w>ġžɖƌžďůğŵăěžƚƌăŷɛɖžƌƚğ͘
-^ƶɖžŷśă ƶŵă ɛŝƚƶăĕćž ğŵ ƌƶğ ƚğŷśăŵžɛ k
-ɖžƌƚžɛ͕p1͕p2͕͕͘͘͘pk͕ƌƶğŝƌćžɛƶɖƌŝƌjŵğƌđăěžɛ͕
-m1͕ m2͕ ͕͘͘͘ mj ͕ đžŵ ƶŵ đğƌƚž ɖƌžěƶƚž͘ k ɖžƌƚž
-pi ɖžɛɛƶŝ ƶŵă ƌƶăŷɵěăěğ si ěž ɖƌžěƶƚž͕ ɛğŷěž
-i   1͕ 2͕ ...,k͕ğžŵğƌđăěžmj ěğǀğƌğđğďğƌɖğůž
-ŵğŷžɛ ƶŵă ƌƶăŷɵěăěğ rj ěž ɖƌžěƶƚž͕ ɛğŷěž
-j   1, 2, ..., j͘ žŷɛŝěğƌğ ƌƶğ bij ġ ž đƶɛƚž ěğ
-ƚƌăŷɛɖžƌƚğěğƶŵăƶŷŝěăěğěžɖƌžěƶƚžěžɖžƌƚžpi
-ɖăƌăžŵğƌđăěžmj͕e yijġăƌƶăŷɵěăěğěğɖƌžěƶƚžɛ
-ěğɛɖăđśăěžɛ ěž ɖžƌƚž pi ɖăƌă ž ŵğƌđăěž mj.
-kɖƌžďůğŵăġɛƶɖƌŝƌăɛŷğđğɛɛŝěăěğɛěžɛŵğƌđăěžɛ
-đžŵžđƶɛƚžěğƚƌăŷɛɖžƌƚğŵşŷŝŵž͘
-žŵ ďăɛğ ŷă ɛŝƚƶăĕćž ăɖƌğɛğŷƚăěă͕ ăǀăůŝğ ăɛ
-ăįƌŵăĕɓğɛăɛğőƶŝƌ͘
-/͘ ğǆɖƌğɛɛćžăɛğƌŵŝŷŝŵŝǌăěăġ
-y b
-ij
+em pesquisa operacional, problemas de
+programação linear (pl) são aqueles para os quais
+a função objetivo e as restrições são todas lineares.
+um importante problema prático modelado com
+plé o problema do transporte.
+
+suponha uma situação em que tenhamos k
+portos, p, p,, ..., p,, que irão suprir j mercados,
+m, m, .... m,, com um certo produto. o porto
+p, possui uma quantidade s, do produto, sendo
+i=1,2,..,k,e o mercado m deve receber pelo
+menos uma quantidade z do produto, sendo
+j=1,2,..., j. considere que b, é o custo de
+transporte de uma unidade do produto do porto p,
+paraomercadom ,ey, é a quantidade de produtos
+despachados do porto p, para o mercado m..
+o problema é suprir as necessidades dos mercados
+com o custo de transporte mínimo.
+
+com base na situação apresentada, avalie as
+afirmações a seguir.
+
 j
-j
-i
+
 k
-ij
-=
-= ∑
-∑
-1
-1
-.
-//͘ ^ćžƌğɛƚƌŝĕɓğɛěžɖƌžďůğŵă͗
-y
-s
-ij
+il. a expressão a ser minimizada é >> yidy.
+i=1j=1
+
 j
-j
-i
-=∑
-≤
-1
-ɖăƌă
-i   1, 2, ..., k.
-///͘^ćžƌğɛƚƌŝĕɓğɛěžɖƌžďůğŵă͗
-y
-r
-ij
-i
+il. são restrições do problema: 3; <s, para
+j=1
+i=1,2,..,k.
+
 k
-j
-=∑
-≤
-1
-ɖăƌă
-j   1, 2, ..., j.
-/s͘  ƌƶăŷɵěăěğ ƚžƚăů ěğɛɖăđśăěă ɖăƌă ž
-ŵğƌđăěžmjġk · yij.
-đžƌƌğƚžăɖğŷăɛžƌƶğɛğăįƌŵăğŵ
-a /ğ//͘
-b //ğ/s͘
-c ///ğ/s͘
-d /͕//ğ///͘
-e /͕///ğ/s͘
-ƌğăůŝǀƌğ
+iii. são restrições do problema: >) y, <r, para
+j=l3.,]. o
+
+iv. a quantidade total despachada para o
+mercado m, ék. yy
+
+é correto apenas o que se afirma em

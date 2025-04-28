@@ -1,31 +1,31 @@
 questão 17
-dada uma sequência de caracteres s = s1, s2, ..., sn, uma subsequência de s é dada pela 
-remoção de zero ou mais caracteres de s. formalmente, a sequência x = x1, x2, ..., xk é 
-subsequência de s se existe uma sequência crescente de índices i1, ..., ik de s, tal que xj = sij 
-para todo j = 1, 2, ..., k. define-se, também, um prefixo da sequência s com comprimento i para 
-i = 0, ..., n, como si = s1, s2, ..., si. 
-o problema da subsequência comum mais longa (lcs) e suas variações, definido a seguir, pode ser 
-utilizado em análise de textos e em bioinformática. o problema da lcs pressupõe duas sequências 
-de caracteres a = a1, a2, ..., an e b = b1, b2, ..., bm, de comprimentos n e m, respectivamente.  
-dadas essas duas sequências, é preciso encontrar uma sequência de maior comprimento possível que seja, 
-simultaneamente, subsequência de a e de b.
-a partir dessas informações, considere que z = z1, z2, ..., zk seja uma lcs das sequências a e b. 
-em relação ao problema da lcs, avalie as afirmações a seguir.
-i.	 se an = bm, então zk = an, zk = bm e zk-1 é uma lcs de an-1 e bm-1.
-ii.	 se an ≠ bm e zk ≠ an, então z é uma lcs de an-1 e b.
-iii.	seja lcs(i,j) o comprimento da lcs entre ai e bj. para i, j > 0, se ai ≠ bj, então  
+Dada uma sequência de caracteres S = s1, s2, ..., sn, uma subsequência de S é dada pela 
+remoção de zero ou mais caracteres de S. Formalmente, a sequência X = x1, x2, ..., xk é 
+subsequência de S se existe uma sequência crescente de índices i1, ..., ik de S, tal que xj = Sij 
+para todo j = 1, 2, ..., k. Define-se, também, um prefixo da sequência S com comprimento i para 
+i = 0, ..., n, como Si = s1, s2, ..., si. 
+O problema da Subsequência Comum Mais Longa (LCS) e suas variações, definido a seguir, pode ser 
+utilizado em análise de textos e em bioinformática. O problema da LCS pressupõe duas sequências 
+de caracteres A = a1, a2, ..., an e B = b1, b2, ..., bm, de comprimentos n e m, respectivamente.  
+Dadas essas duas sequências, é preciso encontrar uma sequência de maior comprimento possível que seja, 
+simultaneamente, subsequência de A e de B.
+A partir dessas informações, considere que Z = z1, z2, ..., zk seja uma LCS das sequências A e B. 
+Em relação ao problema da LCS, avalie as afirmações a seguir.
+I.	 Se an = bm, então zk = an, zk = bm e Zk-1 é uma LCS de An-1 e Bm-1.
+II.	 Se an ≠ bm e zk ≠ an, então Z é uma LCS de An-1 e B.
+III.	Seja lcs(i,j) o comprimento da LCS entre Ai e Bj. Para i, j > 0, se ai ≠ bj, então  
 lcs(i,j) = min{lcs(i, j-1), lcs(i-1, j)}.
-iv.	 seja lcs(i,j) o comprimento da lcs entre ai e bj. para i, j > 0, se ai = bj, então  
+IV.	 Seja lcs(i,j) o comprimento da LCS entre Ai e Bj. Para i, j > 0, se ai = bj, então  
 lcs(i,j) = lcs(i-1,j-1)+1.
-é correto apenas o que se afirma em
-a	 i e iii.
-b	 i e iv.
-c	 ii e iii.
-d	 i, ii e iv.
-e	 ii, iii e iv
-*r08202321*
-validinep2023validinep2023validinep2023validinep2023validin3p2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023validinep2023
-validinep2023validinep2023validin3p2023validinep2023validinep2validinep
+É correto apenas o que se afirma em
+A	 I e III.
+B	 I e IV.
+C	 II e III.
+D	 I, II e IV.
+E	 II, III e IV
+*R08202321*
+VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDIN3P2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023VALIDINEP2023
+VALIDINEP2023VALIDINEP2023VALIDIN3P2023VALIDINEP2023VALIDINEP2VALIDINEP
 
 22
-engenharia de computação
+Engenharia de Computação
