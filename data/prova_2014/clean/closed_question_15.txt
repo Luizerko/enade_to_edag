@@ -1,0 +1,38 @@
+Questão 15
+
+Observe o programa classificador (“sort”), em pseudocódigo, apresentado abaixo.
+
+2 variável texto nome(5)
+3 variável real nota(5)
+4 variável inteiro i, j
+
+5 variável real aux
+6 variável texto naux
+
+para i de 1 até 5
+    escrever "nome ", i, "="
+    ler nome(i-1)
+    escrever "nota ", i
+    ler nota(i-1)
+próximo
+
+para i de 0 até 4
+    para j de i+1 até 4
+        se nota(i) <= nota(j) então
+            aux <- nota(i)
+            nota(i) <- nota(j)
+            nota(j) <- aux
+            naux <- nome(i)
+            nome(i) <- nome(j)
+            nome(j) <- naux
+        fimse
+    próximo
+próximo
+
+para i de 1 até 5
+    escrever nome(i-1), ":", nota(i-1)
+próximo
+
+Esse programa classifica, em ordem 
+
+decrescente, notas de alunos.

@@ -170,7 +170,7 @@ def parse_pdf_test(url, year):
         doc = fitz.open(stream=pdf_stream, filetype="pdf")
 
         # Creating folder to store individual questions
-        output_folder = f"data/prova_{year}"
+        output_folder = f"data/prova_{year}/raw"
         os.makedirs(output_folder, exist_ok=True)
 
         # Getting all text from all pages

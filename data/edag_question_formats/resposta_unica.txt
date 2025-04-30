@@ -1,9 +1,9 @@
-PERGUNTA:
 - Texto auxiliar (um gráfico, tabela, figura, etc.). Se não quiser usar nada, escreva “Sem suporte gráfico.”
 - Enunciado da questão, que provoque a interpretação do aluno.
-- Cinco alternativas (A) até (E), apenas uma correta.
-- Cada parte do formato DEVE aparecer na força exata abaixo:
+- Cinco alternativas (A) até (E), apenas uma correta. Nesse caso, não devem haver sentenças em numerais romanos a serem avaliadas, apenas as alternativas diretamente.
+- Cada parte do formato DEVE aparecer na forma exata abaixo:
 
+PERGUNTA:
 <texto auxiliar>
 
 <enunciado da questao>

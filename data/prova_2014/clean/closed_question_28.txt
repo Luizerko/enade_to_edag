@@ -1,0 +1,46 @@
+As vibrações em um ônibus em movimento serão analisadas através da medida da aceleração durante 
+períodos de tempo, por meio do sistema de aquisição formado por quatro módulos: um sensor de aceleração, 
+um amplificador, um sample & hold e um conversor A/D, conforme esquema a seguir.
+
+ 
+
+ 
+
+ 
+
+    
+
+Sensor 
+de 
+Aceleração Conversor
+ A/D Sample and Hold Analógico/Digital
+
+   
+
+»
+
+9 Amplificador
+
+O sensor é um acelerômetro que converte linearmente leituras entre -1,0 m/s² e +1,0 m/s² em sinal de tensão 
+V, entre -800 mV e +800 mV. Esse sinal passa por um amplificador operacional com ganho de tensão dado por 
+Av=1+Rf/R1, em que Rf=R1=10 kΩ. Uma vez amplificado, o sinal V1, é submetido a um sample & hold, cuja 
+chave de amostragem pode ser controlada por software através de seu ponto de controle “C”. O conversor 
+A/D converte linearmente valores entre -2,00 V e +2,00 V para valores binários que podem, então, ser lidos 
+por software. Com esse sistema de aquisição, serão feitas coletas de dados de 1000 aquisições a uma taxa de 
+500 aquisições por segundo, ou seja, cada coleta dura dois segundos.
+
+A análise desse sistema de aquisição de dados revela que
+
+O amplificador tem ganho unitário e alta impedância de entrada, isolando o sensor do resto do circuito.
+
+O conversor A/D deverá ser de 12 ou mais bits, para que as leituras obtidas tenham uma resolução de 
+0,001 m/s².
+
+O software que fará o processamento da aquisição necessitará trocar o sinal da leitura feita, já que a 
+montagem do amplificador é inversora.
+
+A faixa de passagem do amplificador deve ficar pelo menos entre 0 e 250 Hz, correspondentes à taxa de 
+Nyquist, já que ocorrerão 500 aquisições por segundo.
+
+O sample & hold vai ser ligado no início da coleta de dados e desligado ao seu final, com a chave mantida 
+fechada durante todos os 2 segundos de cada coleta.

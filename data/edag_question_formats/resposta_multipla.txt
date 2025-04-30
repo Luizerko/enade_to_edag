@@ -1,8 +1,9 @@
-PERGUNTA:
-Na questão do tipo RESPOSTA MÚLTIPLA, fechada, várias (3 a 5) afirmativas devem ser analisadas como falsas ou verdadeiras. Por fim, deve ser escolhida a alternativa que corresponde ao resultado analisado. nserir suporte mínimo, conforme o solicitado: Gráfico e/ou Tabela e/ou Texto e/ou Charge e/ou Tirinha e/ou Fluxograma e/ou Figura O suporte deve auxiliar o estudante/leitor a responder a questão. Você deve apresentar de 3 a 5 afirmações.
+- Gráfico e/ou Tabela e/ou Texto e/ou Charge e/ou Tirinha e/ou Fluxograma e/ou Figura. O suporte deve auxiliar o estudante/leitor a responder à questão. Se não houver, escrever "Sem suporte gráfico."
+- Na questão do tipo RESPOSTA MÚLTIPLA, várias (3 a 5) afirmativas devem ser analisadas como falsas ou verdadeiras. Por fim, deve ser escolhida a alternativa que corresponde ao resultado analisado.
+- Cada parte do formato DEVE aparecer na forma exata abaixo:
 
-formato:
-<pequeno texto auxiliar>
+PERGUNTA:
+<texto auxiliar>
 
 I. <afirmação>
 II. <afirmação>
@@ -14,13 +15,10 @@ IV. <afirmação>
 (A) I
 (B) II e IV
 (C) III e IV
-(D) I, II, e III
+(D) I, II e III
 (E) I, II, III e IV
 
 JUSTIFICATIVA:
-Cada afirmativa deve ser justificada, indicando o erro em caso de ser uma afirmativa incorreta.
-
-formato:
 I. Verdadeira/Falsa: <explicação>
 II. Verdadeira/Falsa: <explicação>
 III. Verdadeira/Falsa: <explicação>
