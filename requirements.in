@@ -7,3 +7,4 @@ requests
 pytesseract
 pdf2image
 openai
+streamlit
