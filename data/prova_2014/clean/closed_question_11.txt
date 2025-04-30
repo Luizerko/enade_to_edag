@@ -83,7 +83,7 @@ t0,01 kg/mº
 considerando que pode ocorrer autodepuração no rio, em qual seção dele a água não pode ser classificada,
 no mínimo, como “razoável”?
 ox
-oy
-oz
-ow
+oy.
+oz.
+ow.
 ot

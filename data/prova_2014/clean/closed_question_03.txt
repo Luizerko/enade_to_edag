@@ -1,4 +1,4 @@
-A pegada ecológica é um indicador que estima a demanda ou a exigência humana sobre o meio ambiente,
+Pegada ecológica é um indicador que estima a demanda ou a exigência humana sobre o meio ambiente,
 considerando-se o nível de atividade para atender ao padrão de consumo atual (com a tecnologia atual). É, de
 certa forma, uma maneira de medir o fluxo de ativos ambientais de que necessitamos para sustentar nosso padrão
 de consumo. Esse indicador é medido em hectare global, medida de área equivalente a 10.000 m². Na medida
@@ -11,8 +11,6 @@ menor que 1, indica que o planeta se recupera mais rapidamente.
 
 Razão entre a pegada ecológica
 e a biocapacidade do planeta
-
- 
 
 O aumento da razão entre pegada ecológica e biocapacidade representado no gráfico evidencia
 

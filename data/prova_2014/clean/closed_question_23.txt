@@ -3,10 +3,10 @@ um componente bastante usado em circuitos lógicos
 é a matriz lógica programável (ou pla, do inglês
 programmable logic array). uma pla usa como
 entrada um conjunto de sinais e os complementos
-desses sinais. a lógica é implementada a 
+desses sinais. a lógica é implementada a
 partir de dois estágios: o primeiro é uma matriz de
 portas and, que formam o conjunto de termos-
-produto; o segundo 
+produto ; o segundo
 estágio é uma matriz de portas or, cada uma
 efetuando uma soma lógica de qualquer quantidade
 dos mintermos. 

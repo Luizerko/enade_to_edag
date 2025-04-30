@@ -1,4 +1,4 @@
-questão21
+questão 21
 a compressão de dados pode ser realizada por
 intermédio de diversos algoritmos de compressão,
 reduzindo a quantidade de bits para representar
@@ -32,21 +32,20 @@ a redundância espectral é a que ocorre em
 imagens com mais de uma faixa espectral,
 quando os valores espectrais para a mesma
 posição na matriz de pixels de cada banda são
-correlacionados.
+correlacionados. 
 
 as redundâncias psicovisuais ou baseadas na
 percepção são aquelas relacionadas ao fato
-de o sistema visual humano responder de 
-forma diferenciada  a todas as informações
-visuais. 
+de o sistema visual humano responder de forma
+diferencial a informações visuais. 
 
 é correto o que se afirma em
 
 o | apenas.
 
-o ||, apenas.
-
-o |||, apenas.
 o | e ||, apenas.
 
-o |,|| e|||
+o | e |||, apenas.
+o |, || e |||, apenas.
+
+o |, ||, ||| e |V.

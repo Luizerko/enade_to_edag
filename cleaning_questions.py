@@ -55,4 +55,4 @@ for folder in os.listdir(root_dir):
             # Avoiding requesting more than the free tier allows
             time.sleep(2.5)
 
-        print(f'Limpeza feita para {folder}\n')
+        print(f'Limpeza feita para {folder.split('/')[-1]}\n')

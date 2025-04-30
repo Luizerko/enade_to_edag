@@ -18,7 +18,3 @@ B II e IV, apenas.
 C III e IV, apenas.
 D I, II e III, apenas.
 E I, II, III e IV.
-*R0920195*
-
-6
-ENGENHARIA DE COMPUTAÇÃO

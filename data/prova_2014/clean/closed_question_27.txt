@@ -18,7 +18,6 @@ categoria: veículo
 preço: textfield
 
 concordo com os termos do serviço
-
 salvar cancelar
 
 com base nesse protótipo de tela, infere-se que o modelo lógico correto para um banco de dados relacional 

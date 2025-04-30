@@ -13,7 +13,7 @@ esses problemas têm sido modelados com teoria
 dos grafos, de onde se destacam dois conceitos
 relacionados: circuito euleriano e ciclo hamiltoniano.
 
-uma trilha é uma sequência de arestas adjacentes em
+umatrilha é uma sequência de arestas adjacentes em
 que não há repetição de arestas, e seu comprimento
 é a quantidade de arestas. a trilha é dita fechada se
 inicia e finaliza no mesmo vértice. assim, um grafo
@@ -42,7 +42,6 @@ como resultado a mesma trilha.
 é correto o que se afirma em 
 
 ii, apenas.
-
 iii, apenas.
 i, apenas.
 i e iii, apenas.

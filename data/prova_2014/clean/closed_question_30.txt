@@ -37,10 +37,10 @@ LRU utiliza o princípio de localidade espacial.
 
 II.
 
-II e IV.
-
 II e V.
+
+II e IV.
 
 I, II e V.
 
-I, II, III e IV.
+I, II e IV.

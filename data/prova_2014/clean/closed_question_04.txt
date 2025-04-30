@@ -1,4 +1,5 @@
 questão04
+
 importante website de relacionamento caminha para
 700 milhões de usuários. outro conhecido servidor de
 microblogging acumula140 milhões de mensagens ao
@@ -15,7 +16,7 @@ destas,60% assumem que bisbilhotam a vida dos
 candidatos em websites de rede social.
 
 realizada por uma agência de recrutamento, uma
-pesquisa com2.500 executivos brasileiros mostrou 
+pesquisa com2.500 executivos brasileiros mostrou
 que44% desclassificariam, no processo de seleção, um
 candidato por seu comportamento em uma rede social.
 

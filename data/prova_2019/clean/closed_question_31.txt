@@ -14,5 +14,5 @@ IV. O diagrama é inadequado para representar um sistema monotarefa.
 A I e II.
 B I e III.
 C III e IV.
-D II, III e IV.
-E II e IV.
+D I, II e IV.
+E II, III e IV.

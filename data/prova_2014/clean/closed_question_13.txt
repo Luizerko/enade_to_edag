@@ -52,5 +52,7 @@ alta relação resistência/peso.
 I.
 II.
 III.
-I e III.
+IV.
 I, II e III.
+I, II e IV.
+I, III e IV.

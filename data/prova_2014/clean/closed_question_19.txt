@@ -1,4 +1,5 @@
-questão19
+questão 19
+
 de todas as propostas do marco civil da internet, uma
 das mais polêmicas e importantes é a denominada
 “neutralidade da rede”. o marco civil defende que
@@ -47,11 +48,8 @@ satisfação de seus clientes.
 
 é correto o que se afirma em
 
-I e II, apenas.
-II e III, apenas.
-I e III, apenas.
-I e II.
-II, apenas.
-
-enade2014 
-exame nacional de desempenho dos estudantes
+o I, apenas.
+o III, apenas.
+o I e II, apenas.
+o I e III, apenas.
+o I, II e III.
