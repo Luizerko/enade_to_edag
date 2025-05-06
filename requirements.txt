@@ -41,6 +41,12 @@ entrypoints==0.4
     # via altair
 exceptiongroup==1.2.2
     # via anyio
+filelock==3.18.0
+    # via
+    #   huggingface-hub
+    #   transformers
+fsspec==2025.3.2
+    # via huggingface-hub
 gitdb==4.0.12
     # via gitpython
 gitpython==3.1.44
@@ -53,6 +59,10 @@ httpcore==1.0.9
     # via httpx
 httpx==0.28.1
     # via openai
+huggingface-hub==0.30.2
+    # via
+    #   tokenizers
+    #   transformers
 idna==3.10
     # via
     #   anyio
@@ -82,13 +92,16 @@ numpy==2.2.5
     #   pandas
     #   pydeck
     #   streamlit
+    #   transformers
 openai==1.76.2
     # via -r requirements.in
 packaging==25.0
     # via
     #   build
+    #   huggingface-hub
     #   pytesseract
     #   streamlit
+    #   transformers
 pandas==2.2.3
     # via
     #   -r requirements.in
@@ -135,20 +148,30 @@ python-dateutil==2.9.0.post0
     #   streamlit
 pytz==2025.2
     # via pandas
+pyyaml==6.0.2
+    # via
+    #   huggingface-hub
+    #   transformers
 referencing==0.36.2
     # via
     #   jsonschema
     #   jsonschema-specifications
+regex==2024.11.6
+    # via transformers
 requests==2.32.3
     # via
     #   -r requirements.in
+    #   huggingface-hub
     #   streamlit
+    #   transformers
 rich==14.0.0
     # via streamlit
 rpds-py==0.24.0
     # via
     #   jsonschema
     #   referencing
+safetensors==0.5.3
+    # via transformers
 six==1.17.0
     # via python-dateutil
 smmap==5.0.2
@@ -163,6 +186,8 @@ streamlit==1.22.0
     # via -r requirements.in
 tenacity==8.5.0
     # via streamlit
+tokenizers==0.21.1
+    # via transformers
 toml==0.10.2
     # via streamlit
 tomli==2.2.1
@@ -174,11 +199,17 @@ toolz==1.0.0
 tornado==6.4.2
     # via streamlit
 tqdm==4.67.1
-    # via openai
+    # via
+    #   huggingface-hub
+    #   openai
+    #   transformers
+transformers==4.51.3
+    # via -r requirements.in
 typing-extensions==4.13.2
     # via
     #   anyio
     #   beautifulsoup4
+    #   huggingface-hub
     #   openai
     #   pydantic
     #   pydantic-core

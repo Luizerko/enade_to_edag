@@ -21,7 +21,7 @@ II. <segunda asserção>
 (E) As asserções I e II são proposições falsas.
 
 JUSTIFICATIVA:
-I. Verdadeira/Falsa: <explicação>
-II. Verdadeira/Falsa: <explicação>
+I. <Verdadeira/Falsa: explicação>
+II. <Verdadeira/Falsa: explicação>
 
 <justificativa sobre a relação de causalidade (se aplicável)>

@@ -15,8 +15,8 @@ PERGUNTA:
 (E) <alternativa E>
 
 JUSTIFICATIVA:  
-(A) Correta/Incorreta: <explicação>  
-(B) Correta/Incorreta: <explicação>  
-(C) Correta/Incorreta: <explicação>  
-(D) Correta/Incorreta: <explicação>  
-(E) Correta/Incorreta: <explicação>
+(A) <Correta/Incorreta: explicação>  
+(B) <Correta/Incorreta: explicação>  
+(C) <Correta/Incorreta: explicação>  
+(D) <Correta/Incorreta: explicação>  
+(E) <Correta/Incorreta: explicação>

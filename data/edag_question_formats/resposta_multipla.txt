@@ -19,7 +19,7 @@ IV. <afirmação>
 (E) I, II, III e IV
 
 JUSTIFICATIVA:
-I. Verdadeira/Falsa: <explicação>
-II. Verdadeira/Falsa: <explicação>
-III. Verdadeira/Falsa: <explicação>
-IV. Verdadeira/Falsa: <explicação>
+I. <Verdadeira/Falsa: explicação>
+II. <Verdadeira/Falsa: explicação>
+III. <Verdadeira/Falsa: explicação>
+IV. <Verdadeira/Falsa: explicação>

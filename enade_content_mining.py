@@ -170,7 +170,7 @@ def parse_pdf_test(url, year):
         doc = fitz.open(stream=pdf_stream, filetype="pdf")
 
         # Creating folder to store individual questions
-        output_folder = f"data/prova_{year}/raw"
+        output_folder = f"data/textual_approach/prova_{year}/raw"
         os.makedirs(output_folder, exist_ok=True)
 
         # Getting all text from all pages
@@ -233,8 +233,6 @@ def parse_pdf_test(url, year):
             filepath = os.path.join(output_folder, filename)
             with open(filepath, "w", encoding="utf-8") as f:
                 f.write(full_question)
-
-            # print(f"Questão {q_number} ({q_type}) de {year} salva em: {filepath}")
 
         print(f"Extração das questões de prova de {year} completa: {len(matches)} questões salvas\n")
 
@@ -307,7 +305,6 @@ def parse_and_extract(page, df, target_courses, extraction_type='edital'):
 
     # Populating test_content with pd.NA because we are going to do this parsing on a GPU server so we can use and LLM to infer the area/sub-area of the content
     df['test_content'] = [pd.NA for y in df['year']]
-
 
 # Starting interaction with browser
 with sync_playwright() as p:
