@@ -3,13 +3,19 @@ import re
 import os
 import io
 
+from PIL import Image, ImageDraw
 from playwright.sync_api import sync_playwright
 import fitz
 from bs4 import BeautifulSoup
 import pandas as pd
+import numpy as np
 import requests
-from pdf2image import convert_from_bytes
+from pdf2image import convert_from_bytes, convert_from_path
 import pytesseract
+import torch
+from transformers import LayoutLMv3Processor, LayoutLMv3Model
+import matplotlib.pyplot as plt
+
 
 # Normalizing text for when we want to compare strings
 def normalize(text):
@@ -162,7 +168,7 @@ def parse_html_theoretical(url, course, year):
         return []
 
 # Parsing PDF to extract ENADE test content
-def parse_pdf_test(url, year):
+def parse_pdf_test_textual(url, year):
     try:
         # Getting PDF
         response = safe_get(url)
@@ -239,6 +245,190 @@ def parse_pdf_test(url, year):
     except Exception as e:
         print(f"Não foi possível parsear o PDF {url}: {e}\n")
 
+# Function to extract questions from PDF
+def deep_learning_ocr(pages, processor, device, visual=-1):
+    # Running LayoutLMv3 OCR
+    tokens = []
+    boxes = []
+    for i, page in enumerate(pages, start=1):
+        # Running model
+        enc = processor(page, return_tensors="pt", truncation=True, \
+        max_length=1024).to(device)
+        
+        # Extracting tokens and boundig boxes
+        page_tokens = enc.tokens()
+        page_tokens = [token.replace('Ġ', '') for token in page_tokens]
+        page_boxes  = enc.bbox.squeeze(0)
+        
+        tokens.append(page_tokens)
+        boxes.append(page_boxes)
+        
+        # Drawing bounding boxes on questions
+        if visual != -1 and i == visual:
+            orig_w, orig_h = page.size
+            draw = ImageDraw.Draw(page)
+            for idx in range(len(page_tokens)):
+                x0, y0, x1, y1 = page_boxes[idx]
+                draw.rectangle([(orig_w*x0/1000, orig_h*y0/1000), \
+                                (orig_w*x1/1000, orig_h*y1/1000)], \
+                               outline="red", width=2)
+            
+            plt.figure(figsize=(12, 6))
+            plt.imshow(page)
+
+            return pages, tokens, boxes
+    
+    return pages, tokens, boxes
+
+# Parsing PDF to extract ENADE test content
+def parse_pdf_test_visual(url, year, dpi=300, visual=-1):
+    try:
+        # Getting PDF as PIL images 
+        response = safe_get(url)
+        pages = convert_from_bytes(response.content, dpi=dpi)
+        pages = pages[1:-2]
+
+        # Creating folder to store individual questions
+        output_folder = f"data/visual_approach/prova_{year}"
+        os.makedirs(output_folder, exist_ok=True)
+
+        # Initializing processor and device
+        processor = LayoutLMv3Processor.from_pretrained("microsoft/layoutlmv3-large", apply_ocr=True, ocr_lang="por")
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+
+        # Extracting questions
+        pages, tokens, boxes = deep_learning_ocr(pages, processor, device, visual=visual)
+
+        # Saving screenshot of question for later usage on an LLM
+        page_overflow = False
+        prev = {'left': None, "right": None, "discursiva": None}
+        open_counter = 1
+        closed_counter = 1
+        for i, t in enumerate(tokens):
+            # Getting indices of questions on a page
+            indices = [j for j, token in enumerate(t) if token == 'QUEST']
+
+            # Saving continuation of a question on another second page
+            if page_overflow is True:
+                try:
+                    bot_limit = boxes[i][indices[0], 1]
+                except:
+                    bot_limit = torch.max(boxes[i][:-1, 1])
+                
+                img = pages[i]
+                orig_w, orig_h = img.size
+                left = (prev["left"].item()/1000)*orig_w - 5
+                right = (prev["right"].item()/1000)* orig_w + 5
+                top = 5
+                bottom = (bot_limit.item()/1000)*orig_h + 5
+
+                crop = img.crop((left, top, right, bottom))
+                if discursiva:
+                    fname = f"data/visual_approach/prova_{year}/open_question_{open_counter-1:02d}_p2.png"
+                else:
+                    fname = f"data/visual_approach/prova_{year}/closed_question_{closed_counter-1:02d}_p2.png"
+                crop.save(fname)
+                
+                page_overflow = False
+
+            # Going through questions on a page
+            for j, idx in enumerate(indices):
+                # Checking if its closed or open
+                discursiva = (t[idx+3] == 'DIS')
+
+                # Computing limits for cropping
+                left_limit, right_limit = boxes[i][idx, 0], torch.max(boxes[i][:-1, 2])
+                top_limit = boxes[i][idx, 1]
+                
+                # Two questions on the same page
+                if j < len(indices)-1:
+                    bot_limit = boxes[i][indices[j+1], 1]
+                
+                # A question that either finishes the page or goes to another page
+                else:
+                    page_overflow = True
+                    bot_limit = boxes[i][-10, 3]
+
+                # Saving question
+                img = pages[i]
+                orig_w, orig_h = img.size
+                left = (left_limit.item()/1000)*orig_w - 5
+                right = (right_limit.item()/1000)* orig_w + 5
+                top = (top_limit.item()/1000)*orig_h - 5
+                bottom = (bot_limit.item()/1000)*orig_h + 5
+
+                crop = img.crop((left, top, right, bottom))
+                if discursiva:
+                    fname = f"data/visual_approach/prova_{year}/open_question_{open_counter:02d}_p1.png"
+                    open_counter += 1
+                else:
+                    fname = f"data/visual_approach/prova_{year}/closed_question_{closed_counter:02d}_p1.png"
+                    closed_counter += 1
+                crop.save(fname)
+
+                # Updating previous dictionary if needed
+                if page_overflow:
+                    prev.update({"left": left_limit, "right": right_limit, \
+                                "discursiva": discursiva})
+
+        # "Glueing" multiple page questions
+        folder = f"data/visual_approach/prova_{year}"
+        open_pattern = re.compile(r"open_question_(\d{2})_p[12]\.png$")
+        closed_pattern = re.compile(r"closed_question_(\d{2})_p[12]\.png$")
+
+        # Gathering all files and group by question number
+        groups = {}
+        for fname in os.listdir(folder):
+            open_m = open_pattern.match(fname)
+            closed_m = closed_pattern.match(fname)
+            
+            if open_m:
+                qnum = open_m.group(1)
+                try:
+                    groups[f'open_{qnum}'].append(fname)
+                except:
+                    groups[f'open_{qnum}'] = [fname]
+
+            elif closed_m:
+                qnum = closed_m.group(1)
+                try:
+                    groups[f'closed_{qnum}'].append(fname)
+                except:
+                    groups[f'closed_{qnum}'] = [fname]
+
+        # Stacking images vertically when question has more than one part
+        for qnum, fnames in groups.items():
+            if len(fnames) < 2:
+                path = os.path.join(folder, fnames[0])
+                os.rename(path, os.path.join(folder, f"{fnames[0].split('_p')[0]}.png"))
+                continue
+
+            # Organizing order to stack correctly
+            fnames_sorted = sorted(fnames)
+
+            # Computing dimensions for the new canvas
+            imgs = [Image.open(os.path.join(folder, f)) for f in fnames_sorted]
+            widths, heights = zip(*(im.size for im in imgs))
+            max_width = max(widths)
+            total_height = sum(heights)
+
+            # Creating a blank canvas and pasting each part
+            combined = Image.new("RGB", (max_width, total_height), (255, 255, 255))
+            y_offset = 0
+            for im in imgs:
+                combined.paste(im, (0, y_offset))
+                y_offset += im.height
+
+            # Saving the stacked image
+            combined.save(os.path.join(folder, f"{fnames[0].split('_p')[0]}.png"))
+
+            # Deleting the old files with parts
+            for f in fnames:
+                os.remove(os.path.join(folder, f))
+
+    except Exception as e:
+        print(f"Não foi possível parsear o PDF {url}: {e}\n")
+
 # Function to parse and extract content. Basically a wrapper of the other functions
 def parse_and_extract(page, df, target_courses, extraction_type='edital'):
     # Getting all year tabs and filtering everything before 2014
@@ -301,7 +491,8 @@ def parse_and_extract(page, df, target_courses, extraction_type='edital'):
                                 href = link.get_attribute("href")
                                 print(f"Prova do curso '{course}' encontrada em {year}\n")
 
-                                test_content = parse_pdf_test(href, int(year))
+                                # test_content = parse_pdf_test_textual(href, int(year))
+                                parse_pdf_test_visual(href, int(year))
 
     # Populating test_content with pd.NA because we are going to do this parsing on a GPU server so we can use and LLM to infer the area/sub-area of the content
     df['test_content'] = [pd.NA for y in df['year']]
