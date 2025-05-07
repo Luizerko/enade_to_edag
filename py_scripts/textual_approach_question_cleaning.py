@@ -9,14 +9,14 @@ def load_file(file_path):
   return content
 
 # Connecting to groq
-os.environ["OPENAI_API_KEY"] = load_file('data/keys/groq').strip()
+os.environ["OPENAI_API_KEY"] = load_file('../data/keys/groq').strip()
 client = OpenAI(
     base_url="https://api.groq.com/openai/v1",
     api_key=os.environ["OPENAI_API_KEY"],
 )
 
 # Reading questions
-root_dir = 'data/'
+root_dir = '../data/'
 for folder in os.listdir(root_dir):
     folder = os.path.join(root_dir, folder)
 

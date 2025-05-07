@@ -8,7 +8,7 @@ def load_file(file_path):
   return content
 
 # Connecting to groq
-os.environ["OPENAI_API_KEY"] = load_file('data/keys/groq').strip()
+os.environ["OPENAI_API_KEY"] = load_file('../data/keys/groq').strip()
 client = OpenAI(
     base_url="https://api.groq.com/openai/v1",
     api_key=os.environ["OPENAI_API_KEY"],
@@ -18,9 +18,9 @@ client = OpenAI(
 test_year = 2023
 question_type = 'closed'
 test_question = 1
-original_question = load_file(f'data/prova_{test_year}/clean/{question_type}_question_{test_question:02d}.txt')
+original_question = load_file(f'../data/prova_{test_year}/clean/{question_type}_question_{test_question:02d}.txt')
 
-question_format = load_file('data/edag_question_formats/resposta_unica.txt')
+question_format = load_file('../data/edag_question_formats/resposta_unica.txt')
 
 # Making request
 response = client.chat.completions.create(

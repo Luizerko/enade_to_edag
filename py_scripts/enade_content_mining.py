@@ -176,7 +176,7 @@ def parse_pdf_test_textual(url, year):
         doc = fitz.open(stream=pdf_stream, filetype="pdf")
 
         # Creating folder to store individual questions
-        output_folder = f"data/textual_approach/prova_{year}/raw"
+        output_folder = f"../data/textual_approach/prova_{year}/raw"
         os.makedirs(output_folder, exist_ok=True)
 
         # Getting all text from all pages
@@ -289,7 +289,7 @@ def parse_pdf_test_visual(url, year, dpi=300, visual=-1):
         pages = pages[1:-2]
 
         # Creating folder to store individual questions
-        output_folder = f"data/visual_approach/prova_{year}"
+        output_folder = f"../data/visual_approach/prova_{year}"
         os.makedirs(output_folder, exist_ok=True)
 
         # Initializing processor and device
@@ -324,9 +324,9 @@ def parse_pdf_test_visual(url, year, dpi=300, visual=-1):
 
                 crop = img.crop((left, top, right, bottom))
                 if discursiva:
-                    fname = f"data/visual_approach/prova_{year}/open_question_{open_counter-1:02d}_p2.png"
+                    fname = f"../data/visual_approach/prova_{year}/open_question_{open_counter-1:02d}_p2.png"
                 else:
-                    fname = f"data/visual_approach/prova_{year}/closed_question_{closed_counter-1:02d}_p2.png"
+                    fname = f"../data/visual_approach/prova_{year}/closed_question_{closed_counter-1:02d}_p2.png"
                 crop.save(fname)
                 
                 page_overflow = False
@@ -359,10 +359,10 @@ def parse_pdf_test_visual(url, year, dpi=300, visual=-1):
 
                 crop = img.crop((left, top, right, bottom))
                 if discursiva:
-                    fname = f"data/visual_approach/prova_{year}/open_question_{open_counter:02d}_p1.png"
+                    fname = f"../data/visual_approach/prova_{year}/open_question_{open_counter:02d}_p1.png"
                     open_counter += 1
                 else:
-                    fname = f"data/visual_approach/prova_{year}/closed_question_{closed_counter:02d}_p1.png"
+                    fname = f"../data/visual_approach/prova_{year}/closed_question_{closed_counter:02d}_p1.png"
                     closed_counter += 1
                 crop.save(fname)
 
@@ -372,7 +372,7 @@ def parse_pdf_test_visual(url, year, dpi=300, visual=-1):
                                 "discursiva": discursiva})
 
         # "Glueing" multiple page questions
-        folder = f"data/visual_approach/prova_{year}"
+        folder = f"../data/visual_approach/prova_{year}"
         open_pattern = re.compile(r"open_question_(\d{2})_p[12]\.png$")
         closed_pattern = re.compile(r"closed_question_(\d{2})_p[12]\.png$")
 
@@ -530,4 +530,4 @@ with sync_playwright() as p:
 
     # Creating and saving dataframe
     df = pd.DataFrame(df)
-    df.to_csv("data/enade_data.csv", index=False)
+    df.to_csv("../data/enade_data.csv", index=False)
