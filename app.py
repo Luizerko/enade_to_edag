@@ -20,8 +20,8 @@ def encode_image(image_path):
     return base64.b64encode(image_file.read()).decode('utf-8')
 
 # Initializing API client
-groq_key = load_file('data/keys/groq').strip()
-# groq_key = st.secrets["groq"]["key"]
+# groq_key = load_file('data/keys/groq').strip()
+groq_key = st.secrets["groq"]["key"]
 os.environ['OPENAI_API_KEY'] = groq_key
 client = OpenAI(
     base_url='https://api.groq.com/openai/v1',
@@ -101,12 +101,21 @@ original_question = load_image(original_path)
 # Displaying original question and creating placeholder for new question
 left, right = st.columns(2)
 with left:
-    st.subheader('Questão Original')
-    generate_clicked = st.button('Gerar Questão')
+    header_col, button_col = st.columns([4, 1])
+    header_col.subheader("Questão Original")
+    button_col.markdown(
+        "<div></div>",
+        unsafe_allow_html=True
+    )
+    generate_clicked = button_col.button("Gerar Questão")
+    
     img = load_image(original_path)
     st.image(img)
 with right:
-    st.subheader('Questão Gerada')
+    st.markdown(
+        "<h3 style='text-align:center; margin-bottom: 0.5em;'>Questão Gerada</h3>",
+        unsafe_allow_html=True
+    )
     new_q_placeholder = st.empty()
 
 # Generation button
