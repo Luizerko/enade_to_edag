@@ -1,10 +1,13 @@
-- Texto auxiliar (um gráfico, tabela, figura, etc.). Se não quiser usar nada, escreva “Sem suporte gráfico.”
+- Texto auxiliar introdutório para a questão.
+- Anexo da questão (um gráfico, tabela, figura, fluxograma, etc.) para ajudar o aluno no entendimento da questão ou visualizar algo descrito pela questão. Se não quiser usar nada, escreva “Sem suporte gráfico.”
 - Enunciado da questão, que provoque a interpretação do aluno.
 - Cinco alternativas (A) até (E), apenas uma correta. Nesse caso, não devem haver sentenças em numerais romanos a serem avaliadas, apenas as alternativas diretamente.
 - Cada parte do formato DEVE aparecer na forma exata abaixo:
 
 PERGUNTA:
 <texto auxiliar>
+
+<anexo>
 
 <enunciado da questao>
 

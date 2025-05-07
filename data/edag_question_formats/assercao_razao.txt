@@ -1,14 +1,18 @@
-- A questão do tipo ASSERÇÃO-RAZÃO é fechada com cinco alternativas e tem como objetivo a análise de relações de veracidade ou falsidade, e também da existência ou não de relação de causalidade entre as proposições.
-- Inserir suporte mínimo, conforme o solicitado: Gráfico e/ou Tabela e/ou Texto e/ou Charge e/ou Tirinha e/ou Fluxograma e/ou Figura. O suporte deve auxiliar o estudante/leitor a responder à questão. Se não houver, escrever "Sem suporte gráfico."
-- Você deve apresentar duas proposições ligadas pela palavra PORQUE.
+- Texto auxiliar introdutório para a questão.
+- Anexo da questão (um gráfico, tabela, figura, fluxograma, etc.) para ajudar o aluno no entendimento da questão ou visualizar algo descrito pela questão. Se não quiser usar nada, escreva “Sem suporte gráfico.”
+- Questão com duas proposições a serem analisadas pelo aluno como verdadeiras ou falsas. Você deve apresentar duas proposições ligadas pela palavra PORQUE.
+- A qestão também requer uma análise de causalidade entre as proposições.
 
 PERGUNTA:
 <texto auxiliar>
+
+<anexo>
+
 Nesse contexto, avalie as asserções a seguir e a relação proposta entre elas:
 
 I. <primeira asserção>
 
-PORQUE
+**PORQUE**
 
 II. <segunda asserção>
 

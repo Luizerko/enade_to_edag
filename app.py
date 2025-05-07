@@ -20,8 +20,8 @@ def encode_image(image_path):
     return base64.b64encode(image_file.read()).decode('utf-8')
 
 # Initializing API client
-# groq_key = load_file('data/keys/groq').strip()
-groq_key = st.secrets["groq"]["key"]
+groq_key = load_file('data/keys/groq').strip()
+# groq_key = st.secrets["groq"]["key"]
 os.environ['OPENAI_API_KEY'] = groq_key
 client = OpenAI(
     base_url='https://api.groq.com/openai/v1',
@@ -30,7 +30,16 @@ client = OpenAI(
 
 # Page configuration
 st.set_page_config(page_title='Gerador de Questões EDAG', layout='wide', initial_sidebar_state='collapsed')
-st.title('Gerador de Questões EDAG')
+
+# Addition to the title
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <h1>Gerador de Questões EDAG <span style="font-size: small;">by Luis Zerkowski</span></h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # Custom CSS for streamlit
 st.markdown(
@@ -93,15 +102,15 @@ original_question = load_image(original_path)
 left, right = st.columns(2)
 with left:
     st.subheader('Questão Original')
+    generate_clicked = st.button('Gerar Questão')
     img = load_image(original_path)
-    st.image(img, use_column_width=True)
+    st.image(img)
 with right:
-    st.subheader('Nova Questão Gerada')
+    st.subheader('Questão Gerada')
     new_q_placeholder = st.empty()
-    new_q_placeholder.text_area('', '', height=500)
 
 # Generation button
-if st.button('Gerar Nova Questão'):
+if generate_clicked:
     base64_image = encode_image(original_path)
     response = client.chat.completions.create(
         #model="meta-llama/llama-3.3-70b-versatile",
@@ -110,7 +119,7 @@ if st.button('Gerar Nova Questão'):
         messages=[
             {
                 'role': 'system',
-                'content': "Sua função é gerar uma nova questão de prova baseada numa imagem de uma questão original e seguindo exatamente no formato de saída fornecido. Não responda ao conteúdo da questão original. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Mantenha a estrutura, numeração, pontuação e estilo do [FORMATO DE SAÍDA]. Retorne apenas o texto da nova questão, nada mais.",
+                'content': "Sua função é gerar markdown de uma nova questão de prova baseada numa imagem de uma questão original e seguindo exatamente no formato de saída fornecido. Não responda ao conteúdo da questão original. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Mantenha a estrutura, numeração, pontuação e estilo do [FORMATO DE SAÍDA]. Retorne apenas o texto da nova questão, nada mais.",
             },
             {
                 'role': 'user',
@@ -134,4 +143,4 @@ if st.button('Gerar Nova Questão'):
     new_q = response.choices[0].message.content.strip()
 
     # Updating placeholder with actual new question
-    new_q_placeholder.text_area('', new_q, height=500)
+    new_q_placeholder.markdown(new_q, unsafe_allow_html=True)

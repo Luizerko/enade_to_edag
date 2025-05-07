@@ -1,14 +1,17 @@
-- Gráfico e/ou Tabela e/ou Texto e/ou Charge e/ou Tirinha e/ou Fluxograma e/ou Figura. O suporte deve auxiliar o estudante/leitor a responder à questão. Se não houver, escrever "Sem suporte gráfico."
-- Na questão do tipo RESPOSTA MÚLTIPLA, várias (3 a 5) afirmativas devem ser analisadas como falsas ou verdadeiras. Por fim, deve ser escolhida a alternativa que corresponde ao resultado analisado.
+- Texto auxiliar introdutório para a questão.
+- Anexo da questão (um gráfico, tabela, figura, fluxograma, etc.) para ajudar o aluno no entendimento da questão ou visualizar algo descrito pela questão. Se não quiser usar nada, escreva “Sem suporte gráfico.”
+- Quatro afirmativas para análise de verdadeiro ou falso. Por fim, o aluno irá escolher a alternativa que corresponde aos resultados de verdadeiro ou falso analisados.
 - Cada parte do formato DEVE aparecer na forma exata abaixo:
 
 PERGUNTA:
 <texto auxiliar>
 
+<anexo>
+
 I. <afirmação>
 II. <afirmação>
 III. <afirmação>
-IV. <afirmação>
+IV. <afirmação>>
 
 É correto apenas o que se afirma em:
 
