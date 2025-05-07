@@ -20,7 +20,8 @@ def encode_image(image_path):
     return base64.b64encode(image_file.read()).decode('utf-8')
 
 # Initializing API client
-groq_key = load_file('data/keys/groq').strip()
+# groq_key = load_file('data/keys/groq').strip()
+groq_key = st.secrets["groq"]["key"]
 os.environ['OPENAI_API_KEY'] = groq_key
 client = OpenAI(
     base_url='https://api.groq.com/openai/v1',
