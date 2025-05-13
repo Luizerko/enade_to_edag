@@ -35,7 +35,7 @@ st.set_page_config(page_title='Gerador de Questões EDAG', layout='wide', initia
 st.markdown(
     """
     <div style="text-align: center;">
-        <h1>Gerador de Questões EDAG <span style="font-size: small;">by Luis Zerkowski</span></h1>
+        <h1>Gerador de Questões EDAG <span style="font-size: xx-small;">by Luis Zerkowski</span></h1>
     </div>
     """,
     unsafe_allow_html=True

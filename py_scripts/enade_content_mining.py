@@ -245,23 +245,56 @@ def parse_pdf_test_textual(url, year):
     except Exception as e:
         print(f"Não foi possível parsear o PDF {url}: {e}\n")
 
+# Function to test if any other question has similar height to the first question
+def test_heights(indices, boxes):
+    if len(indices) > 1:
+        for idx in indices[1:]:
+            if torch.abs(boxes[indices[0], 1]-boxes[idx, 1]) < 5:
+                return True
+    return False
+
 # Function to extract questions from PDF
 def deep_learning_ocr(pages, processor, device, visual=-1):
     # Running LayoutLMv3 OCR
     tokens = []
     boxes = []
+    final_pages = []
     for i, page in enumerate(pages, start=1):
         # Running model
         enc = processor(page, return_tensors="pt", truncation=True, \
-        max_length=1024).to(device)
+        max_length=2048).to(device)
         
         # Extracting tokens and boundig boxes
-        page_tokens = enc.tokens()
-        page_tokens = [token.replace('Ġ', '') for token in page_tokens]
+        page_tokens = [token.replace('Ġ', '') for token in enc.tokens()]
         page_boxes  = enc.bbox.squeeze(0)
         
+         # Stopping test reading if "Questionário de Percepção da Prova" is reached
+        indices = [j for j, token in enumerate(page_tokens) if token == 'QUEST']
+        if len(indices) >= 1 and page_tokens[indices[0]+1] == 'ION':
+            return final_pages, tokens, boxes
+
+        # Splitting page in case it's a vertically split page        
+        if len(indices) >= 2 and test_heights(indices, page_boxes):
+            w, h  = page.size
+            mid_x = w//2
+            halves = [page.crop((0, 0, mid_x, h)), page.crop((mid_x, 0, w, h))]
+
+            # Rerunning model now on 2 pages
+            for half in halves:
+                sub_enc = processor(half, return_tensors="pt", truncation=True,\
+                                    max_length=1024).to(device)
+                sub_tokens = [token.replace('Ġ','') for token in sub_enc.tokens()]
+                sub_boxes  = sub_enc.bbox.squeeze(0)
+
+                tokens.append(sub_tokens)
+                boxes.append(sub_boxes)
+                final_pages.append(half)
+
+            continue
+
         tokens.append(page_tokens)
         boxes.append(page_boxes)
+        final_pages.append(page)
         
         # Drawing bounding boxes on questions
         if visual != -1 and i == visual:
@@ -276,9 +309,9 @@ def deep_learning_ocr(pages, processor, device, visual=-1):
             plt.figure(figsize=(12, 6))
             plt.imshow(page)
 
-            return pages, tokens, boxes
+            return final_pages, tokens, boxes
     
-    return pages, tokens, boxes
+    return final_pages, tokens, boxes
 
 # Parsing PDF to extract ENADE test content
 def parse_pdf_test_visual(url, year, dpi=300, visual=-1):
