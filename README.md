@@ -23,10 +23,10 @@ A partir desses dados, queremos:
 ## Status Atual
 
 - Raspagem e extração dos conteúdos teóricos dos editais **concluída**.
-- Raspagem de questões das provas **em andamento**.
-- Desenvolvimento do dashboard interativo para conteúdo **no futuro**.
-- Classificação das questões das provas nas áreas temáticas **no futuro**.
+- Raspagem de questões das provas **concluída**.
 - Geração automática de novas questões com LLMs **em andamento**.
+- Classificação das questões das provas nas áreas temáticas **em andamento**.
+- Desenvolvimento do dashboard interativo para conteúdo **no futuro**.
 
 ---
 

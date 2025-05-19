@@ -2,6 +2,7 @@ import time
 import re
 import os
 import io
+import base64
 
 from PIL import Image, ImageDraw
 from playwright.sync_api import sync_playwright
@@ -10,6 +11,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
 import requests
+from openai import OpenAI
 from pdf2image import convert_from_bytes, convert_from_path
 import pytesseract
 import torch
@@ -37,6 +39,20 @@ def safe_get(url, retries=5, backoff_factor=1.2):
         except Exception as e:
             print(f"Falha no request {i+1} de {retries}: {e}\n")
             time.sleep(backoff_factor*(2**i))
+
+# Function to load files
+def load_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        return f.read()
+
+# Function to load images
+def load_image(path):
+    return Image.open(path)
+
+# Function to encode images so we can send them to the model
+def encode_image(image_path):
+  with open(image_path, "rb") as image_file:
+    return base64.b64encode(image_file.read()).decode('utf-8')
 
 # Function to figure out if a text is garbage we did not manage to decode or proper text
 def garbage_text(text, threshold=0.5):
@@ -462,6 +478,58 @@ def parse_pdf_test_visual(url, year, dpi=300, visual=-1):
     except Exception as e:
         print(f"Não foi possível parsear o PDF {url}: {e}\n")
 
+# Function to extract the test content by topics, both on ENADE's format and on CIMATEC's formart
+def extract_test_content(df, year):
+    # Hard coded list of content from CIMATEC's perspective
+    edag_content_list = ['programação e engenharia de software', 'robótica', 'eletrônica e elétrica', 'arquitetura de computadores e sistemas operacionais', 'inteligência artificial', 'sistemas distribuídos e programação paralela', 'redes, cloud e segurança', 'sistemas embarcados e iot', 'sistemas digitais e sinais', 'outros']
+
+    # Getting enade's content list
+    idx = [i for i, y in enumerate(df['year']) if y == year][0]
+    enade_content_list = df['theoretical_content'][idx]
+
+    # Initializing API client
+    groq_key = load_file('../data/keys/groq').strip()
+    os.environ['OPENAI_API_KEY'] = groq_key
+    client = OpenAI(
+        base_url='https://api.groq.com/openai/v1',
+        api_key=os.environ['OPENAI_API_KEY'],
+    )
+
+    # Iterating through images and extracting content
+    for question in os.listdir(f'../data/visual_approach/prova_{year}'):
+        base64_image = encode_image(question)
+        response = client.chat.completions.create(
+            model='meta-llama/llama-4-maverick-17b-128e-instruct',
+            messages=[
+                {
+                    'role': 'system',
+                    'content': "Sua função é analisar a questão fornecida e determinar a quais categorias ela pertence em duas diferentes listas de conteúdo. Retorne apenas as categorias, nada mais. As categorias pertencentes a cada uma das listas devem ser separadas por '\n'.",
+                },
+                {
+                    'role': 'user',
+                    'content': [
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/png;base64,{base64_image}",
+                            },
+                        },
+                        {
+                            'type': 'text',
+                            'text': f"""Lista de conteúdos 1: {enade_content_list}\nLista de conteúdos 2: {edag_content_list}""",
+                        }
+                    ]
+                },
+            ],
+            temperature=1,
+            max_tokens=1024,
+        )
+        
+        contents = response.choices[0].message.content.strip()
+        enade_content, edag_content = contents.split('\n')
+        
+        return enade_content.split(', '), edag_content.split(', ')
+    
 # Function to parse and extract content. Basically a wrapper of the other functions
 def parse_and_extract(page, df, target_courses, extraction_type='edital'):
     # Getting all year tabs and filtering everything before 2014
@@ -524,11 +592,12 @@ def parse_and_extract(page, df, target_courses, extraction_type='edital'):
                                 href = link.get_attribute("href")
                                 print(f"Prova do curso '{course}' encontrada em {year}\n")
 
-                                # test_content = parse_pdf_test_textual(href, int(year))
                                 parse_pdf_test_visual(href, int(year))
 
-    # Populating test_content with pd.NA because we are going to do this parsing on a GPU server so we can use and LLM to infer the area/sub-area of the content
-    df['test_content'] = [pd.NA for y in df['year']]
+                                # After parsing the test, we procees to extract its content
+                                content_enade, content_edag = extract_test_content(df, int(year))
+                                df['test_content_enade'].append(content_enade)
+                                df['test_content_edag'].append(content_edag)
 
 # Starting interaction with browser
 with sync_playwright() as p:
@@ -536,7 +605,7 @@ with sync_playwright() as p:
     target_courses = {'engenharia de computação': ["engenharia da computação", "engenharia de computação"]}
 
     # Initializing dataframe
-    df = {'course': [], 'year': [], 'theoretical_content': [], 'test_content': []}
+    df = {'course': [], 'year': [], 'theoretical_content': [], 'test_content_enade': [], 'test_content_edag': []}
 
     # Launchung browser and navigating to desired URL
     browser = p.chromium.launch(headless=True)
