@@ -484,7 +484,11 @@ def extract_test_content(df, year):
     edag_content_list = ['programação e engenharia de software', 'robótica', 'eletrônica e elétrica', 'arquitetura de computadores e sistemas operacionais', 'inteligência artificial', 'sistemas distribuídos e programação paralela', 'redes, cloud e segurança', 'sistemas embarcados e iot', 'sistemas digitais e sinais', 'outros']
 
     # Getting enade's content list
-    idx = [i for i, y in enumerate(df['year']) if y == year][0]
+    idx = None
+    for i, y in enumerate(df['year']):
+        if int(y) == year:
+            idx = i
+            break
     enade_content_list = df['theoretical_content'][idx]
 
     # Initializing API client
@@ -496,39 +500,68 @@ def extract_test_content(df, year):
     )
 
     # Iterating through images and extracting content
+    enade_dictionary = {}
+    edag_dictionary = {}
     for question in os.listdir(f'../data/visual_approach/prova_{year}'):
-        base64_image = encode_image(question)
-        response = client.chat.completions.create(
-            model='meta-llama/llama-4-maverick-17b-128e-instruct',
-            messages=[
-                {
-                    'role': 'system',
-                    'content': "Sua função é analisar a questão fornecida e determinar a quais categorias ela pertence em duas diferentes listas de conteúdo. Retorne apenas as categorias, nada mais. As categorias pertencentes a cada uma das listas devem ser separadas por '\n'.",
-                },
-                {
-                    'role': 'user',
-                    'content': [
+        base64_image = encode_image(f'../data/visual_approach/prova_{year}/{question}')
+        while True:
+            try:
+                response = client.chat.completions.create(
+                    model='meta-llama/llama-4-maverick-17b-128e-instruct',
+                    messages=[
                         {
-                            "type": "image_url",
-                            "image_url": {
-                                "url": f"data:image/png;base64,{base64_image}",
-                            },
+                            'role': 'system',
+                            'content': "Sua função é analisar a questão fornecida e determinar a quais categorias ela pertence em duas diferentes listas de conteúdo. Retorne apenas as categorias, nada mais. As diferentes categorias numa lista devem ser separadas por ', ' e as listas de categorias devem ser separadas por '\n'.",
                         },
                         {
-                            'type': 'text',
-                            'text': f"""Lista de conteúdos 1: {enade_content_list}\nLista de conteúdos 2: {edag_content_list}""",
-                        }
-                    ]
-                },
-            ],
-            temperature=1,
-            max_tokens=1024,
-        )
+                            'role': 'user',
+                            'content': [
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": f"data:image/png;base64,{base64_image}",
+                                    },
+                                },
+                                {
+                                    'type': 'text',
+                                    'text': f"""Lista de conteúdos 1: {enade_content_list}\nLista de conteúdos 2: {edag_content_list}""",
+                                }
+                            ]
+                        },
+                    ],
+                    temperature=1,
+                    max_tokens=4096,
+                )
+                contents = response.choices[0].message.content.strip()
+
+                # Guaranteeing the answer is well formed by counting the number of lists
+                if contents.count('\n') == 1:
+                    enade_content, edag_content = contents.split('\n')
+                    enade_content = enade_content.split(', ')
+                    edag_content = edag_content.split(', ')
+
+                    # Checking if the contents are actually part of their proper lists
+                    for content in enade_content:
+                        if content not in enade_content_list:
+                            continue
+
+                    for content in edag_content:
+                        if content not in edag_content_list:
+                            continue
+
+                    time.sleep(2)
+                    break
+                
+                continue
+            
+            except:
+                print(f'Server problem... {e}')
+                time.sleep(15)
         
-        contents = response.choices[0].message.content.strip()
-        enade_content, edag_content = contents.split('\n')
-        
-        return enade_content.split(', '), edag_content.split(', ')
+        enade_dictionary[question.split('.')[0]] = enade_content
+        edag_dictionary[question.split('.')[0]] = edag_content
+
+    return enade_dictionary, edag_dictionary
     
 # Function to parse and extract content. Basically a wrapper of the other functions
 def parse_and_extract(page, df, target_courses, extraction_type='edital'):
