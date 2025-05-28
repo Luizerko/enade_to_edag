@@ -78,8 +78,6 @@ idna==3.10
     #   anyio
     #   httpx
     #   requests
-importlib-metadata==8.7.0
-    # via streamlit
 ipdb==0.13.13
     # via -r requirements.in
 ipython==8.36.0
@@ -96,14 +94,10 @@ jsonschema==4.23.0
     # via altair
 jsonschema-specifications==2025.4.1
     # via jsonschema
-markdown-it-py==3.0.0
-    # via rich
 markupsafe==3.0.2
     # via jinja2
 matplotlib-inline==0.1.7
     # via ipython
-mdurl==0.1.2
-    # via markdown-it-py
 numpy==2.2.5
     # via
     #   altair
@@ -113,7 +107,7 @@ numpy==2.2.5
     #   transformers
 openai==1.76.2
     # via -r requirements.in
-packaging==25.0
+packaging==24.2
     # via
     #   build
     #   huggingface-hub
@@ -159,11 +153,7 @@ pydeck==0.9.1
 pyee==12.1.1
     # via playwright
 pygments==2.19.1
-    # via
-    #   ipython
-    #   rich
-pympler==1.1
-    # via streamlit
+    # via ipython
 pymupdf==1.25.5
     # via -r requirements.in
 pyproject-hooks==1.2.0
@@ -173,9 +163,7 @@ pyproject-hooks==1.2.0
 pytesseract==0.3.13
     # via -r requirements.in
 python-dateutil==2.9.0.post0
-    # via
-    #   pandas
-    #   streamlit
+    # via pandas
 pytz==2025.2
     # via pandas
 pyyaml==6.0.2
@@ -194,8 +182,6 @@ requests==2.32.3
     #   huggingface-hub
     #   streamlit
     #   transformers
-rich==14.0.0
-    # via streamlit
 rpds-py==0.24.0
     # via
     #   jsonschema
@@ -214,7 +200,7 @@ soupsieve==2.7
     # via beautifulsoup4
 stack-data==0.6.3
     # via ipython
-streamlit==1.22.0
+streamlit==1.45.1
     # via -r requirements.in
 tenacity==8.5.0
     # via streamlit
@@ -253,27 +239,20 @@ typing-extensions==4.13.2
     #   pydantic-core
     #   pyee
     #   referencing
-    #   rich
     #   streamlit
     #   typing-inspection
 typing-inspection==0.4.0
     # via pydantic
 tzdata==2025.2
     # via pandas
-tzlocal==5.3.1
-    # via streamlit
 urllib3==2.4.0
     # via requests
-validators==0.34.0
-    # via streamlit
 watchdog==6.0.0
     # via streamlit
 wcwidth==0.2.13
     # via prompt-toolkit
 wheel==0.45.1
     # via pip-tools
-zipp==3.21.0
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
