@@ -119,8 +119,8 @@ def validate_question_format(text, fmt):
     return bool(re.match(pattern, text, re.DOTALL | re.VERBOSE))
 
 # Initializing API client
-groq_key = load_file('data/keys/groq').strip()
-# groq_key = st.secrets["groq"]["key"]
+# groq_key = load_file('data/keys/groq').strip()
+groq_key = st.secrets["groq"]["key"]
 os.environ['OPENAI_API_KEY'] = groq_key
 client = OpenAI(
     base_url='https://api.groq.com/openai/v1',
@@ -148,7 +148,7 @@ st.markdown(
         h1 { text-align: center; }
 
         /* Bigger labels for selectors */
-        div[data-testid="stMarkdownContainer"]{
+        div[data-testid="stMarkdownContainer"] {
             font-size: 24px !important;
         }
 
@@ -162,12 +162,58 @@ st.markdown(
             height: 8.5em !important;
         }
 
-        /* Centralizing columns */
-        div[data-testid="stColumn"].st-emotion-cache-vv2psj{
+        /* Centralizing columns for button that generates questions */
+        div[data-testid="stColumn"].st-emotion-cache-vv2psj {
             display: flex !important;
-            justify-content: center !important;
+            justify-content: center !important; 
             align-items: center !important;
         }
+
+        /* Making buttons larger */
+        button[data-testid="stBaseButton-secondary"] {
+            height: 5em !important;
+            width: 15em !important;
+        }
+
+        /* Making year separation bigger and centralized */
+        div[data-testid="stMarkdownContainer"].st-emotion-cache-seewz2 {
+            font-size: 28px !important;
+            line-height: 2.6em !important;
+        }
+
+        /* Centralizing grid buttons */
+        div[data-testid="stButton"].st-emotion-cache-8atqhb {
+            display: flex !important;
+            justify-content: center !important;
+            margin-bottom: 2em !important;
+        }
+
+        /* Resizing images */
+        div[data-testid="stImageContainer"] {
+            height: 33em !important;
+            width: 23em !important;
+        }
+        
+        img {
+            height: 100% !important;
+            object-fit: contain !important;
+        }
+
+        /* Removing toolbar from images */
+        div[data-testid="stElementToolbar"].st-emotion-cache-1iuhdj4 {
+            display: none !important;
+        }
+        
+        /* Centralizing selected image */
+        div[data-testid="stFullScreenFrame"] {
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        /* Increasing legend size for selected image */
+        div[data-testid="stCaptionContainer"] {
+            font-size: x-large !important;
+        } 
 
     </style>
     """,
@@ -284,16 +330,18 @@ if generate_clicked:
             break
 
         # If failed, changing message to try again
-        msgs.append({
-            'role':'user',
-            'content': ("O formato da questão não seguiu exatamente o template. Por favor, gere novamente exatamente no formato fornecido.")
-        })
+        if attempt == 0:
+            msgs.append({
+                'role':'user',
+                'content': ("O formato da questão não seguiu exatamente o template. Por favor, gere novamente exatamente no formato fornecido.")
+            })
         time.sleep(2)
 
     if new_q:
         new_q_placeholder.markdown(new_q, unsafe_allow_html=True)
     else:
-        st.error("Não consegui gerar a questão no formato correto após várias tentativas. Pode tentar novamente?")
+        st.error("Não consegui gerar a questão no formato correto após várias tentativas, mas aí está uma pergunta candidata")
+        new_q_placeholder.markdown(candidate, unsafe_allow_html=True)
 
 # Expanded question view logic
 if st.session_state.selected_question:
@@ -303,7 +351,7 @@ if st.session_state.selected_question:
         st.session_state.selected_question = None
         st.rerun()
 
-    st.image(sq['url'], caption=f"{type_map.get(sq['type'], sq['type'].title())} {sq['number']:02d}", output_format='PNG')
+    st.image(sq['url'], caption=f"Questão {type_map.get(sq['type'], sq['type'].title())} {sq['number']:02d}", output_format='PNG')
 
 # Card grid view
 else:
@@ -342,7 +390,7 @@ else:
 
     # Exhibiting qiestions in grid fashion
     for y in sorted(grouped.keys(), reverse=True):
-        cols = st.columns([1, 20])
+        cols = st.columns([1, 16])
         with cols[0]:
             st.markdown("")
             st.markdown(f"**{y}**")
