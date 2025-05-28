@@ -1,19 +1,9 @@
-- Texto auxiliar introdutório para a questão.
-- Anexo da questão (um gráfico, tabela, figura, fluxograma, etc.) para ajudar o aluno no entendimento da questão ou visualizar algo descrito pela questão. Se não quiser usar nada, escreva “Sem suporte gráfico.”
-- Questão dissertativa, aberta ou de resposta livre.
-- A questão deve incluir todas as informações necessárias para sua resolução, fornecendo textos motivadores e informações técnicas específicas (quando necessário).
-- O padrão de resposta deve ser claro e objetivo.
-- Todos os itens a serem respondidos devem ser enumerados.
-- O aluno deve responder, preferencialmente, de forma dissertativa, em até 15 linhas.
-- Cada parte do formato DEVE aparecer na forma exata abaixo:
-
 PERGUNTA:
-<texto auxiliar>
+<Texto auxiliar introdutório para a questão>
 
-<anexo>
+<Anexo da questão (um gráfico, tabela, figura, fluxograma) fornecido pelo usuário através de uma imagem. Se nada for anexado, escreva “Sem suporte gráfico”>
 
-<questão>
+<Enunciado da questão, que provoque a interpretação do aluno. A questão deve incluir todas as informações necessárias para sua resolução, fornecendo informações técnicas específicas quando necessário, e deve ser pensada para resposta dissertativa em até 15 linhas>
 
 JUSTIFICATIVA:
-
-<justificativa>
+<Resposta esperada para a questão com uma justificativa clara e objetiva>

@@ -1,17 +1,12 @@
-- Texto auxiliar introdutório para a questão.
-- Anexo da questão (um gráfico, tabela, figura, fluxograma, etc.) para ajudar o aluno no entendimento da questão ou visualizar algo descrito pela questão. Se não quiser usar nada, escreva “Sem suporte gráfico.”
-- Quatro afirmativas para análise de verdadeiro ou falso. Por fim, o aluno irá escolher a alternativa que corresponde aos resultados de verdadeiro ou falso analisados.
-- Cada parte do formato DEVE aparecer na forma exata abaixo:
-
 PERGUNTA:
-<texto auxiliar>
+<Texto auxiliar introdutório para a questão>
 
-<anexo>
+<Anexo da questão (um gráfico, tabela, figura, fluxograma) fornecido pelo usuário através de uma imagem. Se nada for anexado, escreva “Sem suporte gráfico”>
 
-I. <afirmação>
-II. <afirmação>
-III. <afirmação>
-IV. <afirmação>>
+I. <Afirmativa para análise posterior de verdadeiro ou falso>
+II. <Afirmativa para análise posterior de verdadeiro ou falso>
+III. <Afirmativa para análise posterior de verdadeiro ou falso>
+IV. <Afirmativa para análise posterior de verdadeiro ou falso>
 
 É correto apenas o que se afirma em:
 
@@ -22,7 +17,7 @@ IV. <afirmação>>
 (E) I, II, III e IV
 
 JUSTIFICATIVA:
-I. <Verdadeira/Falsa: explicação>
-II. <Verdadeira/Falsa: explicação>
-III. <Verdadeira/Falsa: explicação>
-IV. <Verdadeira/Falsa: explicação>
+I. <Declaração se a afirmativa I é verdadeira ou falsa seguida de uma explicação>
+II. <Declaração se a afirmativa II é verdadeira ou falsa seguida de uma explicação>
+III. <Declaração se a afirmativa III é verdadeira ou falsa seguida de uma explicação>
+IV. <Declaração se a afirmativa IV é verdadeira ou falsa seguida de uma explicação>

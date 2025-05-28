@@ -1,25 +1,19 @@
-- Texto auxiliar introdutório para a questão.
-- Anexo da questão (um gráfico, tabela, figura, fluxograma, etc.) para ajudar o aluno no entendimento da questão ou visualizar algo descrito pela questão. Se não quiser usar nada, escreva “Sem suporte gráfico.”
-- Enunciado da questão, que provoque a interpretação do aluno.
-- Cinco alternativas (A) até (E), apenas uma correta. Nesse caso, não devem haver sentenças em numerais romanos a serem avaliadas, apenas as alternativas diretamente.
-- Cada parte do formato DEVE aparecer na forma exata abaixo:
-
 PERGUNTA:
-<texto auxiliar>
+<Texto auxiliar introdutório para a questão>
 
-<anexo>
+<Anexo da questão (um gráfico, tabela, figura, fluxograma) fornecido pelo usuário através de uma imagem. Se nada for anexado, escreva “Sem suporte gráfico”>
 
-<enunciado da questao>
+<Enunciado da questão, que provoque a interpretação do aluno. As respostas serão dadas em cinco alternativas (abaixo) com apenas UMA correta>
 
-(A) <alternativa A>  
-(B) <alternativa B>  
-(C) <alternativa C>  
-(D) <alternativa D>  
-(E) <alternativa E>
+(A) <Alternativa A>
+(B) <Alternativa B>
+(C) <Alternativa C>
+(D) <Alternativa D>
+(E) <Alternativa E>
 
-JUSTIFICATIVA:  
-(A) <Correta/Incorreta: explicação>  
-(B) <Correta/Incorreta: explicação>  
-(C) <Correta/Incorreta: explicação>  
-(D) <Correta/Incorreta: explicação>  
-(E) <Correta/Incorreta: explicação>
+JUSTIFICATIVA:
+(A) <Declaração se a alternativa A é correta ou incorreta seguida de uma explicação>  
+(B) <Declaração se a alternativa B é correta ou incorreta seguida de uma explicação>  
+(C) <Declaração se a alternativa C é correta ou incorreta seguida de uma explicação>  
+(D) <Declaração se a alternativa D é correta ou incorreta seguida de uma explicação>
+(E) <Declaração se a alternativa E é correta ou incorreta seguida de uma explicação>

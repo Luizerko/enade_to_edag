@@ -511,7 +511,7 @@ def extract_test_content(df, year):
                     messages=[
                         {
                             'role': 'system',
-                            'content': "Sua função é analisar a questão fornecida e determinar a quais categorias ela pertence em duas diferentes listas de conteúdo. Retorne apenas as categorias, nada mais. As diferentes categorias numa lista devem ser separadas por ', ' e as listas de categorias devem ser separadas por '\n'.",
+                            'content': "Sua função é analisar a questão fornecida e determinar a quais categorias ela pertence em duas diferentes listas de conteúdo. Tente achar o menor número de categorias possível por questão, ou seja categorias diretas da questão, não tangenciais. Retorne apenas as categorias, nada mais. As diferentes categorias numa lista devem ser separadas por '; ' e as listas de categorias devem ser separadas por '\n'.",
                         },
                         {
                             'role': 'user',
@@ -529,7 +529,7 @@ def extract_test_content(df, year):
                             ]
                         },
                     ],
-                    temperature=1,
+                    temperature=0.9,
                     max_tokens=4096,
                 )
                 contents = response.choices[0].message.content.strip()
@@ -537,8 +537,8 @@ def extract_test_content(df, year):
                 # Guaranteeing the answer is well formed by counting the number of lists
                 if contents.count('\n') == 1:
                     enade_content, edag_content = contents.split('\n')
-                    enade_content = enade_content.split(', ')
-                    edag_content = edag_content.split(', ')
+                    enade_content = enade_content.split('; ')
+                    edag_content = edag_content.split('; ')
 
                     # Checking if the contents are actually part of their proper lists
                     for content in enade_content:

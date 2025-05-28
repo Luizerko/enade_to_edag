@@ -1,4 +1,6 @@
 import os
+import re
+import time
 import glob
 import base64
 from PIL import Image
@@ -27,9 +29,98 @@ def load_edag_topics(path='data/enade_data.csv'):
     df = pd.read_csv(path, converters={'test_content_edag': ast.literal_eval})
     return {row['year']: row['test_content_edag'] for _, row in df.iterrows()}
 
+# Function to validate question format
+def validate_question_format(text, fmt):
+    # Question starts with “PERGUNTA:” and contains “JUSTIFICATIVA:”?
+    if not text.startswith("PERGUNTA:") or "JUSTIFICATIVA:" not in text:
+        return False
+
+    # Trying to get rid of questions on the introction text without filtering too much for the model's creativity
+    try:
+        intro = text.split("PERGUNTA:\n",1)[1].split("\n\n",1)[0]
+        if "?" == intro[-1]:
+            return False
+    except:
+        return False
+
+    # Testing regex for question structure
+    if fmt == 'resposta_unica':
+        pattern = r"""
+            ^PERGUNTA:\n
+            .+\n\n
+            .+\n\n
+            .+\n\n
+            \(A\)\s.+\n
+            \(B\)\s.+\n
+            \(C\)\s.+\n
+            \(D\)\s.+\n
+            \(E\)\s.+\n\n
+            JUSTIFICATIVA:\n
+            \(A\)\s.+\n
+            \(B\)\s.+\n
+            \(C\)\s.+\n
+            \(D\)\s.+\n
+            \(E\)\s.+$
+        """
+
+    elif fmt == 'resposta_multipla':
+        pattern = r"""
+            ^PERGUNTA:\n
+            .+\n\n
+            .+\n\n
+            I\.\s+.+\n
+            II\.\s+.+\n
+            III\.\s+.+\n
+            IV\.\s+.+\n\n
+            É correto apenas o que se afirma em:\n\n
+            \(A\)\s+I\n
+            \(B\)\s+II e IV\n
+            \(C\)\s+III e IV\n
+            \(D\)\s+I, II e III\n
+            \(E\)\s+I, II, III e IV\n\n
+            JUSTIFICATIVA:\n
+            I\.\s+.+\n
+            II\.\s+.+\n
+            III\.\s+.+\n
+            IV\.\s+.+s$
+        """
+
+    elif fmt == 'discursiva':
+        pattern = r"""
+            ^PERGUNTA:\n
+            .+\n\n
+            .+\n\n
+            .+\n\n
+            JUSTIFICATIVA:\n
+            .+$
+        """
+
+    elif fmt == 'assercao_razao':
+        pattern = r"""
+            ^PERGUNTA:\n
+            .+\n\n
+            .+\n\n
+            Nesse contexto, avalie as asserções a seguir e a relação proposta entre elas:\n\n
+            I\.\s+.+\n\n
+            \*\*PORQUE\*\*\n\n
+            II\.\s+.+\n\n
+            À respeito dessas asserções, assinale a opção correta:\n\n
+            \(A\)\s+As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I\.\n
+            \(B\)\s+As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I\.\n
+            \(C\)\s+A asserção I é uma proposição verdadeira, e a II é uma proposição falsa\.\n
+            \(D\)\s+A asserção I é uma proposição falsa, e a II é uma proposição verdadeira\.\n
+            \(E\)\s+As asserções I e II são proposições falsas\.\n\n
+            JUSTIFICATIVA:\n
+            I\.\s+.+\n
+            II\.\s+.+\n\n
+            .+$
+        """
+    
+    return bool(re.match(pattern, text, re.DOTALL | re.VERBOSE))
+
 # Initializing API client
-# groq_key = load_file('data/keys/groq').strip()
-groq_key = st.secrets["groq"]["key"]
+groq_key = load_file('data/keys/groq').strip()
+# groq_key = st.secrets["groq"]["key"]
 os.environ['OPENAI_API_KEY'] = groq_key
 client = OpenAI(
     base_url='https://api.groq.com/openai/v1',
@@ -64,6 +155,18 @@ st.markdown(
         /* Reducing spacing between labels and text areas */
         div[data-testid="stSubHeader"] > label {
             margin-bottom: 0px !important;
+        }
+
+        /* Increasing textbox area */
+        div[data-testid="stTextInputRootElement"]{
+            height: 8.5em !important;
+        }
+
+        /* Centralizing columns */
+        div[data-testid="stColumn"].st-emotion-cache-vv2psj{
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
         }
 
     </style>
@@ -127,7 +230,7 @@ if generate_clicked:
     # Building up pipeline message
     msgs = []
     sys_content = (
-        "Sua função é gerar markdown de uma nova questão de prova baseada em [TÓPICOS] e seguindo exatamente no [FORMATO DE SAÍDA] fornecido. Não responda ao conteúdo da questão original. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Retorne apenas o texto da nova questão, nada mais. Caso haja uma imagem, gere a nova questão no mesmo tema da questão base da figura. Caso haja uma segunda imagem, use a figura fornecida como suporte gráfico na geração da nova questão. Caso haja [INSTRUÇÕES ADICIONAIS], siga exatamente o que for pedido."
+        "Sua função é gerar markdown de uma nova questão de prova dentro dos [TÓPICOS] fornecidos e seguindo exatamente o [FORMATO DE SAÍDA] fornecido através do preenchimento dos trechos marcados por '<>'. Não responda ao conteúdo da questão original. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Retorne apenas o texto da nova questão, nada mais. Caso haja uma imagem [QUESTÃO BASE], siga seu tema para gerar a nova questão. Caso haja uma image [ANEXO GRÁFICO], use-a como suporte gráfico na geração da nova questão. Caso haja [INSTRUÇÕES ADICIONAIS], siga exatamente o que for pedido."
     )
     msgs.append({'role':'system','content':sys_content})
 
@@ -138,34 +241,59 @@ if generate_clicked:
     if st.session_state.selected_question:
         path = st.session_state.selected_question['path']
         img_b64 = encode_image(path)
+        content_list.append({'type': 'text', 'text': '\n\n[QUESTÃO BASE]\n'})
         content_list.append({'type':'image_url','image_url':{'url':f"data:image/png;base64,{img_b64}"}})
     
     # Adjut for graphic support
     if uploaded_graphic is not None:
         data = uploaded_graphic.read()
         graphic_b64 = encode_image(data)
+        content_list.append({'type': 'text', 'text': '\n\n[ANEXO GRÁFICO]\n'})
         content_list.append({'type':'image_url','image_url':{'url':f"data:image/png;base64,{graphic_b64}"}})
     
     # Basic text with topics and format
-    text_block = f"[TÓPICOS]\n{topics}\n[FORMATO DE SAÍDA]\n{load_file(f'data/edag_question_formats/{st.session_state.chosen_fmt}') }"
+    if len(topics) != 0:
+        text_block = f"\n\n[TÓPICOS]\n{topics}\n\n[FORMATO DE SAÍDA]\n{load_file(f'data/edag_question_formats/{fmt_filter}') }"
+    else:
+        text_block = f"\n\n[TÓPICOS]\n{edag_content_list}\n\n[FORMATO DE SAÍDA]\n{load_file(f'data/edag_question_formats/{fmt_filter}') }"
 
     # Adjust for user instructions
     if user_prompt:
-        text_block += f"\n[INSTRUÇÕES ADICIONAIS]\n{user_prompt}"
+        text_block += f"\n\n[INSTRUÇÕES ADICIONAIS]\n{user_prompt}"
     
     msgs.append({'role':'user','content':content_list + [{'type':'text','text':text_block}]})
 
-    # API call
-    resp = client.chat.completions.create(
-        # model="meta-llama/llama-3.3-70b-versatile",
-        # model='meta-llama/llama-4-scout-17b-16e-instruct',
-        model='meta-llama/llama-4-maverick-17b-128e-instruct',
-        messages=msgs,
-        temperature=1,
-        max_tokens=2048
-    )
-    new_q = resp.choices[0].message.content.strip()
-    new_q_placeholder.markdown(new_q, unsafe_allow_html=True)
+    # Trying to generate question
+    max_attempts = 5
+    new_q = None
+    for attempt in range(max_attempts):
+        # API call
+        resp = client.chat.completions.create(
+            # model="meta-llama/llama-3.3-70b-versatile",
+            # model='meta-llama/llama-4-scout-17b-16e-instruct',
+            model='meta-llama/llama-4-maverick-17b-128e-instruct',
+            messages=msgs,
+            temperature=1.2,
+            max_tokens=2048
+        )
+
+        # Validating question
+        candidate = resp.choices[0].message.content.strip()
+        if validate_question_format(candidate, fmt_filter.split('.')[0]):
+            new_q = candidate
+            break
+
+        # If failed, changing message to try again
+        msgs.append({
+            'role':'user',
+            'content': ("O formato da questão não seguiu exatamente o template. Por favor, gere novamente exatamente no formato fornecido.")
+        })
+        time.sleep(2)
+
+    if new_q:
+        new_q_placeholder.markdown(new_q, unsafe_allow_html=True)
+    else:
+        st.error("Não consegui gerar a questão no formato correto após várias tentativas. Pode tentar novamente?")
 
 # Expanded question view logic
 if st.session_state.selected_question:
@@ -173,7 +301,7 @@ if st.session_state.selected_question:
 
     if st.button('Voltar'):
         st.session_state.selected_question = None
-        st.experimental_rerun()
+        st.rerun()
 
     st.image(sq['url'], caption=f"{type_map.get(sq['type'], sq['type'].title())} {sq['number']:02d}", output_format='PNG')
 
@@ -232,4 +360,4 @@ else:
                     label = f"Questão {type_map.get(q['type'], q['type'].title())} {q['number']:02d}"
                     if st.button(label, key=f"select_{y}_{q['type']}_{q['number']}"):
                         st.session_state.selected_question = q
-                        st.experimental_rerun()
+                        st.rerun()

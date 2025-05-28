@@ -1,20 +1,15 @@
-- Texto auxiliar introdutório para a questão.
-- Anexo da questão (um gráfico, tabela, figura, fluxograma, etc.) para ajudar o aluno no entendimento da questão ou visualizar algo descrito pela questão. Se não quiser usar nada, escreva “Sem suporte gráfico.”
-- Questão com duas proposições a serem analisadas pelo aluno como verdadeiras ou falsas. Você deve apresentar duas proposições ligadas pela palavra PORQUE.
-- A qestão também requer uma análise de causalidade entre as proposições.
-
 PERGUNTA:
-<texto auxiliar>
+<Texto auxiliar introdutório para a questão>
 
-<anexo>
+<Anexo da questão (um gráfico, tabela, figura, fluxograma) fornecido pelo usuário através de uma imagem. Se nada for anexado, escreva “Sem suporte gráfico”>
 
 Nesse contexto, avalie as asserções a seguir e a relação proposta entre elas:
 
-I. <primeira asserção>
+I. <Primeira asserção verdadeira ou falsa e que seja (ou não) justificada pela segunda asserção>
 
 **PORQUE**
 
-II. <segunda asserção>
+II. <Segunda asserção verdadeira ou falsa e que seja (ou não) explicação da primeira asserção>
 
 À respeito dessas asserções, assinale a opção correta:
 
@@ -25,7 +20,7 @@ II. <segunda asserção>
 (E) As asserções I e II são proposições falsas.
 
 JUSTIFICATIVA:
-I. <Verdadeira/Falsa: explicação>
-II. <Verdadeira/Falsa: explicação>
+I. <Declaração se a asserção I é verdadeira ou falsa seguida de uma explicação>
+II. <Declaração se a asserção II é verdadeira ou falsa seguida de uma explicação>
 
-<justificativa sobre a relação de causalidade (se aplicável)>
+<Explicação do porquê a segunda asserção é uma explicação (ou não) da primeira asserção>

@@ -4,8 +4,8 @@ Este projeto tem como objetivo minerar e analisar o conteúdo dos editais e das 
 
 A partir desses dados, queremos:
 
-- Construir um dashboard interativo com visualizações que nos permitam entender como o conteúdo do exame evoluiu ao longo do tempo.
 - Desenvolver uma pipeline automatizada com o uso de LLMs para gerar novas questões baseadas no conteúdo do ENADE, mas no formato do EDAG.
+- Construir um dashboard interativo com visualizações que nos permitam entender como o conteúdo do exame evoluiu ao longo do tempo.
 
 ## Etapas do Projeto
 
@@ -13,12 +13,12 @@ A partir desses dados, queremos:
    - Raspagem dos editais do ENADE (portarias oficiais) para extração do conteúdo teórico da prova.
    - Raspagem das provas aplicadas do ENADE por ano para extração e categorização automática das questões com base no conteúdo programático.
 
+2. **Geração de Questões com IA**
+   - Uso de LLMs para sugerir novas questões baseadas no ENADE e com a formatação do EDAG.
+
 3. **Dashboard Interativo**
    - Visualizações da evolução dos conteúdos e questões ao longo dos anos.
    - Comparações quantitativas por áreas temáticas.
-
-4. **Geração de Questões com IA**
-   - Uso de LLMs para sugerir novas questões baseadas no ENADE e com a formatação do EDAG.
 
 ## Status Atual
 
