@@ -118,6 +118,17 @@ def validate_question_format(text, fmt):
     
     return bool(re.match(pattern, text, re.DOTALL | re.VERBOSE))
 
+# Function modal with decorator to show new question
+@st.dialog('Nova Questão Gerada')
+def show_new_q():
+    # Rendering generated question
+    st.markdown(st.session_state.modal_content, unsafe_allow_html=True)
+
+    # Close button inside the dialog
+    if st.button("Close", key="close_modal"):
+        st.session_state.show_modal = False
+        st.rerun()
+
 # Initializing API client
 # groq_key = load_file('data/keys/groq').strip()
 groq_key = st.secrets["groq"]["key"]
@@ -159,11 +170,11 @@ st.markdown(
 
         /* Increasing textbox area */
         div[data-testid="stTextInputRootElement"]{
-            height: 8.5em !important;
+            height: 10em !important;
         }
 
         /* Centralizing columns for button that generates questions */
-        div[data-testid="stColumn"].st-emotion-cache-vv2psj {
+        div[data-testid="stColumn"]:has(> div > div > div > div[data-testid="stButton"]) {
             display: flex !important;
             justify-content: center !important; 
             align-items: center !important;
@@ -171,27 +182,42 @@ st.markdown(
 
         /* Making buttons larger */
         button[data-testid="stBaseButton-secondary"] {
-            height: 5em !important;
-            width: 15em !important;
+            height: 4em !important;
+            width: 12em !important;
         }
 
+        /* Centralizing drag and ro of files */
+        section[data-testid="stFileUploaderDropzone"] {
+            align-items: center !important;
+        }
+
+        div[data-testid="stFileUploaderDropzoneInstructions"] {
+            margin-right: 0 !important;
+        }    
+
         /* Making year separation bigger and centralized */
-        div[data-testid="stMarkdownContainer"].st-emotion-cache-seewz2 {
-            font-size: 28px !important;
-            line-height: 2.6em !important;
+        .year-separation {
+            font-size: 40px !important;
+            line-height: 1.5em !important;
         }
 
         /* Centralizing grid buttons */
-        div[data-testid="stButton"].st-emotion-cache-8atqhb {
+        div[data-testid="stButton"] {
             display: flex !important;
             justify-content: center !important;
-            margin-bottom: 2em !important;
         }
 
-        /* Resizing images */
-        div[data-testid="stImageContainer"] {
-            height: 33em !important;
-            width: 23em !important;
+        /* Separating grid lines */
+        div[data-testid="stHorizontalBlock"]:has(> div > div > div > div > div > div > div[data-testid="stImage"]) {
+            margin-bottom: 3em !important;
+            padding-bottom: 2em !important;
+            border-bottom: 2px dashed #aaa !important;
+        }
+
+        /* Resizing images on grid */
+        div[data-testid="stHorizontalBlock"] > div > div > div > div > div > div > div > div[data-testid="stImageContainer"] {
+            height: 30em !important;
+            width: 20em !important;
         }
         
         img {
@@ -200,10 +226,15 @@ st.markdown(
         }
 
         /* Removing toolbar from images */
-        div[data-testid="stElementToolbar"].st-emotion-cache-1iuhdj4 {
+        div[data-testid="stElementToolbar"] {
             display: none !important;
         }
         
+        /* Resizing selected image */
+        div[data-testid="stElementContainer"] > div > div > div > div[data-testid="stImageContainer"] {
+            height: 60em !important;
+        }
+
         /* Centralizing selected image */
         div[data-testid="stFullScreenFrame"] {
             display: flex !important;
@@ -213,7 +244,18 @@ st.markdown(
         /* Increasing legend size for selected image */
         div[data-testid="stCaptionContainer"] {
             font-size: x-large !important;
-        } 
+            colot: black !important
+        }
+
+        /* Changing size of modal for newly generated question */
+        div[data-testid="stDialog"] > div > div {
+            width: 100em !important;
+        }
+
+        /* Removing small 'x' from modal to better control enviroment variable */
+        button[aria-label="Close"] {
+            display: None !important
+        }
 
     </style>
     """,
@@ -223,6 +265,12 @@ st.markdown(
 # State variable later used for card (question) selection
 if 'selected_question' not in st.session_state:
     st.session_state.selected_question = None
+
+# State variable for new question modal
+if 'show_modal' not in st.session_state:
+    st.session_state.show_modal = False
+if 'modal_content' not in st.session_state:
+    st.session_state.modal_content = ""
 
 # Hard coded list of content from CIMATEC's perspective
 edag_content_list = ['programação e engenharia de software', 'robótica', 'eletrônica e elétrica', 'arquitetura de computadores e sistemas operacionais', 'inteligência artificial', 'sistemas distribuídos e programação paralela', 'redes, cloud e segurança', 'sistemas embarcados e iot', 'sistemas digitais e sinais', 'outros']
@@ -266,20 +314,28 @@ with cols[2]:
 gen_col, upload_col, btn_col = st.columns([3, 1, 1])
 user_prompt = gen_col.text_input('Instruções Adicionais (opcional)')
 uploaded_graphic = upload_col.file_uploader('Suporte Gráfico (opcional)', type=['png'])
+difficulty = btn_col.select_slider('Nível de Dificuldade', ['Fácil', 'Médio', 'Difícil'])
 generate_clicked = btn_col.button('Gerar Questão')
-
-# Placeholder for new question
-new_q_placeholder = st.empty()
 
 # Question generation logic
 if generate_clicked:
     # Building up pipeline message
     msgs = []
     sys_content = (
-        "Sua função é gerar markdown de uma nova questão de prova dentro dos [TÓPICOS] fornecidos e seguindo exatamente o [FORMATO DE SAÍDA] fornecido através do preenchimento dos trechos marcados por '<>'. Não responda ao conteúdo da questão original. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Retorne apenas o texto da nova questão, nada mais. Caso haja uma imagem [QUESTÃO BASE], siga seu tema para gerar a nova questão. Caso haja uma image [ANEXO GRÁFICO], use-a como suporte gráfico na geração da nova questão. Caso haja [INSTRUÇÕES ADICIONAIS], siga exatamente o que for pedido."
+        "Sua função é gerar markdown de uma nova questão de prova dentro dos [TÓPICOS] fornecidos, na [DIFICULDADE] fornecida e seguindo exatamente o [FORMATO DE SAÍDA] fornecido através do preenchimento dos trechos marcados por '<>'. Não responda ao conteúdo da questão original. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Retorne apenas o texto da nova questão, nada mais. Caso haja [INSTRUÇÕES ADICIONAIS], siga exatamente o que for pedido. Caso haja uma imagem [QUESTÃO BASE], siga seu tema para gerar a nova questão. Caso haja uma image [ANEXO GRÁFICO], use-a como suporte gráfico na geração da nova questão."
     )
     msgs.append({'role':'system','content':sys_content})
 
+    # Basic text with topics and format
+    if len(topics) != 0:
+        text_block = f"\n\n[TÓPICOS]\n{topics}\n\n[DIFICULDADE]\n{difficulty}\n\n[FORMATO DE SAÍDA]\n{load_file(f'data/edag_question_formats/{fmt_filter}') }"
+    else:
+        text_block = f"\n\n[TÓPICOS]\n{edag_content_list}\n\n[DIFICULDADE]\n{difficulty}\n\n[FORMATO DE SAÍDA]\n{load_file(f'data/edag_question_formats/{fmt_filter}') }"
+
+    # Adjust for user instructions
+    if user_prompt:
+        text_block += f"\n\n[INSTRUÇÕES ADICIONAIS]\n{user_prompt}"
+    
     # Adding user content
     content_list = []
     
@@ -297,17 +353,7 @@ if generate_clicked:
         content_list.append({'type': 'text', 'text': '\n\n[ANEXO GRÁFICO]\n'})
         content_list.append({'type':'image_url','image_url':{'url':f"data:image/png;base64,{graphic_b64}"}})
     
-    # Basic text with topics and format
-    if len(topics) != 0:
-        text_block = f"\n\n[TÓPICOS]\n{topics}\n\n[FORMATO DE SAÍDA]\n{load_file(f'data/edag_question_formats/{fmt_filter}') }"
-    else:
-        text_block = f"\n\n[TÓPICOS]\n{edag_content_list}\n\n[FORMATO DE SAÍDA]\n{load_file(f'data/edag_question_formats/{fmt_filter}') }"
-
-    # Adjust for user instructions
-    if user_prompt:
-        text_block += f"\n\n[INSTRUÇÕES ADICIONAIS]\n{user_prompt}"
-    
-    msgs.append({'role':'user','content':content_list + [{'type':'text','text':text_block}]})
+    msgs.append({'role':'user','content':[{'type':'text','text':text_block}] + content_list})
 
     # Trying to generate question
     max_attempts = 5
@@ -319,14 +365,14 @@ if generate_clicked:
             # model='meta-llama/llama-4-scout-17b-16e-instruct',
             model='meta-llama/llama-4-maverick-17b-128e-instruct',
             messages=msgs,
-            temperature=1.2,
+            temperature=1,
             max_tokens=2048
         )
 
         # Validating question
         candidate = resp.choices[0].message.content.strip()
         if validate_question_format(candidate, fmt_filter.split('.')[0]):
-            new_q = candidate
+            new_q = candidate.replace('\n', '<br>')
             break
 
         # If failed, changing message to try again
@@ -338,18 +384,24 @@ if generate_clicked:
         time.sleep(2)
 
     if new_q:
-        new_q_placeholder.markdown(new_q, unsafe_allow_html=True)
+        st.session_state.show_modal = True
+        st.session_state.modal_content = new_q    
     else:
-        st.error("Não consegui gerar a questão no formato correto após várias tentativas, mas aí está uma pergunta candidata")
-        new_q_placeholder.markdown(candidate, unsafe_allow_html=True)
+        st.error("Não consegui gerar a questão no formato correto após várias tentativas, mas aí está uma pergunta candidata!")
+        st.session_state.show_modal = True
+        st.session_state.modal_content = candidate
+
+# Creating modal with new question
+if st.session_state.show_modal:
+    show_new_q()
 
 # Expanded question view logic
 if st.session_state.selected_question:
     sq = st.session_state.selected_question
 
     if st.button('Voltar'):
-        st.session_state.selected_question = None
-        st.rerun()
+            st.session_state.selected_question = None
+            st.rerun()
 
     st.image(sq['url'], caption=f"Questão {type_map.get(sq['type'], sq['type'].title())} {sq['number']:02d}", output_format='PNG')
 
@@ -390,10 +442,10 @@ else:
 
     # Exhibiting qiestions in grid fashion
     for y in sorted(grouped.keys(), reverse=True):
-        cols = st.columns([1, 16])
+        cols = st.columns([1, 14])
         with cols[0]:
             st.markdown("")
-            st.markdown(f"**{y}**")
+            st.markdown(f"<b class='year-separation'>{y}</b>", unsafe_allow_html=True)
         with cols[1]:
             st.markdown(f"---")
         

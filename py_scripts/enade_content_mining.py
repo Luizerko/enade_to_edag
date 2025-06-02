@@ -504,58 +504,105 @@ def extract_test_content(df, year):
     edag_dictionary = {}
     for question in os.listdir(f'../data/visual_approach/prova_{year}'):
         base64_image = encode_image(f'../data/visual_approach/prova_{year}/{question}')
+        try_counter = 0
+        enade_check = False
+        edag_check = False
         while True:
             try:
-                response = client.chat.completions.create(
-                    model='meta-llama/llama-4-maverick-17b-128e-instruct',
-                    messages=[
-                        {
-                            'role': 'system',
-                            'content': "Sua função é analisar a questão fornecida e determinar a quais categorias ela pertence em duas diferentes listas de conteúdo. Tente achar o menor número de categorias possível por questão, ou seja categorias diretas da questão, não tangenciais. Retorne apenas as categorias, nada mais. As diferentes categorias numa lista devem ser separadas por '; ' e as listas de categorias devem ser separadas por '\n'.",
-                        },
-                        {
-                            'role': 'user',
-                            'content': [
-                                {
-                                    "type": "image_url",
-                                    "image_url": {
-                                        "url": f"data:image/png;base64,{base64_image}",
+                if not enade_check:
+                    response_enade = client.chat.completions.create(
+                        model='meta-llama/llama-4-maverick-17b-128e-instruct',
+                        messages=[
+                            {
+                                'role': 'system',
+                                'content': "Sua função é analisar a questão fornecida e determinar a quais categorias ela pertence dada uma lista de conteúdos. Tente achar o menor número de categorias possível por questão, ou seja categorias diretas da questão, não tangenciais. Retorne apenas as categorias, nada mais. Para as questões que não apresentam conteúdo técnico, atribua exclusivamente a categoria 'outros'. As diferentes categorias devem ser separadas por '; '.",
+                            },
+                            {
+                                'role': 'user',
+                                'content': [
+                                    {
+                                        "type": "image_url",
+                                        "image_url": {
+                                            "url": f"data:image/png;base64,{base64_image}",
+                                        },
                                     },
-                                },
-                                {
-                                    'type': 'text',
-                                    'text': f"""Lista de conteúdos 1: {enade_content_list}\nLista de conteúdos 2: {edag_content_list}""",
-                                }
-                            ]
-                        },
-                    ],
-                    temperature=0.9,
-                    max_tokens=4096,
-                )
-                contents = response.choices[0].message.content.strip()
+                                    {
+                                        'type': 'text',
+                                        'text': f"""Lista de conteúdos: {enade_content_list}""",
+                                    }
+                                ]
+                            },
+                        ],
+                        temperature=0.8,
+                        max_tokens=4096,
+                    )
+                    enade_content = response_enade.choices[0].message.content.strip().split('; ')
 
-                # Guaranteeing the answer is well formed by counting the number of lists
-                if contents.count('\n') == 1:
-                    enade_content, edag_content = contents.split('\n')
-                    enade_content = enade_content.split('; ')
-                    edag_content = edag_content.split('; ')
+                if not edag_check:
+                    response_edag = client.chat.completions.create(
+                        model='meta-llama/llama-4-maverick-17b-128e-instruct',
+                        messages=[
+                            {
+                                'role': 'system',
+                                'content': "Sua função é analisar a questão fornecida e determinar a quais categorias ela pertence dada uma lista de conteúdos. Tente achar o menor número de categorias possível por questão, ou seja categorias diretas da questão, não tangenciais. Retorne apenas as categorias, nada mais. Para as questões que não apresentam conteúdo técnico, atribua exclusivamente a categoria 'outros'. As diferentes categorias devem ser separadas por '; '.",
+                            },
+                            {
+                                'role': 'user',
+                                'content': [
+                                    {
+                                        "type": "image_url",
+                                        "image_url": {
+                                            "url": f"data:image/png;base64,{base64_image}",
+                                        },
+                                    },
+                                    {
+                                        'type': 'text',
+                                        'text': f"""Lista de conteúdos: {edag_content_list}""",
+                                    }
+                                ]
+                            },
+                        ],
+                        temperature=1.5,
+                        max_tokens=4096,
+                    )
+                    edag_content = response_edag.choices[0].message.content.strip().split('; ')
 
-                    # Checking if the contents are actually part of their proper lists
-                    for content in enade_content:
-                        if content not in enade_content_list:
-                            continue
+                # Checking if the contents are actually part of their proper lists
+                enade_check = True
+                for content in enade_content:
+                    if content not in enade_content_list:
+                        enade_check = False
+                        break
 
-                    for content in edag_content:
-                        if content not in edag_content_list:
-                            continue
+                edag_check = True
+                for content in edag_content:
+                    if content not in edag_content_list:
+                        edag_check = False
+                        break
 
-                    time.sleep(2)
-                    break
-                
-                continue
+                if not enade_check or not edag_check:
+                    try_counter += 1
+                    if try_counter >= 3:
+                        try_counter = 0
+                        print(f"Por favor, revise os conteúdos da questão {question.split('.')[0]}")
+                        print(question.split('.')[0])
+                        print(enade_content)
+                        print(edag_content)
+                        print()
+
+                        time.sleep(2)
+                        break
+                    continue
+
+                print(question.split('.')[0])
+                print(enade_content)
+                print(edag_content)
+                print()
+                time.sleep(2)
+                break
             
-            except:
-                print(f'Server problem... {e}')
+            except Exception as e:
+                print(f'Problema no servidor... {e}')
                 time.sleep(15)
         
         enade_dictionary[question.split('.')[0]] = enade_content
