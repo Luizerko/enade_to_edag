@@ -1,7 +1,7 @@
 ENUNCIADO:
 <Texto auxiliar introdutório para a questão>
 
-<Anexo da questão (um gráfico, tabela, figura, fluxograma) fornecido pelo usuário através de uma imagem. Se nada for anexado, escreva “Sem suporte gráfico”>
+Suporte gráfico fornecido pelo usuário.
 
 I. <Afirmativa para análise posterior de verdadeiro ou falso>
 II. <Afirmativa para análise posterior de verdadeiro ou falso>
@@ -17,7 +17,7 @@ IV. <Afirmativa para análise posterior de verdadeiro ou falso>
 (E) I, II, III e IV
 
 JUSTIFICATIVA:
-I. <Declaração se a afirmativa I é verdadeira ou falsa seguida de uma explicação>
-II. <Declaração se a afirmativa II é verdadeira ou falsa seguida de uma explicação>
-III. <Declaração se a afirmativa III é verdadeira ou falsa seguida de uma explicação>
-IV. <Declaração se a afirmativa IV é verdadeira ou falsa seguida de uma explicação>
+I. <Declaração se a afirmativa I é verdadeira ou falsa seguida de uma explicação, lembrando que o conjunto de afirmativas corretas deve presente em uma das alternativas>
+II. <Declaração se a afirmativa II é verdadeira ou falsa seguida de uma explicação, lembrando que o conjunto de afirmativas corretas deve presente em uma das alternativas>
+III. <Declaração se a afirmativa III é verdadeira ou falsa seguida de uma explicação, lembrando que o conjunto de afirmativas corretas deve presente em uma das alternativas>
+IV. <Declaração se a afirmativa IV é verdadeira ou falsa seguida de uma explicação, lembrando que o conjunto de afirmativas corretas deve presente em uma das alternativas>

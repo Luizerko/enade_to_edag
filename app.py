@@ -23,6 +23,11 @@ def encode_image(image_path):
   with open(image_path, "rb") as image_file:
     return base64.b64encode(image_file.read()).decode('utf-8')
 
+# Function to encode images (file objects) coming from the user
+def encode_image_fileobj(file_obj):
+    file_obj.seek(0)
+    return base64.b64encode(file_obj.read()).decode('utf-8')
+
 # Function to load dataframe's edag topics information (and save it in cache)
 @st.cache_data
 def load_edag_topics(path='data/enade_data.csv'):
@@ -45,83 +50,24 @@ def validate_question_format(text, fmt):
 
     # Testing regex for question structure
     if fmt == 'resposta_unica':
-        pattern = r"""
-            ^PERGUNTA:\n
-            .+\n\n
-            .+\n\n
-            .+\n\n
-            \(A\)\s.+\n
-            \(B\)\s.+\n
-            \(C\)\s.+\n
-            \(D\)\s.+\n
-            \(E\)\s.+\n\n
-            JUSTIFICATIVA:\n
-            \(A\)\s.+\n
-            \(B\)\s.+\n
-            \(C\)\s.+\n
-            \(D\)\s.+\n
-            \(E\)\s.+$
-        """
+        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\n[^\n]+\n\n\(A\) [^\n]+\n\(B\) [^\n]+\n\(C\) [^\n]+\n\(D\) [^\n]+\n\(E\) [^\n]+\n\nJUSTIFICATIVA:\n\(A\) [^\n]+\n\(B\) [^\n]+\n\(C\) [^\n]+\n\(D\) [^\n]+\n\(E\) [^\n]+$"
 
     elif fmt == 'resposta_multipla':
-        pattern = r"""
-            ^PERGUNTA:\n
-            .+\n\n
-            .+\n\n
-            I\.\s+.+\n
-            II\.\s+.+\n
-            III\.\s+.+\n
-            IV\.\s+.+\n\n
-            É correto apenas o que se afirma em:\n\n
-            \(A\)\s+I\n
-            \(B\)\s+II e IV\n
-            \(C\)\s+III e IV\n
-            \(D\)\s+I, II e III\n
-            \(E\)\s+I, II, III e IV\n\n
-            JUSTIFICATIVA:\n
-            I\.\s+.+\n
-            II\.\s+.+\n
-            III\.\s+.+\n
-            IV\.\s+.+s$
-        """
+        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\nI\. [^\n]+\nII\. [^\n]+\nIII\. [^\n]+\nIV\. [^\n]+\n\nÉ correto apenas o que se afirma em:\n\n\(A\) I\n\(B\) II e IV\n\(C\) III e IV\n\(D\) I, II e III\n\(E\) I, II, III e IV\n\nJUSTIFICATIVA:\nI\. [^\n]+\nII\. [^\n]+\nIII\. [^\n]+\nIV\. [^\n]+s$"
 
     elif fmt == 'discursiva':
-        pattern = r"""
-            ^PERGUNTA:\n
-            .+\n\n
-            .+\n\n
-            .+\n\n
-            JUSTIFICATIVA:\n
-            .+$
-        """
+        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\n[^\n]+\n\nJUSTIFICATIVA:\n[^\n]+$"
 
     elif fmt == 'assercao_razao':
-        pattern = r"""
-            ^PERGUNTA:\n
-            .+\n\n
-            .+\n\n
-            Nesse contexto, avalie as asserções a seguir e a relação proposta entre elas:\n\n
-            I\.\s+.+\n\n
-            \*\*PORQUE\*\*\n\n
-            II\.\s+.+\n\n
-            À respeito dessas asserções, assinale a opção correta:\n\n
-            \(A\)\s+As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I\.\n
-            \(B\)\s+As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I\.\n
-            \(C\)\s+A asserção I é uma proposição verdadeira, e a II é uma proposição falsa\.\n
-            \(D\)\s+A asserção I é uma proposição falsa, e a II é uma proposição verdadeira\.\n
-            \(E\)\s+As asserções I e II são proposições falsas\.\n\n
-            JUSTIFICATIVA:\n
-            I\.\s+.+\n
-            II\.\s+.+\n\n
-            .+$
-        """
+        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\nNesse contexto, avalie as asserções a seguir e a relação proposta entre elas:\n\nI\. [^\n]+\n\n\*\*PORQUE\*\*\n\nII\. [^\n]+\n\nÀ respeito dessas asserções, assinale a opção correta:\n\n\(A\) As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I\.\n\(B\) As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I\.\n\(C\) A asserção I é uma proposição verdadeira, e a II é uma proposição falsa\.\n\(D\) A asserção I é uma proposição falsa, e a II é uma proposição verdadeira\.\n\(E\) As asserções I e II são proposições falsas\.\n\nJUSTIFICATIVA:\nI\. [^\n]+\nII\. [^\n]+\n\n[^\n]+$"
     
-    return bool(re.match(pattern, text, re.DOTALL | re.VERBOSE))
+    return bool(re.match(pattern, text, flags=0))
 
 # Function modal with decorator to show new question
 @st.dialog('Nova Questão Gerada')
 def show_new_q():
     # Rendering generated question
+    # st.text(st.session_state.modal_content)
     st.markdown(st.session_state.modal_content, unsafe_allow_html=True)
 
     # Close button inside the dialog
@@ -130,13 +76,29 @@ def show_new_q():
         st.rerun()
 
 # Initializing API client
-# groq_key = load_file('data/keys/groq').strip()
-groq_key = st.secrets["groq"]["key"]
-os.environ['OPENAI_API_KEY'] = groq_key
+key = load_file('data/keys/groq').strip()
+# key = st.secrets["groq"]["key"]
+os.environ['OPENAI_API_KEY'] = key
 client = OpenAI(
     base_url='https://api.groq.com/openai/v1',
     api_key=os.environ['OPENAI_API_KEY'],
 )
+
+# key = load_file('data/keys/maritaca').strip()
+# key = st.secrets["maritaca"]["key"]
+# os.environ['OPENAI_API_KEY'] = key
+# client = OpenAI(
+#     base_url='https://chat.maritaca.ai/api',
+#     api_key=os.environ['OPENAI_API_KEY'],
+# )
+
+# key = load_file('data/keys/openai').strip()
+# key = st.secrets["openai"]["key"]
+# os.environ['OPENAI_API_KEY'] = key
+# client = OpenAI(
+#     base_url='https://api.groq.com/openai/v1',
+#     api_key=os.environ['OPENAI_API_KEY'],
+# )
 
 # Page configuration
 st.set_page_config(page_title='Gerador de Questões EDAG', layout='wide', initial_sidebar_state='collapsed')
@@ -156,7 +118,9 @@ st.markdown(
     """
     <style>
         /* Centering the main title */
-        h1 { text-align: center; }
+        h1 {
+            text-align: center;
+        }
 
         /* Bigger labels for selectors */
         div[data-testid="stMarkdownContainer"] {
@@ -166,11 +130,6 @@ st.markdown(
         /* Reducing spacing between labels and text areas */
         div[data-testid="stSubHeader"] > label {
             margin-bottom: 0px !important;
-        }
-
-        /* Increasing textbox area */
-        div[data-testid="stTextInputRootElement"]{
-            height: 10em !important;
         }
 
         /* Centralizing columns for button that generates questions */
@@ -194,6 +153,13 @@ st.markdown(
         div[data-testid="stFileUploaderDropzoneInstructions"] {
             margin-right: 0 !important;
         }    
+
+        /* Centering provas antigas title */
+        h2 {
+            text-align: center;
+            font-weight: bold !important;
+            margin-top: 3em !important;
+        }
 
         /* Making year separation bigger and centralized */
         .year-separation {
@@ -312,8 +278,8 @@ with cols[2]:
 
 # Text box for additional instructions and button to generate question
 gen_col, upload_col, btn_col = st.columns([3, 1, 1])
-user_prompt = gen_col.text_input('Instruções Adicionais (opcional)')
-uploaded_graphic = upload_col.file_uploader('Suporte Gráfico (opcional)', type=['png'])
+user_prompt = gen_col.text_area('Instruções Adicionais (opcional)', height=155)
+uploaded_graphic = upload_col.file_uploader('Suporte Gráfico PNG (opcional)', type=['png'])
 difficulty = btn_col.select_slider('Nível de Dificuldade', ['Fácil', 'Médio', 'Difícil'])
 generate_clicked = btn_col.button('Gerar Questão')
 
@@ -322,7 +288,7 @@ if generate_clicked:
     # Building up pipeline message
     msgs = []
     sys_content = (
-        "Sua função é gerar markdown de uma nova questão de prova dentro dos [TÓPICOS] fornecidos, na [DIFICULDADE] fornecida e seguindo exatamente o [FORMATO DE SAÍDA] fornecido através do preenchimento dos trechos marcados por '<>'. Não responda ao conteúdo da questão original. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Retorne apenas o texto da nova questão, nada mais. Caso haja [INSTRUÇÕES ADICIONAIS], siga exatamente o que for pedido. Caso haja uma imagem [QUESTÃO BASE], siga seu tema para gerar a nova questão. Caso haja uma image [ANEXO GRÁFICO], use-a como suporte gráfico na geração da nova questão."
+        "Sua função é gerar uma nova questão de prova dentro dos [TÓPICOS] fornecidos, na [DIFICULDADE] fornecida e seguindo exatamente o [FORMATO DE SAÍDA] fornecido através do preenchimento dos trechos marcados por '<>'. Não responda ao conteúdo da questão original. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Retorne apenas o texto da nova questão, nada mais. Caso haja [INSTRUÇÕES ADICIONAIS], siga exatamente o que for pedido. Caso haja uma imagem [QUESTÃO BASE], siga como exmplo para gerar a nova questão. Caso haja uma imagem [ANEXO GRÁFICO], use como suporte gráfico na geração da nova questão."
     )
     msgs.append({'role':'system','content':sys_content})
 
@@ -344,35 +310,47 @@ if generate_clicked:
         path = st.session_state.selected_question['path']
         img_b64 = encode_image(path)
         content_list.append({'type': 'text', 'text': '\n\n[QUESTÃO BASE]\n'})
-        content_list.append({'type':'image_url','image_url':{'url':f"data:image/png;base64,{img_b64}"}})
+        # content_list.append({'type':'image_url','image_url':{'url': f"data:image/png;base64,{img_b64}"}})
+        content_list.append({'type':'image_url','image_url':{'url': st.session_state.selected_question['url']}})
     
     # Adjut for graphic support
     if uploaded_graphic is not None:
-        data = uploaded_graphic.read()
-        graphic_b64 = encode_image(data)
+        graphic_b64 = encode_image_fileobj(uploaded_graphic)
         content_list.append({'type': 'text', 'text': '\n\n[ANEXO GRÁFICO]\n'})
         content_list.append({'type':'image_url','image_url':{'url':f"data:image/png;base64,{graphic_b64}"}})
     
+    # Creating message for groq models
     msgs.append({'role':'user','content':[{'type':'text','text':text_block}] + content_list})
 
+    # "Flattening" content for Maritaca's API
+    # flattened = text_block
+    # for item in content_list:
+    #     if item["type"] == "text":
+    #         flattened += item["text"]
+    #     
+    #     elif item["type"] == "image_url":
+    #         flattened += item["image_url"]["url"]
+
+    # msgs.append({"role": "user", "content": flattened})
+
     # Trying to generate question
-    max_attempts = 5
+    max_attempts = 1
     new_q = None
     for attempt in range(max_attempts):
         # API call
         resp = client.chat.completions.create(
-            # model="meta-llama/llama-3.3-70b-versatile",
-            # model='meta-llama/llama-4-scout-17b-16e-instruct',
+            # model="llama-3.3-70b-versatile",
             model='meta-llama/llama-4-maverick-17b-128e-instruct',
+            # model='sabia-3.1',
             messages=msgs,
-            temperature=1,
-            max_tokens=2048
+            temperature=0.8,
+            max_tokens=4096
         )
 
         # Validating question
         candidate = resp.choices[0].message.content.strip()
         if validate_question_format(candidate, fmt_filter.split('.')[0]):
-            new_q = candidate.replace('\n', '<br>')
+            new_q = candidate.replace('\n', '  \n')
             break
 
         # If failed, changing message to try again
@@ -381,13 +359,24 @@ if generate_clicked:
                 'role':'user',
                 'content': ("O formato da questão não seguiu exatamente o template. Por favor, gere novamente exatamente no formato fornecido.")
             })
-        time.sleep(2)
+        time.sleep(5)
 
     if new_q:
+        # Adding Anexo Gráfico to question if it exists
+        if uploaded_graphic is not None:
+            new_q = new_q.replace('  \n  \n', f'  \n  \n![Anexo Gráfico](data:image/png;base64,{graphic_b64})  \n  \n', 1)
+
         st.session_state.show_modal = True
         st.session_state.modal_content = new_q    
     else:
         st.error("Não consegui gerar a questão no formato correto após várias tentativas, mas aí está uma pergunta candidata!")
+
+        candidate = candidate.replace('\n', '  \n')
+
+        # Adding Anexo Gráfico to question if it exists
+        if uploaded_graphic is not None:
+            candidate = candidate.replace('  \n  \n', f"  \n  \n<img src='data:image/png;base64,{graphic_b64}'>  \n  \n", 1)
+
         st.session_state.show_modal = True
         st.session_state.modal_content = candidate
 
@@ -407,6 +396,9 @@ if st.session_state.selected_question:
 
 # Card grid view
 else:
+    st.markdown("")
+    st.markdown('<h2>Provas Antigas do ENADE</h2>', unsafe_allow_html=True)
+
     # Getting questions
     all_qs = []
     for y in years:

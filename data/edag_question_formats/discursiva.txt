@@ -1,7 +1,7 @@
 ENUNCIADO:
 <Texto auxiliar introdutório para a questão>
 
-<Anexo da questão (um gráfico, tabela, figura, fluxograma) fornecido pelo usuário através de uma imagem. Se nada for anexado, escreva “Sem suporte gráfico”>
+Suporte gráfico fornecido pelo usuário.
 
 <Enunciado da questão, que provoque a interpretação do aluno. A questão deve incluir todas as informações necessárias para sua resolução, fornecendo informações técnicas específicas quando necessário, e deve ser pensada para resposta dissertativa em até 15 linhas>
 
