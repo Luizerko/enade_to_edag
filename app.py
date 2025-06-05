@@ -76,8 +76,8 @@ def show_new_q():
         st.rerun()
 
 # Initializing API client
-key = load_file('data/keys/groq').strip()
-# key = st.secrets["groq"]["key"]
+# key = load_file('data/keys/groq').strip()
+key = st.secrets["groq"]["key"]
 os.environ['OPENAI_API_KEY'] = key
 client = OpenAI(
     base_url='https://api.groq.com/openai/v1',
@@ -239,7 +239,7 @@ if 'modal_content' not in st.session_state:
     st.session_state.modal_content = ""
 
 # Hard coded list of content from CIMATEC's perspective
-edag_content_list = ['programação e engenharia de software', 'robótica', 'eletrônica e elétrica', 'arquitetura de computadores e sistemas operacionais', 'inteligência artificial', 'sistemas distribuídos e programação paralela', 'redes, cloud e segurança', 'sistemas embarcados e iot', 'sistemas digitais e sinais', 'outros']
+edag_content_list = ['algoritmos e estrutura de dados', 'arquitetura de computadores', 'banco de dados', 'cibersegurança', 'ciência de dados', 'elétrica e eletrônica', 'engenharia de software', 'grafos', 'inteligência artificial', 'iot', 'lógica de programação', 'processamento de sinais', 'redes de computadores', 'robótica, automação e controle', 'sistemas digitais', 'sistemas distribuídos e programação paralela', 'sistemas embarcados', 'sistemas operacionais e compiladores', 'outros']
 
 # Loading topics
 edag_topics_by_year = load_edag_topics()

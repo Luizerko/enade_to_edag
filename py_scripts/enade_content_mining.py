@@ -481,7 +481,7 @@ def parse_pdf_test_visual(url, year, dpi=300, visual=-1):
 # Function to extract the test content by topics, both on ENADE's format and on CIMATEC's formart
 def extract_test_content(df, year):
     # Hard coded list of content from CIMATEC's perspective
-    edag_content_list = ['programação e engenharia de software', 'robótica', 'eletrônica e elétrica', 'arquitetura de computadores e sistemas operacionais', 'inteligência artificial', 'sistemas distribuídos e programação paralela', 'redes, cloud e segurança', 'sistemas embarcados e iot', 'sistemas digitais e sinais', 'outros']
+    edag_content_list = ['algoritmos e estrutura de dados', 'arquitetura de computadores', 'banco de dados', 'cibersegurança', 'ciência de dados', 'elétrica e eletrônica', 'engenharia de software', 'grafos', 'inteligência artificial', 'iot', 'lógica de programação', 'processamento de sinais', 'redes de computadores', 'robótica, automação e controle', 'sistemas digitais', 'sistemas distribuídos e programação paralela', 'sistemas embarcados', 'sistemas operacionais e compiladores', 'outros']
 
     # Getting enade's content list
     idx = None
@@ -533,7 +533,7 @@ def extract_test_content(df, year):
                                 ]
                             },
                         ],
-                        temperature=0.8,
+                        temperature=1.2,
                         max_tokens=4096,
                     )
                     enade_content = response_enade.choices[0].message.content.strip().split('; ')
@@ -562,7 +562,7 @@ def extract_test_content(df, year):
                                 ]
                             },
                         ],
-                        temperature=1.5,
+                        temperature=1.2,
                         max_tokens=4096,
                     )
                     edag_content = response_edag.choices[0].message.content.strip().split('; ')
@@ -590,15 +590,17 @@ def extract_test_content(df, year):
                         print(edag_content)
                         print()
 
-                        time.sleep(2)
+                        time.sleep(5)
                         break
+                    
+                    time.sleep(5)
                     continue
 
                 print(question.split('.')[0])
                 print(enade_content)
                 print(edag_content)
                 print()
-                time.sleep(2)
+                time.sleep(5)
                 break
             
             except Exception as e:
