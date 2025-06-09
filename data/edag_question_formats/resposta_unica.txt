@@ -1,7 +1,5 @@
 ENUNCIADO:
-<Texto auxiliar introdutório para a questão>
-
-Suporte gráfico fornecido pelo usuário.
+<Texto auxiliar introdutório para a questão. Se houver ANEXO GRÁFICO fornecido pelo usuário, ele será colocado logo abaixo desse texto auxiliar>
 
 <Enunciado da questão, que provoque a interpretação do aluno. As respostas serão dadas em cinco alternativas (abaixo) com apenas UMA correta>
 

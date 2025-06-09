@@ -36,13 +36,13 @@ def load_edag_topics(path='data/enade_data.csv'):
 
 # Function to validate question format
 def validate_question_format(text, fmt):
-    # Question starts with “PERGUNTA:” and contains “JUSTIFICATIVA:”?
-    if not text.startswith("PERGUNTA:") or "JUSTIFICATIVA:" not in text:
+    # Question starts with “ENUNCIADO:” and contains “JUSTIFICATIVA:”?
+    if not text.startswith("ENUNCIADO:") or "JUSTIFICATIVA:" not in text:
         return False
 
     # Trying to get rid of questions on the introction text without filtering too much for the model's creativity
     try:
-        intro = text.split("PERGUNTA:\n",1)[1].split("\n\n",1)[0]
+        intro = text.split("ENUNCIADO:\n",1)[1].split("\n\n",1)[0]
         if "?" == intro[-1]:
             return False
     except:
@@ -50,22 +50,27 @@ def validate_question_format(text, fmt):
 
     # Testing regex for question structure
     if fmt == 'resposta_unica':
-        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\n[^\n]+\n\n\(A\) [^\n]+\n\(B\) [^\n]+\n\(C\) [^\n]+\n\(D\) [^\n]+\n\(E\) [^\n]+\n\nJUSTIFICATIVA:\n\(A\) [^\n]+\n\(B\) [^\n]+\n\(C\) [^\n]+\n\(D\) [^\n]+\n\(E\) [^\n]+$"
+        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\n\(A\) [^\n]+\n\(B\) [^\n]+\n\(C\) [^\n]+\n\(D\) [^\n]+\n\(E\) [^\n]+\n\nJUSTIFICATIVA:\n\(A\) [^\n]+\n\(B\) [^\n]+\n\(C\) [^\n]+\n\(D\) [^\n]+\n\(E\) [^\n]+$"
 
     elif fmt == 'resposta_multipla':
-        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\nI\. [^\n]+\nII\. [^\n]+\nIII\. [^\n]+\nIV\. [^\n]+\n\nÉ correto apenas o que se afirma em:\n\n\(A\) I\n\(B\) II e IV\n\(C\) III e IV\n\(D\) I, II e III\n\(E\) I, II, III e IV\n\nJUSTIFICATIVA:\nI\. [^\n]+\nII\. [^\n]+\nIII\. [^\n]+\nIV\. [^\n]+s$"
+        pattern = r"^ENUNCIADO:\n[^\n]+\n\nI\. [^\n]+\nII\. [^\n]+\nIII\. [^\n]+\nIV\. [^\n]+\n\nÉ correto apenas o que se afirma em:\n\n\(A\) I\n\(B\) II e IV\n\(C\) III e IV\n\(D\) I, II e III\n\(E\) I, II, III e IV\n\nJUSTIFICATIVA:\nI\. [^\n]+\nII\. [^\n]+\nIII\. [^\n]+\nIV\. [^\n]+\n\nPortanto a alternativa correta é [A,B,C,D,E]$"
 
     elif fmt == 'discursiva':
-        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\n[^\n]+\n\nJUSTIFICATIVA:\n[^\n]+$"
+        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\nJUSTIFICATIVA:\n[^\n]+$"
 
     elif fmt == 'assercao_razao':
-        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\nNesse contexto, avalie as asserções a seguir e a relação proposta entre elas:\n\nI\. [^\n]+\n\n\*\*PORQUE\*\*\n\nII\. [^\n]+\n\nÀ respeito dessas asserções, assinale a opção correta:\n\n\(A\) As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I\.\n\(B\) As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I\.\n\(C\) A asserção I é uma proposição verdadeira, e a II é uma proposição falsa\.\n\(D\) A asserção I é uma proposição falsa, e a II é uma proposição verdadeira\.\n\(E\) As asserções I e II são proposições falsas\.\n\nJUSTIFICATIVA:\nI\. [^\n]+\nII\. [^\n]+\n\n[^\n]+$"
+        pattern = r"^ENUNCIADO:\n[^\n]+\n\nNesse contexto, avalie as asserções a seguir e a relação proposta entre elas:\n\nI\. [^\n]+\n\n\*\*PORQUE\*\*\n\nII\. [^\n]+\n\nÀ respeito dessas asserções, assinale a opção correta:\n\n\(A\) As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I\.\n\(B\) As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I\.\n\(C\) A asserção I é uma proposição verdadeira, e a II é uma proposição falsa\.\n\(D\) A asserção I é uma proposição falsa, e a II é uma proposição verdadeira\.\n\(E\) As asserções I e II são proposições falsas\.\n\nJUSTIFICATIVA:\nI\. [^\n]+\nII\. [^\n]+\n\n[^\n]+$"
     
     return bool(re.match(pattern, text, flags=0))
 
 # Function modal with decorator to show new question
 @st.dialog('Nova Questão Gerada')
 def show_new_q():
+    # Rendering question generation error
+    if st.session_state.modal_error:
+        st.error(st.session_state.modal_error)
+        st.session_state.modal_error = None
+
     # Rendering generated question
     # st.text(st.session_state.modal_content)
     st.markdown(st.session_state.modal_content, unsafe_allow_html=True)
@@ -237,6 +242,8 @@ if 'show_modal' not in st.session_state:
     st.session_state.show_modal = False
 if 'modal_content' not in st.session_state:
     st.session_state.modal_content = ""
+if 'modal_error' not in st.session_state:
+    st.session_state.modal_error = None
 
 # Hard coded list of content from CIMATEC's perspective
 edag_content_list = ['algoritmos e estrutura de dados', 'arquitetura de computadores', 'banco de dados', 'cibersegurança', 'ciência de dados', 'elétrica e eletrônica', 'engenharia de software', 'grafos', 'inteligência artificial', 'iot', 'lógica de programação', 'processamento de sinais', 'redes de computadores', 'robótica, automação e controle', 'sistemas digitais', 'sistemas distribuídos e programação paralela', 'sistemas embarcados', 'sistemas operacionais e compiladores', 'outros']
@@ -288,7 +295,7 @@ if generate_clicked:
     # Building up pipeline message
     msgs = []
     sys_content = (
-        "Sua função é gerar uma nova questão de prova dentro dos [TÓPICOS] fornecidos, na [DIFICULDADE] fornecida e seguindo exatamente o [FORMATO DE SAÍDA] fornecido através do preenchimento dos trechos marcados por '<>'. Não responda ao conteúdo da questão original. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Retorne apenas o texto da nova questão, nada mais. Caso haja [INSTRUÇÕES ADICIONAIS], siga exatamente o que for pedido. Caso haja uma imagem [QUESTÃO BASE], siga como exmplo para gerar a nova questão. Caso haja uma imagem [ANEXO GRÁFICO], use como suporte gráfico na geração da nova questão."
+        "Sua função é gerar uma nova questão de prova dentro dos [TÓPICOS] fornecidos, na [DIFICULDADE] fornecida e seguindo exatamente o [FORMATO DE SAÍDA] fornecido através do preenchimento dos trechos indicados por '<>'. Não responda ao conteúdo da questão original. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Retorne apenas o texto da nova questão, nada mais. Caso haja [INSTRUÇÕES ADICIONAIS], siga exatamente o que for pedido. Caso haja uma imagem [QUESTÃO BASE], siga como exmplo para gerar a nova questão. Caso haja uma imagem [ANEXO GRÁFICO], use como suporte gráfico na geração da nova questão."
     )
     msgs.append({'role':'system','content':sys_content})
 
@@ -334,7 +341,7 @@ if generate_clicked:
     # msgs.append({"role": "user", "content": flattened})
 
     # Trying to generate question
-    max_attempts = 1
+    max_attempts = 3
     new_q = None
     for attempt in range(max_attempts):
         # API call
@@ -349,6 +356,7 @@ if generate_clicked:
 
         # Validating question
         candidate = resp.choices[0].message.content.strip()
+        print(repr(candidate), fmt_filter.split('.')[0])
         if validate_question_format(candidate, fmt_filter.split('.')[0]):
             new_q = candidate.replace('\n', '  \n')
             break
@@ -367,10 +375,8 @@ if generate_clicked:
             new_q = new_q.replace('  \n  \n', f'  \n  \n![Anexo Gráfico](data:image/png;base64,{graphic_b64})  \n  \n', 1)
 
         st.session_state.show_modal = True
-        st.session_state.modal_content = new_q    
+        st.session_state.modal_content = new_q
     else:
-        st.error("Não consegui gerar a questão no formato correto após várias tentativas, mas aí está uma pergunta candidata!")
-
         candidate = candidate.replace('\n', '  \n')
 
         # Adding Anexo Gráfico to question if it exists
@@ -379,6 +385,7 @@ if generate_clicked:
 
         st.session_state.show_modal = True
         st.session_state.modal_content = candidate
+        st.session_state.modal_error = "Não consegui gerar a questão no formato correto após várias tentativas, mas aí está uma pergunta candidata!"
 
 # Creating modal with new question
 if st.session_state.show_modal:
