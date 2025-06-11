@@ -106,13 +106,13 @@ client = OpenAI(
 # )
 
 # Page configuration
-st.set_page_config(page_title='Gerador de Questões EDAG', layout='wide', initial_sidebar_state='collapsed')
+st.set_page_config(page_title='Gerador de Questões do EDAG', layout='wide', initial_sidebar_state='collapsed')
 
 # Addition to the title
 st.markdown(
     """
     <div style="text-align: center;">
-        <h1>Gerador de Questões EDAG <span style="font-size: xx-small;">by Luis Zerkowski</span></h1>
+        <h1>Gerador de Questões do EDAG <span style="font-size: xx-small;">by Luis Zerkowski</span></h1>
     </div>
     """,
     unsafe_allow_html=True
@@ -137,11 +137,22 @@ st.markdown(
             margin-bottom: 0px !important;
         }
 
+        /* Creating a bit more space between block in a horizontal block */
+        div[data-testid="stHorizontalBlock"] {
+            gap: 1.2rem !important;
+        }
+
         /* Centralizing columns for button that generates questions */
         div[data-testid="stColumn"]:has(> div > div > div > div[data-testid="stButton"]) {
             display: flex !important;
             justify-content: center !important; 
             align-items: center !important;
+        }
+
+        /* Centralizing slider and making it smaller */
+        div[data-baseweb="slider"] {
+            padding-left: 1em !important;
+            width: 90% !important;
         }
 
         /* Making buttons larger */
@@ -150,7 +161,7 @@ st.markdown(
             width: 12em !important;
         }
 
-        /* Centralizing drag and ro of files */
+        /* Centralizing drag and drop of files */
         section[data-testid="stFileUploaderDropzone"] {
             align-items: center !important;
         }
@@ -252,11 +263,11 @@ edag_content_list = ['algoritmos e estrutura de dados', 'arquitetura de computad
 edag_topics_by_year = load_edag_topics()
 
 # Topic selector
-topics_display = st.multiselect('Escolha um ou mais tópicos', [t.title() for t in edag_content_list], placeholder='Todos os tópicos')
+topics_display = st.multiselect('Escolha um ou mais tópicos', [t.title() for t in edag_content_list], placeholder='Todos os tópicos', help='Seletor de tópicos para gerar uma nova questão: o modelo usará os tópicos marcados (ou todos, se nenhum for escolhido) para criar uma pergunta. No caso de visualização de provas antigas do ENADE, o seletor filtra as questões por tópico. Note que a geração de uma questão pode combinar vários tópicos selecionados, então se você precisa de uma pergunta focada em um único tópico, selecione apenas aquele tópico.')
 topics = [t.lower() for t in topics_display]
 
-# Creating selectors on top
-cols = st.columns([1, 1, 1])
+# Text box for format selection, additional instructions and button to generate question
+fmt_col, gen_col, upload_col, btn_col = st.columns([1, 2, 1, 1])
 
 # Format mapping
 format_files = glob.glob('data/edag_question_formats/*.txt')
@@ -264,30 +275,14 @@ format_names = [os.path.basename(f) for f in format_files]
 display_formats = [os.path.splitext(name)[0].replace('_', ' ').title() for name in format_names]
 fmt_map = dict(zip(display_formats, format_names))
 
-with cols[0]:
-    chosen_fmt = st.selectbox('Formato da Nova Questão', display_formats)
-    fmt_filter = fmt_map[chosen_fmt]
+chosen_fmt = fmt_col.selectbox('Formato da Nova Questão', display_formats, help='Seletor de formato da nova questão baseado nos direcionamentos de padrão do EDAG.')
+fmt_filter = fmt_map[chosen_fmt]
+difficulty = fmt_col.select_slider('Nível de Dificuldade', ['Fácil', 'Médio', 'Difícil'], help='Seletor do nível de dificuldade da nova questão a ser gerada. Por conta da complexidade e subjetividaded inata em determinar o nível de dificuldade de uma questão, atente-se ao fato de que esse slider não garante uma questão fácil ou difícil.')
 
-# Year selector
-years = sorted([int(prova.split('_')[-1]) for prova in glob.glob('data/visual_approach/prova_*')])
-with cols[1]:
-    year_filter = st.selectbox('Ano da Prova', ['Todos'] + [str(y) for y in years])
+user_prompt = gen_col.text_area('Instruções Adicionais (opcional)', height=155, help='Área de texto para prompts adicionais e pedidos específicos que o usuário possar ter ao modelo quando da geração de uma nova questão.')
 
-# Type mapping
-raw_types = sorted({questao.split('_')[0] for questao in os.listdir(f'data/visual_approach/prova_{2023}')})
-type_map = {'closed': 'Fechada', 'open': 'Discursiva'}
-inv_type_map = {v: k for k, v in type_map.items()}
-display_types = ['Todos'] + [type_map.get(t, t.title()) for t in raw_types]
+uploaded_graphic = upload_col.file_uploader('Suporte Gráfico (opcional)', type=['png'], help='Opção de upload de imagem (em formato PNG) para que o modelo possa utilizar quando da geração de uma nova questão. Note que a imagem aqui fornecida será necessariamente adicionada à questão, não apenas utilizada como inspiração.')
 
-# Question type selector
-with cols[2]:
-    type_filter = st.selectbox('Tipo de Questão', display_types)
-
-# Text box for additional instructions and button to generate question
-gen_col, upload_col, btn_col = st.columns([3, 1, 1])
-user_prompt = gen_col.text_area('Instruções Adicionais (opcional)', height=155)
-uploaded_graphic = upload_col.file_uploader('Suporte Gráfico PNG (opcional)', type=['png'])
-difficulty = btn_col.select_slider('Nível de Dificuldade', ['Fácil', 'Médio', 'Difícil'])
 generate_clicked = btn_col.button('Gerar Questão')
 
 # Question generation logic
@@ -391,8 +386,17 @@ if generate_clicked:
 if st.session_state.show_modal:
     show_new_q()
 
+# Type mapping
+raw_types = sorted({questao.split('_')[0] for questao in os.listdir(f'data/visual_approach/prova_{2023}')})
+type_map = {'closed': 'Fechada', 'open': 'Discursiva'}
+inv_type_map = {v: k for k, v in type_map.items()}
+
 # Expanded question view logic
 if st.session_state.selected_question:
+    st.markdown("")
+    st.markdown('<h2>Questão Base Selecionada</h2>', unsafe_allow_html=True)
+    st.markdown("")
+
     sq = st.session_state.selected_question
 
     if st.button('Voltar'):
@@ -404,7 +408,22 @@ if st.session_state.selected_question:
 # Card grid view
 else:
     st.markdown("")
-    st.markdown('<h2>Provas Antigas do ENADE</h2>', unsafe_allow_html=True)
+    st.markdown('<h2>Questões de Provas Antigas do ENADE</h2>', unsafe_allow_html=True)
+    st.markdown("")
+    # st.markdown("", help="Seção com questões de provas antigas do ENADE. A ideia é permitir que uma questão seja selecionada para ser usada como base na geração de uma nova questão.")
+
+    # Creating selectors on top
+    cols = st.columns([1, 1])
+
+    # Year selector
+    years = sorted([int(prova.split('_')[-1]) for prova in glob.glob('data/visual_approach/prova_*')])
+    with cols[0]:
+        year_filter = st.selectbox('Ano da Prova', ['Todos'] + [str(y) for y in years], help='Filtro de seleção do(s) ano(s) de prova antiga a ser analisado. Note que o usuário também pode escolher analisar todos os anos de prova.')
+
+    # Question type selector
+    display_types = ['Todos'] + [type_map.get(t, t.title()) for t in raw_types]
+    with cols[1]:
+        type_filter = st.selectbox('Tipo de Questão', display_types, help='Filtro de seleção do(s) tipo(s) de questão a ser analisado. Note que o usuário também pode escolher analisar todos os tipos de questão.')
 
     # Getting questions
     all_qs = []
