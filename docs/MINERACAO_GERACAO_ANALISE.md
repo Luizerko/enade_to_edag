@@ -1,6 +1,6 @@
-## Overview
+# Overview
 
-Nesta seção é apresentado o processo de mineração de dados, criação do banco de dados da plataforma, geração automática de novas questões, e também a descrição técnica do projeto para replicabilidade em outras áreas do ENADE. A ideia é facilitar que professores e instituições criem questões no estilo ENADE, e também oferecer uma ferramenta útil para alunos estudarem e se prepararem para as provas.
+Nesta seção é apresentado o processo de mineração de dados, criação do banco de dados da plataforma, geração automática de novas questões, desenvolvimento do dashboard interativo para análise histórica do ENADE, e também a descrição técnica do projeto para replicabilidade em outras áreas do exame. A ideia é facilitar que professores e instituições criem questões no estilo ENADE, e também oferecer uma ferramenta útil para alunos estudarem e se prepararem para as provas.
 
 ## Mineração de Dados
 
@@ -31,3 +31,5 @@ Após diversos testes com diferentes modelos, o que melhor atendeu às necessida
 O sistema oferece flexibilidade na criação das questões, permitindo escolher formatos (dentro das possibilidades em `data/edag_question_formats/`), tópicos específicos, prompts adicionais do usuário, anexação de imagens (interpretadas pelo modelo para composição das questões) e uso de questões anteriores do ENADE como referência para criação de novas versões.
 
 Atualmente, esse modelo está sendo utilizado para criar um banco experimental de questões. Se o desempenho continuar positivo, futuros passos incluirão a escalabilidade e expansão do projeto.
+
+## Análise Histórica do ENADE

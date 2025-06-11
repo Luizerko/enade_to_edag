@@ -75,14 +75,18 @@ def show_new_q():
     # st.text(st.session_state.modal_content)
     st.markdown(st.session_state.modal_content, unsafe_allow_html=True)
 
-    # Close button inside the dialog
-    if st.button("Close", key="close_modal"):
-        st.session_state.show_modal = False
-        st.rerun()
+    # Buttons for either downloading generated question or closing the modal
+    col_dl, col_close = st.columns([1, 1], gap="small")
+    with col_dl:
+        st.download_button(label="Baixar Questão", data=st.session_state.modal_content, file_name="nova_questao.md", mime="text/markdown")
+    with col_close:
+        if st.button("Fechar", key="close_modal"):
+            st.session_state.show_modal = False
+            st.rerun()
 
 # Initializing API client
-# key = load_file('data/keys/groq').strip()
-key = st.secrets["groq"]["key"]
+key = load_file('data/keys/groq').strip()
+# key = st.secrets["groq"]["key"]
 os.environ['OPENAI_API_KEY'] = key
 client = OpenAI(
     base_url='https://api.groq.com/openai/v1',
@@ -239,6 +243,12 @@ st.markdown(
             display: None !important
         }
 
+        /* Fixing download button positioning on new question modal */
+        div[data-testid="stDownloadButton"] {
+            display: flex !important;
+            justify-content: center !important;
+        }
+
     </style>
     """,
     unsafe_allow_html=True
@@ -351,7 +361,6 @@ if generate_clicked:
 
         # Validating question
         candidate = resp.choices[0].message.content.strip()
-        print(repr(candidate), fmt_filter.split('.')[0])
         if validate_question_format(candidate, fmt_filter.split('.')[0]):
             new_q = candidate.replace('\n', '  \n')
             break

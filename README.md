@@ -9,6 +9,8 @@ A partir desses dados, queremos:
 
 <!-- Adicionar animação utilizando o aplicativo  -->
 
+Se quiser entender mais sobre o desenvolvimento das pipelines, leia a [documentação anexa](https://github.com/Luizerko/enade_to_edag/tree/main/docs/MINERACAO_GERACAO_ANALISE.md).
+
 ## Etapas do Projeto
 
 1. **Mineração de Dados**
@@ -33,16 +35,16 @@ A partir desses dados, queremos:
 ## Hierarquia do Repositório
  
     .
-    ├── assets                 # Coleção de imagens e GIFs utilizados para a documentação
-    ├── data                   # Coleção de questões, formatos e o CSV com metadados de provas antigas
-    |   ├── edag_question_formats
-    |   ├── textual_approach   # Questões antigas do ENADE extraídas com método de processamento textual
-    |   ├── visual_approach    # Questões antigas do ENADE extraídas com método de processamento visual
-    |   ├── enade_data.csv     # CSV com metadados de provas antigas
-    ├── docs                   # Arquivos de documentação
-    ├── notebooks              # Coleção ded notebooks IPython usados para testar código
-    ├── py_scripts             # Coleção de scripts Python utilizados para testar código e extrair e processar dados  
-    ├── app.py                 # Código Python do aplicativo
+    ├── assets                     # Coleção de imagens e GIFs utilizados para a documentação
+    ├── data                       # Coleção de questões, formatos e o CSV com metadados de provas antigas
+    |   ├── edag_question_formats  # Coleção de formatos das questões do EDAG
+    |   ├── textual_approach       # Questões antigas do ENADE extraídas com método de processamento textual
+    |   ├── visual_approach        # Questões antigas do ENADE extraídas com método de processamento visual
+    |   ├── enade_data.csv         # CSV com metadados de provas antigas
+    ├── docs                       # Arquivos de documentação
+    ├── notebooks                  # Coleção ded notebooks IPython usados para testar código
+    ├── py_scripts                 # Coleção de scripts Python utilizados para testar código e extrair e processar dados  
+    ├── app.py                     # Código Python do aplicativo
     └── ...
 
 ---
