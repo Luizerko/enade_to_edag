@@ -20,7 +20,7 @@ Essa fase foi mais complexa devido às dificuldades técnicas enfrentadas na ext
 
 Inicialmente, tentou-se usar o Opitcal Character Recognition (OCR) padrão (`pytesseract`), que apresentou dificuldades significativas devido à presença de caracteres especiais gregos (comuns em questões de exatas), imagens, tabelas e diagramas. Essa abordagem resultou em erros frequentes e perda de conteúdo.
 
-A solução encontrada foi o uso do OCR mais avançado `microsoft/layoutlmv3-large`, disponível no [Hugging Face](https://huggingface.co/microsoft/layoutlmv3-large). Esse modelo reconhece o layout da página, permitindo identificar cada questão com precisão por meio de bounding boxes. Essa solução resolveu os problemas anteriores e forneceu resultados consistentes para uso nas etapas seguintes.
+A solução encontrada foi o uso de um modelo OCR mais avançado, o [LayoutLMv3 Large](https://huggingface.co/microsoft/layoutlmv3-large). Esse modelo reconhece o layout da página, permitindo identificar cada questão com precisão por meio de bounding boxes. Essa solução resolveu os problemas anteriores e forneceu resultados consistentes para uso nas etapas seguintes.
 
 ## Geração de Questões
 
