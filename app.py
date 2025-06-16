@@ -40,7 +40,7 @@ def validate_question_format(text, fmt):
     if not text.startswith("ENUNCIADO:") or "JUSTIFICATIVA:" not in text:
         return False
 
-    # Trying to get rid of questions on the introction text without filtering too much for the model's creativity
+    # Trying to get rid of questions on the introduction text without filtering too much for the model's creativity
     try:
         intro = text.split("ENUNCIADO:\n",1)[1].split("\n\n",1)[0]
         if "?" == intro[-1]:
@@ -50,16 +50,16 @@ def validate_question_format(text, fmt):
 
     # Testing regex for question structure
     if fmt == 'resposta_unica':
-        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\n\(A\) [^\n]+\n\(B\) [^\n]+\n\(C\) [^\n]+\n\(D\) [^\n]+\n\(E\) [^\n]+\n\nJUSTIFICATIVA:\n\(A\) [^\n]+\n\(B\) [^\n]+\n\(C\) [^\n]+\n\(D\) [^\n]+\n\(E\) [^\n]+$"
+        pattern = r"(?s)^ENUNCIADO:\n[^\n]+\n\n(?:```.+?```\n\n)?[^\n]+\n\n\(A\) [^\n]+\n\(B\) [^\n]+\n\(C\) [^\n]+\n\(D\) [^\n]+\n\(E\) [^\n]+\n\nJUSTIFICATIVA:\n\(A\) [^\n]+\n\(B\) [^\n]+\n\(C\) [^\n]+\n\(D\) [^\n]+\n\(E\) [^\n]+$"
 
     elif fmt == 'resposta_multipla':
-        pattern = r"^ENUNCIADO:\n[^\n]+\n\nI\. [^\n]+\nII\. [^\n]+\nIII\. [^\n]+\nIV\. [^\n]+\n\nÉ correto apenas o que se afirma em:\n\n\(A\) I\n\(B\) II e IV\n\(C\) III e IV\n\(D\) I, II e III\n\(E\) I, II, III e IV\n\nJUSTIFICATIVA:\nI\. [^\n]+\nII\. [^\n]+\nIII\. [^\n]+\nIV\. [^\n]+\n\nPortanto a alternativa correta é [A,B,C,D,E]$"
+        pattern = r"(?s)^ENUNCIADO:\n[^\n]+\n\n(?:```.+?```\n\n)?I\. [^\n]+\nII\. [^\n]+\nIII\. [^\n]+\nIV\. [^\n]+\n\nÉ correto apenas o que se afirma em:\n\n\(A\) I\n\(B\) II e IV\n\(C\) III e IV\n\(D\) I, II e III\n\(E\) I, II, III e IV\n\nJUSTIFICATIVA:\nI\. [^\n]+\nII\. [^\n]+\nIII\. [^\n]+\nIV\. [^\n]+\n\nPortanto a alternativa correta é \(?[A,B,C,D,E]\)?$"
 
     elif fmt == 'discursiva':
-        pattern = r"^ENUNCIADO:\n[^\n]+\n\n[^\n]+\n\nJUSTIFICATIVA:\n[^\n]+$"
+        pattern = r"(?s)^ENUNCIADO:\n[^\n]+\n\n(?:```.+?```\n\n)?[^\n]+\n\nJUSTIFICATIVA:\n.+$"
 
     elif fmt == 'assercao_razao':
-        pattern = r"^ENUNCIADO:\n[^\n]+\n\nNesse contexto, avalie as asserções a seguir e a relação proposta entre elas:\n\nI\. [^\n]+\n\n\*\*PORQUE\*\*\n\nII\. [^\n]+\n\nÀ respeito dessas asserções, assinale a opção correta:\n\n\(A\) As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I\.\n\(B\) As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I\.\n\(C\) A asserção I é uma proposição verdadeira, e a II é uma proposição falsa\.\n\(D\) A asserção I é uma proposição falsa, e a II é uma proposição verdadeira\.\n\(E\) As asserções I e II são proposições falsas\.\n\nJUSTIFICATIVA:\nI\. [^\n]+\nII\. [^\n]+\n\n[^\n]+$"
+        pattern = r"(?s)^ENUNCIADO:\n[^\n]+\n\n(?:```.+?```\n\n)?Nesse contexto, avalie as asserções a seguir e a relação proposta entre elas:\n\nI\. [^\n]+\n\n\*\*PORQUE\*\*\n\nII\. [^\n]+\n\nÀ respeito dessas asserções, assinale a opção correta:\n\n\(A\) As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I\.\n\(B\) As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I\.\n\(C\) A asserção I é uma proposição verdadeira, e a II é uma proposição falsa\.\n\(D\) A asserção I é uma proposição falsa, e a II é uma proposição verdadeira\.\n\(E\) As asserções I e II são proposições falsas\.\n\nJUSTIFICATIVA:\nI\. [^\n]+\nII\. [^\n]+\n\n[^\n]+$"
     
     return bool(re.match(pattern, text, flags=0))
 
@@ -300,7 +300,7 @@ if generate_clicked:
     # Building up pipeline message
     msgs = []
     sys_content = (
-        "Sua função é gerar uma nova questão de prova dentro dos [TÓPICOS] fornecidos, na [DIFICULDADE] fornecida e seguindo exatamente o [FORMATO DE SAÍDA] fornecido através do preenchimento dos trechos indicados por '<>'. Não responda ao conteúdo da questão original. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Retorne apenas o texto da nova questão, nada mais. Caso haja [INSTRUÇÕES ADICIONAIS], siga exatamente o que for pedido. Caso haja uma imagem [QUESTÃO BASE], siga como exmplo para gerar a nova questão. Caso haja uma imagem [ANEXO GRÁFICO], use como suporte gráfico na geração da nova questão."
+        "Sua função é gerar uma nova questão de prova dentro dos [TÓPICOS] fornecidos, na [DIFICULDADE] fornecida e seguindo exatamente o [FORMATO DE SAÍDA] fornecido através do preenchimento dos trechos indicados por '<>'. Não adicione comentários, cabeçalhos, explicações, saudações ou qualquer texto extra. Retorne apenas o texto da nova questão, nada mais. Caso haja [INSTRUÇÕES ADICIONAIS], siga exatamente o que for pedido. Caso haja uma imagem [ANEXO GRÁFICO], use como suporte gráfico na geração da nova questão. Por fim, caso haja uma imagem [QUESTÃO BASE], faça uma nova versão da questão base, ainda seguindo o [FORMATO DE SAÍDA] fornecido."
     )
     msgs.append({'role':'system','content':sys_content})
 
@@ -317,6 +317,12 @@ if generate_clicked:
     # Adding user content
     content_list = []
     
+    # Adjut for graphic support
+    if uploaded_graphic is not None:
+        graphic_b64 = encode_image_fileobj(uploaded_graphic)
+        content_list.append({'type': 'text', 'text': '\n\n[ANEXO GRÁFICO]\n'})
+        content_list.append({'type':'image_url','image_url':{'url':f"data:image/png;base64,{graphic_b64}"}})
+
     # Adjust for selected question
     if st.session_state.selected_question:
         path = st.session_state.selected_question['path']
@@ -324,12 +330,6 @@ if generate_clicked:
         content_list.append({'type': 'text', 'text': '\n\n[QUESTÃO BASE]\n'})
         # content_list.append({'type':'image_url','image_url':{'url': f"data:image/png;base64,{img_b64}"}})
         content_list.append({'type':'image_url','image_url':{'url': st.session_state.selected_question['url']}})
-    
-    # Adjut for graphic support
-    if uploaded_graphic is not None:
-        graphic_b64 = encode_image_fileobj(uploaded_graphic)
-        content_list.append({'type': 'text', 'text': '\n\n[ANEXO GRÁFICO]\n'})
-        content_list.append({'type':'image_url','image_url':{'url':f"data:image/png;base64,{graphic_b64}"}})
     
     # Creating message for groq models
     msgs.append({'role':'user','content':[{'type':'text','text':text_block}] + content_list})
@@ -385,11 +385,11 @@ if generate_clicked:
 
         # Adding Anexo Gráfico to question if it exists
         if uploaded_graphic is not None:
-            candidate = candidate.replace('  \n  \n', f"  \n  \n<img src='data:image/png;base64,{graphic_b64}'>  \n  \n", 1)
+            candidate = candidate.replace('  \n  \n', f"  \n  \n![Anexo Gráfico](data:image/png;base64,{graphic_b64})  \n  \n", 1)
 
         st.session_state.show_modal = True
         st.session_state.modal_content = candidate
-        st.session_state.modal_error = "Não consegui gerar a questão no formato correto após várias tentativas, mas aí está uma pergunta candidata!"
+        st.session_state.modal_error = f"Não consegui gerar a questão no formato correto após {max_attempts} tentativas, mas segue uma questão candidata."
 
 # Creating modal with new question
 if st.session_state.show_modal:
