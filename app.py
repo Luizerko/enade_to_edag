@@ -75,18 +75,38 @@ def show_new_q():
     # st.text(st.session_state.modal_content)
     st.markdown(st.session_state.modal_content, unsafe_allow_html=True)
 
-    # Buttons for either downloading generated question or closing the modal
-    col_dl, col_close = st.columns([1, 1], gap="small")
-    with col_dl:
-        st.download_button(label="Baixar Questão", data=st.session_state.modal_content, file_name="nova_questao.md", mime="text/markdown")
-    with col_close:
-        if st.button("Fechar", key="close_modal"):
-            st.session_state.show_modal = False
-            st.rerun()
+    # Question editing mode
+    if st.session_state.editing_question:
+        new_md = st.text_area("Edite sua questão:", value=st.session_state.modal_content, height=500, key="md_editor")
+        
+        # Buttons to save or cancel edit
+        col_save, col_cancel = st.columns(2, gap="small")
+        with col_save:
+            if st.button("Salvar", key="save_edit"):
+                st.session_state.modal_content = new_md
+                st.session_state.editing_question = False
+        with col_cancel:
+            if st.button("Cancelar", key="cancel_edit"):
+                st.session_state.editing_question = False
+
+    # Buttons for either downloading generated question, editing it or closing the modal
+    else:
+        col_dl, col_ed, col_close = st.columns([1, 1, 1], gap="small")
+        with col_dl:
+            st.download_button(label="Baixar Questão", data=st.session_state.modal_content, file_name="nova_questao.md", mime="text/markdown")
+
+        with col_ed:
+            if st.button("Editar Questão", key="edit_modal"):
+                st.session_state.editing_question = True
+
+        with col_close:
+            if st.button("Fechar", key="close_modal"):
+                st.session_state.show_modal = False
+                st.rerun()
 
 # Initializing API client
-# key = load_file('data/keys/groq').strip()
-key = st.secrets["groq"]["key"]
+key = load_file('data/keys/groq').strip()
+# key = st.secrets["groq"]["key"]
 os.environ['OPENAI_API_KEY'] = key
 client = OpenAI(
     base_url='https://api.groq.com/openai/v1',
@@ -263,6 +283,8 @@ if 'show_modal' not in st.session_state:
     st.session_state.show_modal = False
 if 'modal_content' not in st.session_state:
     st.session_state.modal_content = ""
+if 'editing_question' not in st.session_state:
+    st.session_state.editing_question = False
 if 'modal_error' not in st.session_state:
     st.session_state.modal_error = None
 
@@ -348,16 +370,21 @@ if generate_clicked:
     # Trying to generate question
     max_attempts = 3
     new_q = None
+    server_error = False
     for attempt in range(max_attempts):
         # API call
-        resp = client.chat.completions.create(
-            # model="llama-3.3-70b-versatile",
-            model='meta-llama/llama-4-maverick-17b-128e-instruct',
-            # model='sabia-3.1',
-            messages=msgs,
-            temperature=0.8,
-            max_tokens=4096
-        )
+        try:
+            resp = client.chat.completions.create(
+                # model="llama-3.3-70b-versatile",
+                model='meta-llama/llama-4-maverick-17b-128e-instruct',
+                # model='sabia-3.1',
+                messages=msgs,
+                temperature=0.8,
+                max_tokens=4096
+            )
+        except:
+            server_error = True
+            break
 
         # Validating question
         candidate = resp.choices[0].message.content.strip()
@@ -380,6 +407,13 @@ if generate_clicked:
 
         st.session_state.show_modal = True
         st.session_state.modal_content = new_q
+    
+    elif server_error:
+        server_error = False
+        st.session_state.show_modal = True
+        st.session_state.modal_content = ''
+        st.session_state.modal_error = f"Não consegui gerar a questão por problemas no servidor."
+    
     else:
         candidate = candidate.replace('\n', '  \n')
 

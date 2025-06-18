@@ -1,5 +1,5 @@
 ENUNCIADO:
-<Texto auxiliar introdutório para a questão. Se houver anexo gráfico fornecido pelo usuário, uma imagem será automaticamente colocada abaixo e você deve fazer referência ao conteúdo dela nesse texto auxiliar>
+<Texto auxiliar introdutório para a questão trazendo contexto através de uma aplicação da vida real. Se houver anexo gráfico fornecido pelo usuário, uma imagem será automaticamente colocada abaixo e você deve fazer referência ao conteúdo dela nesse texto auxiliar>
 
 Nesse contexto, avalie as asserções a seguir e a relação proposta entre elas:
 
