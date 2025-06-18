@@ -71,38 +71,52 @@ def show_new_q():
         st.error(st.session_state.modal_error)
         st.session_state.modal_error = None
 
-    # Rendering generated question
-    # st.text(st.session_state.modal_content)
-    st.markdown(st.session_state.modal_content, unsafe_allow_html=True)
-
     # Question editing mode
     if st.session_state.editing_question:
         new_md = st.text_area("Edite sua questão:", value=st.session_state.modal_content, height=500, key="md_editor")
         
         # Buttons to save or cancel edit
-        col_save, col_cancel = st.columns(2, gap="small")
+        col_save, col_cancel = st.columns([1, 1], gap="small")
         with col_save:
-            if st.button("Salvar", key="save_edit"):
+            if st.button("Salvar Edição", key="save_edit"):
                 st.session_state.modal_content = new_md
                 st.session_state.editing_question = False
+                st.rerun()
+
         with col_cancel:
-            if st.button("Cancelar", key="cancel_edit"):
+            if st.button("Cancelar Edição", key="cancel_edit"):
                 st.session_state.editing_question = False
+                st.rerun()
 
     # Buttons for either downloading generated question, editing it or closing the modal
     else:
-        col_dl, col_ed, col_close = st.columns([1, 1, 1], gap="small")
-        with col_dl:
-            st.download_button(label="Baixar Questão", data=st.session_state.modal_content, file_name="nova_questao.md", mime="text/markdown")
+        # Rendering generated question
+        # st.text(st.session_state.modal_content)
+        st.markdown(st.session_state.modal_content, unsafe_allow_html=True)
 
+        col_ed, col_dl, col_close = st.columns([1, 1, 1], gap="small")
         with col_ed:
             if st.button("Editar Questão", key="edit_modal"):
                 st.session_state.editing_question = True
+                st.rerun()
+        
+        with col_dl:
+            st.download_button(label="Baixar Questão", data=st.session_state.modal_content, file_name="nova_questao.md", mime="text/markdown")
 
         with col_close:
             if st.button("Fechar", key="close_modal"):
-                st.session_state.show_modal = False
+                st.session_state.show_modal_question = False
                 st.rerun()
+
+# Function modal with decorator to show ENADE historic analysis
+@st.dialog("Análise Histórica ENADE")
+def show_history():
+    st.header("Análise Histórica ENADE")
+    st.write("""teste""")
+    
+    if st.button("Fechar", key="close_history"):
+        st.session_state.show_modal_enade = False
+        st.rerun()
 
 # Initializing API client
 key = load_file('data/keys/groq').strip()
@@ -130,25 +144,25 @@ client = OpenAI(
 # )
 
 # Page configuration
-st.set_page_config(page_title='Gerador de Questões do EDAG', layout='wide', initial_sidebar_state='collapsed')
-
-# Addition to the title
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <h1>Gerador de Questões do EDAG <span style="font-size: xx-small;">by Luis Zerkowski</span></h1>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.set_page_config(page_title='Gerador de Questões', layout='wide', initial_sidebar_state='collapsed')
 
 # Custom CSS for streamlit
 st.markdown(
     """
     <style>
         /* Centering the main title */
-        h1 {
-            text-align: center;
+        div[data-testid="stMarkdown"] {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        div[data-testid="stHeadingWithActionElements"] {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
         }
 
         /* Bigger labels for selectors */
@@ -198,7 +212,7 @@ st.markdown(
         h2 {
             text-align: center;
             font-weight: bold !important;
-            margin-top: 3em !important;
+            margin-top: 2em !important;
         }
 
         /* Making year separation bigger and centralized */
@@ -278,9 +292,9 @@ st.markdown(
 if 'selected_question' not in st.session_state:
     st.session_state.selected_question = None
 
-# State variable for new question modal
-if 'show_modal' not in st.session_state:
-    st.session_state.show_modal = False
+# State variables for new question modal
+if 'show_modal_question' not in st.session_state:
+    st.session_state.show_modal_question = False
 if 'modal_content' not in st.session_state:
     st.session_state.modal_content = ""
 if 'editing_question' not in st.session_state:
@@ -288,11 +302,25 @@ if 'editing_question' not in st.session_state:
 if 'modal_error' not in st.session_state:
     st.session_state.modal_error = None
 
+# State variables for ENADE historic analysis modal
+if 'show_modal_enade' not in st.session_state:
+    st.session_state.show_modal_enade = False
+
 # Hard coded list of content from CIMATEC's perspective
 edag_content_list = ['algoritmos e estrutura de dados', 'arquitetura de computadores', 'banco de dados', 'cibersegurança', 'ciência de dados', 'elétrica e eletrônica', 'engenharia de software', 'grafos', 'inteligência artificial', 'iot', 'lógica de programação', 'processamento de sinais', 'redes de computadores', 'robótica, automação e controle', 'sistemas digitais', 'sistemas distribuídos e programação paralela', 'sistemas embarcados', 'sistemas operacionais e compiladores', 'outros']
 
 # Loading topics
 edag_topics_by_year = load_edag_topics()
+
+# Addition to the title
+st.markdown(
+    """
+    <div>
+        <h1>Gerador de Questões</h1>
+        <h4>Um Estudo de Caso para Engenharia de Computação</h4>
+    </div>
+    """,
+    unsafe_allow_html=True, help="""Ferramenta designada para geração de questões utilizando modelos generativos e dentro de alguns parâmetros pré-estabelecidos: formato da questão, dificuldade, instruções adicionais opcionais através de prompt e suporte gráfico opcional através de imputação de imagem. A ferramenta também conta com um grid de questões de provas antigas do ENADE, as quais podem ser selecionadas para geração mais guiada de um nova questão.\n\nEsse software é um projeto experimental na área de Engenharia de Computação, com conteúdo focado na matriz curricular do curso no SENAI CIMATEC e, mais especificamente, pensado para ajudar no desenvolvimento de novas provas do EDAG, o exame interno da universidade para avaliação dos estudantes de graduação.""")
 
 # Topic selector
 topics_display = st.multiselect('Escolha um ou mais tópicos', [t.title() for t in edag_content_list], placeholder='Todos os tópicos', help='Seletor de tópicos para gerar uma nova questão: o modelo usará os tópicos marcados (ou todos, se nenhum for escolhido) para criar uma pergunta. No caso de visualização de provas antigas do ENADE, o seletor filtra as questões por tópico. Note que a geração de uma questão pode combinar vários tópicos selecionados, então se você precisa de uma pergunta focada em um único tópico, selecione apenas aquele tópico.')
@@ -405,12 +433,12 @@ if generate_clicked:
         if uploaded_graphic is not None:
             new_q = new_q.replace('  \n  \n', f'  \n  \n![Anexo Gráfico](data:image/png;base64,{graphic_b64})  \n  \n', 1)
 
-        st.session_state.show_modal = True
+        st.session_state.show_modal_question = True
         st.session_state.modal_content = new_q
     
     elif server_error:
         server_error = False
-        st.session_state.show_modal = True
+        st.session_state.show_modal_question = True
         st.session_state.modal_content = ''
         st.session_state.modal_error = f"Não consegui gerar a questão por problemas no servidor."
     
@@ -421,13 +449,17 @@ if generate_clicked:
         if uploaded_graphic is not None:
             candidate = candidate.replace('  \n  \n', f"  \n  \n![Anexo Gráfico](data:image/png;base64,{graphic_b64})  \n  \n", 1)
 
-        st.session_state.show_modal = True
+        st.session_state.show_modal_question = True
         st.session_state.modal_content = candidate
         st.session_state.modal_error = f"Não consegui gerar a questão no formato correto após {max_attempts} tentativas, mas segue uma questão candidata."
 
 # Creating modal with new question
-if st.session_state.show_modal:
+if st.session_state.show_modal_question:
     show_new_q()
+
+# Creating modal with new ENADE's historic analysis
+if st.session_state.show_modal_enade:
+    show_history()
 
 # Type mapping
 raw_types = sorted({questao.split('_')[0] for questao in os.listdir(f'data/visual_approach/prova_{2023}')})
@@ -450,13 +482,14 @@ if st.session_state.selected_question:
 
 # Card grid view
 else:
+    
+    # ENADE's title
     st.markdown("")
     st.markdown('<h2>Questões de Provas Antigas do ENADE</h2>', unsafe_allow_html=True)
     st.markdown("")
-    # st.markdown("", help="Seção com questões de provas antigas do ENADE. A ideia é permitir que uma questão seja selecionada para ser usada como base na geração de uma nova questão.")
 
     # Creating selectors on top
-    cols = st.columns([1, 1])
+    cols = st.columns([2, 2, 1])
 
     # Year selector
     years = sorted([int(prova.split('_')[-1]) for prova in glob.glob('data/visual_approach/prova_*')])
@@ -467,6 +500,12 @@ else:
     display_types = ['Todos'] + [type_map.get(t, t.title()) for t in raw_types]
     with cols[1]:
         type_filter = st.selectbox('Tipo de Questão', display_types, help='Filtro de seleção do(s) tipo(s) de questão a ser analisado. Note que o usuário também pode escolher analisar todos os tipos de questão.')
+
+    # ENADE's button to show historic analysis modal
+    with cols[2]:
+        if st.button("Análise Histórica", key="btn_history", help="Botão que abre painel interativo para análise histórica das provas do ENADE em seus conteúdos do edital e conteúdos efetivamente encontrados nas questões."):
+            st.session_state.show_modal_enade = True
+            st.rerun()
 
     # Getting questions
     all_qs = []
