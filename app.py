@@ -119,8 +119,8 @@ def show_history():
         st.rerun()
 
 # Initializing API client
-key = load_file('data/keys/groq').strip()
-# key = st.secrets["groq"]["key"]
+# key = load_file('data/keys/groq').strip()
+key = st.secrets["groq"]["key"]
 os.environ['OPENAI_API_KEY'] = key
 client = OpenAI(
     base_url='https://api.groq.com/openai/v1',
