@@ -5,11 +5,12 @@ import glob
 import base64
 import ast
 
+from collections import Counter
 from PIL import Image
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objs as go
 from plotly.colors import sample_colorscale
-from collections import Counter
 
 import streamlit as st
 from openai import OpenAI
@@ -113,6 +114,25 @@ def show_new_q():
                 st.session_state.show_modal_question = False
                 st.rerun()
 
+# Function to adjust layout of figure
+def adjust_layout(fig, all_x=False):
+    if not all_x:
+        fig.update_xaxes(showticklabels=False, title_text=None)
+
+    fig.update_layout(xaxis=dict(type='category'), xaxis_title_font_size=20, yaxis_title_font_size=20, xaxis_tickfont_size=16, yaxis_tickfont_size=16, hoverlabel=dict(font_size=16), legend_title_font_size=20, legend_font_size=16, bargap=0.4, legend_traceorder='reversed')
+
+    if all_x:
+        fig.update_layout(legend=dict(itemclick="toggleothers"))
+
+    fig.update_traces(
+        hovertemplate=(
+            "<b>%{customdata[0]}</b><br>"
+            "Representou %{customdata[1]:.1f}% do exame<extra></extra>"
+        )
+    )
+
+    return fig
+
 # Function modal with decorator to show ENADE historic analysis
 @st.dialog("Análise Histórica ENADE")
 def show_history():
@@ -134,33 +154,48 @@ def show_history():
         # Iterating topics in sorted order to make legend visualization better
         for topic, occ in sorted(counter.items(), key=lambda kv: kv[0], reverse=True):
             pct = occ/total_occ
-            segment_sz = pct*total_q
-            records.append({"year": str(year), "topic": topic.title(), "segment_size": segment_sz, "percent": pct, "occurrences": occ, "total_q": total_q})
+            records.append({"year": str(year), "topic": topic.title(), "percent": pct*100, "occurrences": occ, "total_q": total_q})
 
     # Building dataframe and plotting
     enade_exam_df = pd.DataFrame(records)
+
+    st.markdown("")
+    st.markdown("<p style='text-align:center; font-weight:bold;'>Distribuição de conteúdos do SENAI CIMATEC por ano de prova do ENADE</p>", unsafe_allow_html=True)
+
+    # Reorgering years
+    year_options = sorted({int(y) for y in enade_exam_df["year"]})
 
     # Creating color gradients to make it more visual appealing
     topics_sorted = enade_exam_df["topic"].unique()
     colors = sample_colorscale("Turbo", len(topics_sorted))
     color_map = dict(zip(topics_sorted, colors))
-    
-    # Building interactive barplot
-    year_order = [2014, 2017, 2019, 2023]
-    
-    fig = px.bar(enade_exam_df, x="year", y="segment_size", color="topic", custom_data=["topic", "percent"], title="Distribuição de conteúdos do SENAI CIMATEC por ano de prova do ENADE", barmode="stack", labels={"year": "Exam Year", "segment_size": "Número de Questões", "topic": "Tópico"}, height=650, category_orders={'year': year_order, "topic": topics_sorted}, color_discrete_map=color_map)
-    
-    
-    fig.update_layout(xaxis=dict(type='category'), title_x=0.2, title_font_size=30, xaxis_title_font_size=20, yaxis_title_font_size=20, xaxis_tickfont_size=16, yaxis_tickfont_size=16, hoverlabel=dict(font_size=16), legend_title_font_size=20, legend_font_size=16, bargap=0.4, legend_traceorder='reversed')
 
-    fig.update_traces(
-        hovertemplate=(
-            "<b>%{customdata[0]}</b><br>"
-            "Representou %{customdata[1]:.1%} do exame<extra></extra>"
-        )
-    )
+    # Building interactive barplot 1
+    fig1 = px.bar(enade_exam_df, x="year", y="percent", color="topic", custom_data=["topic", "percent"], barmode="stack", labels={"year": "Ano do Exame", "percent": "Percentual da Prova Representado", "topic": "Tópico"}, height=650, category_orders={'year': year_options, "topic": topics_sorted}, color_discrete_map=color_map)
 
-    st.plotly_chart(fig, use_container_width=True)
+    fig1 = adjust_layout(fig1, all_x=True)
+
+    st.plotly_chart(fig1, use_container_width=True, config={"displayModeBar": False})
+
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+
+    # Slider to pick a year
+    col1, col2, col3 = st.columns([1, 4, 2])
+    with col2:
+        selected_year = st.select_slider(label="", options=year_options, value=year_options[0])
+        df_year = enade_exam_df[enade_exam_df["year"] == str(selected_year)]
+
+    # Building interactive barplot 2
+    fig2 = px.bar(df_year, x="topic", y="occurrences", color="topic", custom_data=["topic", "percent"], labels={"topic": "Tópico", "occurrences": "Número de Questões"}, category_orders={"topic": topics_sorted}, color_discrete_map=color_map, height=650)
+
+    fig2 = adjust_layout(fig2)
+
+    st.plotly_chart(fig2, use_container_width=True, config={"displayModeBar": False})
+
+    # When slider moves, re-filter & re-draw
+    df_year = enade_exam_df[enade_exam_df["year"] == str(selected_year)]
     
     if st.button("Fechar", key="close_history"):
         st.session_state.show_modal_enade = False
