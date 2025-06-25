@@ -119,7 +119,11 @@ def show_history():
     # Counting question topics per year
     edag_topics_by_year = load_edag_topics()
     records = []
-    for year, qdict in edag_topics_by_year.items():
+
+    # Iterating years in a specific order to adjust categories order on graph (and legend)
+    year_order = [2019, 2017, 2014, 2023]
+    for year in  year_order:
+        qdict = edag_topics_by_year[year]
         total_q = len(qdict)
         
         counter = Counter()
@@ -127,7 +131,8 @@ def show_history():
             counter.update(topics)
         total_occ = sum(counter.values())
 
-        for topic, occ in counter.items():
+        # Iterating topics in sorted order to make legend visualization better
+        for topic, occ in sorted(counter.items(), key=lambda kv: kv[0], reverse=True):
             pct = occ/total_occ
             segment_sz = pct*total_q
             records.append({"year": str(year), "topic": topic.title(), "segment_size": segment_sz, "percent": pct, "occurrences": occ, "total_q": total_q})
@@ -135,14 +140,18 @@ def show_history():
     # Building dataframe and plotting
     enade_exam_df = pd.DataFrame(records)
 
-    # Sorting topics and creating color gradients to make it more visual appealing
-    topics_sorted = sorted(enade_exam_df["topic"].unique())
+    # Creating color gradients to make it more visual appealing
+    topics_sorted = enade_exam_df["topic"].unique()
     colors = sample_colorscale("Turbo", len(topics_sorted))
     color_map = dict(zip(topics_sorted, colors))
     
     # Building interactive barplot
-    fig = px.bar(enade_exam_df, x="year", y="segment_size", color="topic", custom_data=["topic", "percent"], title="Distribuição de conteúdos do SENAI CIMATEC por ano de prova do ENADE", barmode="stack", labels={"year": "Exam Year", "segment_size": "Número de Questões", "topic": "Tópico"}, height=650, category_orders={"topic": topics_sorted}, color_discrete_map=color_map)
-    fig.update_layout(xaxis=dict(type='category'), title_x=0.5, title_font_size=28, xaxis_title_font_size=20, yaxis_title_font_size=20, xaxis_tickfont_size=16, yaxis_tickfont_size=16, hoverlabel=dict(font_size=16), legend_title_font_size=20, legend_font_size=16, legend=dict(traceorder="reversed"))
+    year_order = [2014, 2017, 2019, 2023]
+    
+    fig = px.bar(enade_exam_df, x="year", y="segment_size", color="topic", custom_data=["topic", "percent"], title="Distribuição de conteúdos do SENAI CIMATEC por ano de prova do ENADE", barmode="stack", labels={"year": "Exam Year", "segment_size": "Número de Questões", "topic": "Tópico"}, height=650, category_orders={'year': year_order, "topic": topics_sorted}, color_discrete_map=color_map)
+    
+    
+    fig.update_layout(xaxis=dict(type='category'), title_x=0.2, title_font_size=30, xaxis_title_font_size=20, yaxis_title_font_size=20, xaxis_tickfont_size=16, yaxis_tickfont_size=16, hoverlabel=dict(font_size=16), legend_title_font_size=20, legend_font_size=16, bargap=0.4, legend_traceorder='reversed')
 
     fig.update_traces(
         hovertemplate=(
