@@ -98,6 +98,8 @@ markupsafe==3.0.2
     # via jinja2
 matplotlib-inline==0.1.7
     # via ipython
+narwhals==1.44.0
+    # via plotly
 numpy==2.2.5
     # via
     #   altair
@@ -111,6 +113,7 @@ packaging==24.2
     # via
     #   build
     #   huggingface-hub
+    #   plotly
     #   pytesseract
     #   streamlit
     #   transformers
@@ -133,6 +136,8 @@ pillow==11.2.1
 pip-tools==7.4.1
     # via -r requirements.in
 playwright==1.51.0
+    # via -r requirements.in
+plotly==6.1.2
     # via -r requirements.in
 prompt-toolkit==3.0.51
     # via ipython

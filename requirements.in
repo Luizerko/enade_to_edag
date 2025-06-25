@@ -12,3 +12,4 @@ streamlit>=1.45.0
 #torchvision==0.20.1+cu121
 transformers
 ipdb
+plotly
