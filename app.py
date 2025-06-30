@@ -117,19 +117,26 @@ def show_new_q():
 # Function to adjust layout of figure
 def adjust_layout(fig, all_x=False):
     if not all_x:
-        fig.update_xaxes(showticklabels=False, title_text=None)
+        fig.update_xaxes(showticklabels=False, title_text="Tópicos")
 
     fig.update_layout(xaxis=dict(type='category'), xaxis_title_font_size=20, yaxis_title_font_size=20, xaxis_tickfont_size=16, yaxis_tickfont_size=16, hoverlabel=dict(font_size=16), legend_title_font_size=20, legend_font_size=16, bargap=0.4, legend_traceorder='reversed')
 
     if all_x:
         fig.update_layout(legend=dict(itemclick="toggleothers"))
-
-    fig.update_traces(
-        hovertemplate=(
-            "<b>%{customdata[0]}</b><br>"
-            "Representou %{customdata[1]:.1f}% do exame<extra></extra>"
+        fig.update_traces(
+            hovertemplate=(
+                "<b>%{customdata[0]}</b><br>"
+                "Representou %{customdata[1]:.1f}% do exame<extra></extra>"
+            )
         )
-    )
+    else:
+        fig.update_layout(legend=dict(itemclick=False, itemdoubleclick=False))
+        fig.update_traces(
+            hovertemplate=(
+                "<b>%{customdata[0]}</b><br>"
+                "%{customdata[1]} questões no exame<extra></extra>"
+            )
+        )
 
     return fig
 
@@ -160,7 +167,7 @@ def show_history():
     enade_exam_df = pd.DataFrame(records)
 
     st.markdown("")
-    st.markdown("<p style='text-align:center; font-weight:bold;'>Distribuição de conteúdos do SENAI CIMATEC por ano de prova do ENADE</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align:center; font-weight:bold;'>Distribuição de Conteúdos do SENAI CIMATEC por Ano de Prova do ENADE</p>", unsafe_allow_html=True, help="Note que as questões podem conter múltiplos conteúdos, portanto a somatória do número de questões por conteúdo não resulta necessariamente no númeto total de questões da prova. As provas do ENADE para Engenharia de Computação sempre têm exatamente 40 questões.")
 
     # Reorgering years
     year_options = sorted({int(y) for y in enade_exam_df["year"]})
@@ -170,32 +177,33 @@ def show_history():
     colors = sample_colorscale("Turbo", len(topics_sorted))
     color_map = dict(zip(topics_sorted, colors))
 
+    # Create two tabs inside the modal
+    tab_overview, tab_by_year = st.tabs(["Perfil Geral das Provas", "Perfil de Prova por Ano"])
+
     # Building interactive barplot 1
-    fig1 = px.bar(enade_exam_df, x="year", y="percent", color="topic", custom_data=["topic", "percent"], barmode="stack", labels={"year": "Ano do Exame", "percent": "Percentual da Prova Representado", "topic": "Tópico"}, height=650, category_orders={'year': year_options, "topic": topics_sorted}, color_discrete_map=color_map)
+    with tab_overview:
+        fig1 = px.bar(enade_exam_df, x="year", y="percent", color="topic", custom_data=["topic", "percent"], barmode="stack", labels={"year": "Ano do Exame", "percent": "Percentual da Prova Representado", "topic": "Tópico"}, height=600, category_orders={'year': year_options, "topic": topics_sorted}, color_discrete_map=color_map)
 
-    fig1 = adjust_layout(fig1, all_x=True)
+        fig1 = adjust_layout(fig1, all_x=True)
 
-    st.plotly_chart(fig1, use_container_width=True, config={"displayModeBar": False})
+        st.plotly_chart(fig1, use_container_width=True, config={"displayModeBar": False})
 
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
+    with tab_by_year:
+        # Slider to pick a year
+        col1, col2, col3 = st.columns([1, 4, 2])
+        with col2:
+            selected_year = st.select_slider(label="", options=year_options, value=year_options[0])
+            df_year = enade_exam_df[enade_exam_df["year"] == str(selected_year)]
 
-    # Slider to pick a year
-    col1, col2, col3 = st.columns([1, 4, 2])
-    with col2:
-        selected_year = st.select_slider(label="", options=year_options, value=year_options[0])
-        df_year = enade_exam_df[enade_exam_df["year"] == str(selected_year)]
+        # Building interactive barplot 2
+        fig2 = px.bar(df_year, x="topic", y="occurrences", color="topic", custom_data=["topic", "occurrences"], labels={"topic": "Tópico", "occurrences": "Número de Questões"}, category_orders={"topic": topics_sorted}, color_discrete_map=color_map, height=600)
 
-    # Building interactive barplot 2
-    fig2 = px.bar(df_year, x="topic", y="occurrences", color="topic", custom_data=["topic", "percent"], labels={"topic": "Tópico", "occurrences": "Número de Questões"}, category_orders={"topic": topics_sorted}, color_discrete_map=color_map, height=650)
+        fig2 = adjust_layout(fig2)
 
-    fig2 = adjust_layout(fig2)
+        st.plotly_chart(fig2, use_container_width=True, config={"displayModeBar": False})
 
-    st.plotly_chart(fig2, use_container_width=True, config={"displayModeBar": False})
-
-    # When slider moves, re-filter & re-draw
-    df_year = enade_exam_df[enade_exam_df["year"] == str(selected_year)]
+        # When slider moves, re-filter & re-draw
+        #df_year = enade_exam_df[enade_exam_df["year"] == str(selected_year)]
     
     if st.button("Fechar", key="close_history"):
         st.session_state.show_modal_enade = False
@@ -364,6 +372,12 @@ st.markdown(
         div[data-testid="stDownloadButton"] {
             display: flex !important;
             justify-content: center !important;
+        }
+
+        /* Centering the tab container */
+        div[data-baseweb="tab-list"] {
+          display: flex !important;
+          justify-content: space-around !important;
         }
 
     </style>
