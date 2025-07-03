@@ -1,13 +1,14 @@
-# Análise e Geração de Questões para o EDAG com base no ENADE
+# Análise e Geração de Questões para o EDAG
 
-Este projeto tem como objetivo minerar e analisar o conteúdo dos editais e das provas do ENADE (Exame Nacional de Desempenho dos Estudantes), com estudo de caso no curso de Engenharia de Computação, para geração de questões do EDAG (Exame de Desempenho Acadêmico Geral do Senai CIMATEC).
+Este projeto tem como objetivo geração de questões para a prova do EDAG (Exame de Desempenho Acadêmico Geral do Senai CIMATEC), com estudo de caso para o curso de Engenharia da Computação. Também mineramos e analisamos o conteúdo dos editais e das provas do ENADE (Exame Nacional de Desempenho dos Estudantes) com a intenção de possibilitar a geração de questões inspiradas no exame nacional.
 
-A partir desses dados, queremos:
+<p align="center">
+  <img src="assets/usando_app.gif" alt="Visão geral do uso do aplicativo." width="60%" style="margin-top: 20px;" />
+</p>
+<p align="center" style="margin-bottom: 15px;">
+  Animação de uso do aplicativo para uma visão geral de interatividade e das ferramentas existentes no mesmo.
+</p>
 
-- Desenvolver uma pipeline automatizada com o uso de LLMs para gerar novas questões baseadas no conteúdo do ENADE, mas no formato do EDAG.
-- Construir um dashboard interativo com visualizações que nos permitam entender como o conteúdo do ENADE evoluiu ao longo do tempo.
-
-<!-- Adicionar animação utilizando o aplicativo  -->
 
 Se quiser entender mais sobre o desenvolvimento das pipelines, leia a [documentação anexa](https://github.com/Luizerko/enade_to_edag/tree/main/docs/MINERACAO_GERACAO_ANALISE.md).
 
@@ -18,10 +19,10 @@ Se quiser entender mais sobre o desenvolvimento das pipelines, leia a [documenta
    - Raspagem das provas aplicadas do ENADE por ano para extração e categorização automática das questões com base no conteúdo programático.
 
 2. **Geração de Questões com IA**
-   - Uso de LLMs para sugerir novas questões baseadas no ENADE e com a formatação do EDAG.
+   - Uso de LLMs para sugerir novas questões para o EDAG, utilizando sua formatação específica e com possibilidade de basear-se em questões do ENADE.
 
 3. **Dashboard Interativo**
-   - Visualizações da evolução dos conteúdos e questões ao longo dos anos.
+   - Visualizações da evolução dos conteúdos e questões do ENADE ao longo dos anos.
    - Comparações quantitativas por áreas temáticas.
 
 ## Status Atual
@@ -29,8 +30,8 @@ Se quiser entender mais sobre o desenvolvimento das pipelines, leia a [documenta
 - Raspagem e extração dos conteúdos teóricos dos editais **concluída**.
 - Raspagem de questões das provas **concluída**.
 - Classificação das questões das provas nas áreas temáticas **concluída**.
-- Geração automática de novas questões com LLMs **em andamento**.
-- Desenvolvimento do dashboard interativo para conteúdo **no futuro**.
+- Geração automática de novas questões com LLMs **concluída**.
+- Desenvolvimento do dashboard interativo para conteúdo **concluída**.
 
 ## Hierarquia do Repositório
  
@@ -49,4 +50,4 @@ Se quiser entender mais sobre o desenvolvimento das pipelines, leia a [documenta
 
 ---
 
-Projeto desenvolvido por **Luis Vitor Zerkowski**.
+Projeto desenvolvido por **Luis Vitor Zerkowski** com inspiração nas ideias de **Sanval Ebert**.
